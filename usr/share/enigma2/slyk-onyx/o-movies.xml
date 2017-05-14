@@ -1,0 +1,126 @@
+
+<skin>
+
+	<!-- https://github.com/openatv/enigma2/blob/master/lib/python/Screens/MovieSelection.py -->
+	<screen name="MovieContextMenu" position="0,0" size="1280,720" backgroundColor="mid" flags="wfNoBorder">
+		<panel name="template1" />
+		<panel name="h-separator-tr" />
+		<panel name="title2" />
+		<widget name="config" textOffset="10,2" position="351,214" size="636,430" font="Regular;21" secondfont="Regular;21" foregroundColor="white" backgroundColor="mid" backgroundColorSelected="bg-selected" selectionPixmap="o-selectbars/select-636-30.png" backgroundPixmap="o-selectbars/blank.png" itemHeight="30" enableWrapAround="1" scrollbarMode="showNever" transparent="1" />
+		<ePixmap pixmap="o-backgrounds/menu-gradient.png" position="351,600" size="636,50" alphatest="blend" zPosition="2" />
+		<panel name="2RG-Source" />
+		<panel name="description" />
+		<panel name="whatson-top" />
+		<panel name="HelpWindow" />
+		<widget name="footnote" position="1012,616" size="248,20" font="Regular;14" foregroundColor="white" backgroundColor="botright" transparent="1" />
+		<panel name="VKeyIcon" />
+	</screen>
+	
+	<screen name="MovieSelection" position="0,0" size="1280,720" backgroundColor="mid" flags="wfNoBorder">
+		<panel name="background" />
+		<panel name="logo" />
+		<panel name="tv" />
+		<panel name="date" />
+		<panel name="divider1" />
+		<ePixmap pixmap="o-backgrounds/button-bg.png" position="0,e-68" size="1280,68" alphatest="blend" zPosition="-1" />
+		<ePixmap pixmap="o-backgrounds/v-divider.png" position="539 ,670" size="2,50" alphatest="blend" />
+		<ePixmap pixmap="o-backgrounds/v-divider.png" position="752,670" size="2,50" alphatest="blend" />
+		<ePixmap pixmap="o-backgrounds/v-divider.png" position="965,670" size="2,50" alphatest="blend" />
+		<ePixmap pixmap="o-backgrounds/flare.png" position="197,661" size="250,19" alphatest="blend" zPosition="6" />
+		<ePixmap pixmap="o-backgrounds/flare.png" position="840,661" size="250,19" alphatest="blend" zPosition="6" />
+		<eLabel text="Movies" position="10,450" size="300,194" halign="center" font="Regular;23" zPosition="1" transparent="1" foregroundColor="white" backgroundColor="topleft" />
+		<panel name="h-separator-tr" />
+		<panel name="v-separator-tr" />
+		<widget name="list" position="351,220" size="909,450" font="Regular;20" foregroundColor="white" backgroundColor="mid" foregroundColorSelected="white" backgroundColorSelected="bg-selected-text" enableWrapAround="1" scrollbarMode="showOnDemand" transparent="1" />
+		<widget name="waitingtext" position="351,220" size="909,450" font="Regular;20" halign="center" valign="center" zPosition="2" foregroundColor="white" backgroundColor="mid" transparent="1" />
+		<widget source="Service" render="Label" position="351,21" size="603,26" font="Bold;20" foregroundColor="colour2" backgroundColor="topmid" noWrap="1" transparent="1">
+			<convert type="EventName">ShortDescription</convert>
+		</widget>
+		<widget source="Service" render="RunningText" options="movetype=running,startpoint=0,direction=top,steptime=80,repeat=0,always=0,oneshot=0,startdelay=6000,wrap" position="351,50" size="603,125" foregroundColor="white" backgroundColor="topmid" font="Regular;20" transparent="1">
+			<convert type="SlykMovieInfo">MetaDescription</convert>
+		</widget>
+		<widget source="Service" render="Picon" position="1000,25" size="100,60" alphatest="blend">
+			<convert type="MovieReference">Reference</convert>
+		</widget>
+		<panel position="1122,31" size="138,50">
+			<panel name="channel-icons" />
+		</panel>
+		<widget source="Service" render="Label" position="1000,91" size="260,24" font="Regular;20" foregroundColor="white" backgroundColor="topright" transparent="1">
+			<convert type="ServiceTime">Duration</convert>
+			<convert type="SlykClockToText">SlykAsLength</convert>
+		</widget>
+		<widget name="freeDiskSpace" position="1000,122" size="260,23" foregroundColor="white" backgroundColor="topright" font="Regular;16" transparent="1" />
+		<widget source="Service" render="Label" position="1000,147" size="260,23" foregroundColor="white" backgroundColor="topright" font="Regular;16" transparent="1">
+			<convert type="MovieInfo">FileSize</convert>
+		</widget>
+		<panel position="351,220" size="909,450">
+			<widget name="chosenletter" position="center,center" size="60,60" foregroundColor="white" backgroundColor="black" font="Regular;50" halign="center" valign="center" transparent="0" zPosition="4" />
+		</panel>
+		<widget name="movie_sort" position="1195,147" size="35,20" pixmaps="icons/az.png,icons/newtop.png,icons/shuffle.png,icons/za.png,icons/oldtop.png,icons/faz.png,icons/fza.png" zPosition="10" alphatest="blend" />
+		<widget name="movie_off" position="1230,147" size="35,20" pixmaps="icons/ask.png,icons/movielist.png,icons/quit.png,icons/pause.png,icons/playlist.png,icons/playlistquit.png,icons/loop.png,icons/rep.png" zPosition="10" alphatest="blend" />
+		<panel name="4RGYB" />
+		<ePixmap pixmap="buttons/key_info.png" position="1160,683" size="25,25" alphatest="blend" zPosition="3" />
+		<ePixmap pixmap="buttons/key_menu.png" position="1195,683" size="25,25" alphatest="blend" zPosition="3" />
+		<ePixmap pixmap="buttons/key_help.png" position="1230,683" size="25,25" alphatest="blend" zPosition="3" />
+	</screen>
+
+	<screen name="MovieSelectionSlim" position="0,0" size="1280,720" backgroundColor="mid" flags="wfNoBorder">
+		<panel name="MovieSelection" />
+	</screen>
+
+	<screen name="PVRState" flags="wfNoBorder" position="0,0" size="0,0" title="InfoBar" backgroundColor="transparent" />
+
+	<screen name="MoviePlayer" flags="wfNoBorder" position="0,0" size="1280,720" title="InfoBar" backgroundColor="transparent">
+		<eLabel position="0,488" size="1280,232" backgroundColor="blackglass" transparent="0" zPosition="-2" />
+		<ePixmap position="0,470" size="1280,250" pixmap="o-infobars/infobar-blank.png" alphatest="blend" zPosition="-1" />
+		<panel name="date" />
+		<widget source="session.CurrentService" render="Label" position="center,505" size="1280,30" font="Regular;23" foregroundColor="white" backgroundColor="blackglass" halign="center" noWrap="1" transparent="1">
+			<convert type="ServiceName">Name</convert>
+		</widget>
+		<widget name="statusicon" position="center,572" size="54,54" alphatest="blend" pixmaps="o-infobars/play.png,o-infobars/pause.png,o-infobars/stop.png,o-infobars/forward.png,o-infobars/backward.png,o-infobars/slow.png,o-infobars/blank.png" zPosition="5" />
+		<widget name="speed" position="center,539" size="84,30" font="Regular;23" foregroundColor="white" backgroundColor="blackglass" halign="center" transparent="1" zPosition="5" />
+		<!-- progress background -->
+		<ePixmap position="206,597" size="868,4" pixmap="o-infobars/progress-bg.png" alphatest="blend" zPosition="1" />
+		<!--progress border -->
+		<ePixmap position="205,596" size="870,6" pixmap="o-infobars/progress-border.png" alphatest="blend" zPosition="4" />
+		<!-- progress bar-->
+		<widget source="session.CurrentService" render="PositionGauge" position="205,595" size="870,8" pointer="o-infobars/progress2.png:870,0" transparent="1" zPosition="3">
+			<convert type="ServicePosition">Gauge</convert>
+		</widget>
+		<eLabel text="0m" position="47,584" size="130,30" font="Regular;23" foregroundColor="white" backgroundColor="blackglass" halign="right" transparent="1" />
+		<widget source="session.CurrentService" render="Label" position="1105,584" size="133,30" font="Regular;23" foregroundColor="white" backgroundColor="blackglass" transparent="1">
+			<convert type="SlykServicePosition">QMovieLength</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Label" position="center,630" size="124,30" font="Bold;23" foregroundColor="colour2" backgroundColor="blackglass" halign="center" transparent="1">
+			<convert type="SlykServicePosition">QMoviePosition</convert>
+		</widget>
+		<!-- icons -->
+		<panel name="infobar-icons" />
+		<ePixmap pixmap="buttons/key_left.png" position="722,685" size="25,25" alphatest="blend" />
+		<ePixmap pixmap="buttons/key_right.png" position="747,685" size="25,25" alphatest="blend" />
+		<eLabel text="Hold to Seek" position="782,683" size="158,25" font="Regular;20" valign="center" transparent="1" noWrap="1" foregroundColor="white" backgroundColor="button-bg" halign="left" />
+		<ePixmap pixmap="buttons/key_0.png" position="998,685" size="25,25" alphatest="blend" />
+		<eLabel text="Set Marker" position="1033,683" size="158,25" font="Regular;20" valign="center" transparent="1" noWrap="1" foregroundColor="white" backgroundColor="button-bg" halign="left" />
+		<panel name="InfoButton" />
+	</screen>
+
+	<screen name="Seekbar" position="center,36" size="560,75" flags="wfNoBorder" backgroundColor="transparent">
+		<eLabel position="55,0" size="450,75" backgroundColor="blackglass" transparent="0" zPosition="-2" />
+		<ePixmap pixmap="o-backgrounds/seekbar-bg.png" position="0,0" size="560,75" alphatest="blend" zPosition="-1" />
+		<ePixmap pixmap="o-icons/seekbar-bg.png" position="center,center" size="270,8" alphatest="blend" zPosition="1" />
+		<!-- cursor starts at 145px from the left. and 15 pixels down. Progress bar must be 270 pixels long. Cannot be overwritten. Resize outer box and graphics accordingly. -->
+		<widget name="cursor" position="0,15" size="6,36" pixmap="o-icons/position-pointer.png" alphatest="blend" zPosition="2" />
+		<widget name="time" position="60,0" size="75,75" font="Regular;23" valign="center" halign="right" foregroundColor="white" backgroundColor="blackglass" transparent="1" zPosition="2" />
+		<widget source="session.CurrentService" render="Progress" position="145,33" size="270,8" pixmap="o-icons/seekbar.png" transparent="1" zPosition="2">
+			<convert type="ServicePosition">Position</convert>
+		</widget>
+		<widget source="session.CurrentService" render="PositionGauge" position="145,33" size="270,8" transparent="1" zPosition="3">
+			<convert type="ServicePosition">Gauge</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Label" position="e-135,0" size="75,75" font="Regular;23" valign="center" foregroundColor="white" backgroundColor="blackglass" transparent="1" zPosition="2">
+			<convert type="ServicePosition">Length</convert>
+		</widget>
+	</screen>
+</skin>
+
+

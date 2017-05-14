@@ -1,0 +1,150 @@
+
+<skin>
+	<!-- https://github.com/openatv/enigma2/blob/master/lib/python/Screens/TimerEdit.py -->
+	<screen name="TimerEditList" title="Timer editor" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="mid">
+		<panel name="template1" />
+		<panel name="h-separator-tr" />
+		<panel name="title2" />
+		<widget name="timerlist" position="351,230" size="628,440" foregroundColor="white" backgroundColor="mid" backgroundColorSelected="bg-selected-text" itemHeight="48" rowSplit="25" iconMargin="20" setFont="Regular;16" setEventNameFont="Regular; 20" setServiceNameFont="Regular; 20" scrollbarMode="showNever" enableWrapAround="1" transparent="1" />
+		<widget name="description" position="351,50" size="603,125" font="Regular;20" foregroundColor="white" backgroundColor="topmid" transparent="1" />
+		<panel name="4RGYB" />
+		<panel name="InfoButton-pos2" />
+		<panel name="OKButton" />
+	</screen>
+	
+	<!-- Timer entry -->
+	<screen name="TimerEntry" title="Timer entry" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="mid">
+		<panel name="Setup-Default" />
+		<panel name="2RG" />
+		<widget name="canceltext" position="369,683" size="158,25" font="Regular;20" valign="center" transparent="1" noWrap="1" foregroundColor="white" backgroundColor="button-bg" />
+		<widget name="oktext" position="582,683" size="158,25" font="Regular;20" valign="center" transparent="1" noWrap="1" foregroundColor="white" backgroundColor="button-bg" />
+		<panel name="description" />
+		<panel name="whatson-top" />
+		<panel name="HelpWindow" />
+		<panel name="VKeyIcon" />
+	</screen>
+	
+	<!-- Timer log / timer info button-->
+	<screen name="TimerLog" title="Timer log" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="mid">
+		<panel name="template1" />
+		<panel name="h-separator-tr" />
+		<panel name="title2" />
+		<widget name="loglist" textOffset="10,10" position="351,214" size="636,430" font="Regular;20" foregroundColor="white" backgroundColor="mid" backgroundColorSelected="bg-selected" selectionPixmap="o-selectbars/select-636-48.png" backgroundPixmap="o-selectbars/blank.png" itemHeight="48" enableWrapAround="1" scrollbarMode="showNever" transparent="1" />
+		<widget name="logentry" position="351,50" size="603,125" font="Regular;20" foregroundColor="white" backgroundColor="topmid" transparent="1" />
+		<panel name="4RGYB" />
+	</screen>
+	
+	<!-- Timer sanity conflict -->
+	<screen name="TimerSanityConflict" title="Timer sanity error" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="mid">
+		<panel name="template1" />
+		<panel name="h-separator-tr" />
+		<panel name="title2" />
+		<widget name="timer1" position="351,230" size="628,48" foregroundColor="white" backgroundColor="mid" backgroundColorSelected="bg-selected-text" itemHeight="48" rowSplit="25" iconMargin="20" setFont="Regular;16" setEventNameFont="Regular; 20" setServiceNameFont="Regular; 20" scrollbarMode="showNever" enableWrapAround="1" transparent="1" />
+		<widget name="list" textOffset="5,2" position="351,352" size="628,30" foregroundColor="white" backgroundColor="titlebackground" backgroundColorSelected="titlebackground" foregroundColorSelected="white" itemHeight="30" font="Regular;20" scrollbarMode="showNever" transparent="1" />
+		<widget name="timer2" position="351,382" size="628,288" foregroundColor="white" backgroundColor="mid" backgroundColorSelected="bg-selected-text" itemHeight="48" rowSplit="25" iconMargin="20" setFont="Regular;16" setEventNameFont="Regular; 20" setServiceNameFont="Regular; 20" scrollbarMode="showNever" enableWrapAround="1" transparent="1" />
+		<panel name="4RGYB" />
+	</screen>
+	
+	<!-- Timer Selection -->
+	<screen name="TimerSelection" title="Timer selection" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="mid">
+		<panel name="template1" />
+		<panel name="h-separator-tr" />
+		<panel name="title2" />
+		<widget name="timerlist" position="350,210" size="640,440" foregroundColor="white" backgroundColor="mid" backgroundColorSelected="bg-selected-text" itemHeight="48" rowSplit="25" iconMargin="20" setFont="Regular;16" setEventNameFont="Regular; 20" setServiceNameFont="Regular; 20" scrollbarMode="showNever" enableWrapAround="1" transparent="1" />
+		<widget name="description" position="351,50" size="603,125" font="Regular;20" foregroundColor="white" backgroundColor="topmid" transparent="1" />
+		<!--<panel name="button-bg" />  -->
+		<panel name="OKButton" />
+	</screen>
+	
+	<!-- https://github.com/oe-alliance/enigma2-plugins/blob/2.3/autotimer/src/AutoTimerOverview.py -->
+	<!-- ## Autotimer ## -->
+
+	<screen name="AutoTimerOverview" position="0,0" size="1280,720" title="AutoTimer Overview" flags="wfNoBorder" backgroundColor="mid">
+		<panel name="template1" />
+		<panel name="h-separator-tr" />
+		<eLabel text="AutoTimer Overview" position="10,450" size="300,194" halign="center" font="Regular;23" transparent="1" foregroundColor="white" backgroundColor="topleft" />
+		<widget name="entries" position="351,230" size="628,420" itemHeight="70" rowSplit1="25" rowSplit2="43" rowHeight="28" iconMargin="20" DayNameFont="Regular;16" EventNameFont="Regular;20" ServiceNameFont="Regular;20" scrollbarMode="showOnDemand" enableWrapAround="1" foregroundColor="white" backgroundColor="mid" backgroundColorSelected="bg-selected-text" transparent="1" />
+		<widget name="description" position="351,50" size="603,125" font="Regular;20" foregroundColor="white" backgroundColor="topmid" transparent="1" />
+		<panel name="4RGYB-Source" />
+		<panel name="MenuButton-pos2" />
+		<panel name="OKButton" />
+	</screen>
+
+	<screen name="AutoTimerImporter" position="0,0" size="1280,720" title="Import AutoTimer" flags="wfNoBorder" backgroundColor="mid">
+		<panel name="template1" />
+		<panel name="h-separator-tr" />
+		<eLabel text="AutoTimer Importer" position="10,450" size="300,194" halign="center" font="Regular;23" transparent="1" foregroundColor="white" backgroundColor="topleft" />
+		<ePixmap pixmap="o-backgrounds/setup-30-bg.png" alphatest="blend" position="351,229" size="628,440" zPosition="1" />
+		<widget name="list" textOffset="10,0" position="351,230" size="628,440" foregroundColor="white" backgroundColor="mid" font="Regular;20" backgroundColorSelected="bg-selected" selectionPixmap="o-selectbars/select-628-30.png" itemHeight="30" enableWrapAround="1" scrollbarMode="showOnDemand" transparent="1" zPosition="2" />
+		<panel name="2RG-Source" />
+	</screen>
+
+	<screen name="AutoTimerEditor" position="0,0" size="1280,720" title="Edit AutoTimer" flags="wfNoBorder" backgroundColor="mid">
+		<panel name="template1" />
+		<panel name="h-separator-tr" />
+		<eLabel text="AutoTimer Editor" position="10,450" size="300,194" halign="center" font="Regular;23" transparent="1" foregroundColor="white" backgroundColor="topleft" />
+		<panel name="Setup-Default" />
+		<panel name="4RGYB-Source" />
+		<widget source="help" render="Label" position="1012,227" size="248,340" font="Regular;18" foregroundColor="colour2" backgroundColor="midright" transparent="1" />
+	</screen>
+
+	<screen name="AutoTimerFilterEditor" position="0,0" size="1280,720" title="Edit AutoTimer Filters" flags="wfNoBorder" backgroundColor="mid">
+		<panel name="AutoTimerEditor" />
+		<panel name="HelpWindow" />
+	</screen>
+
+	<screen name="AutoTimerServiceEditor" title="Edit AutoTimer Services" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="mid">
+		<panel name="AutoTimerEditor" />
+	</screen>
+
+	<screen name="AutoTimerSettings" position="0,0" size="1280,720" title="AutoTimer Settings" flags="wfNoBorder" backgroundColor="mid">
+		<panel name="template1" />
+		<panel name="h-separator-tr" />
+		<eLabel text="AutoTimer Settings" position="10,450" size="300,194" halign="center" font="Regular;23" transparent="1" foregroundColor="white" backgroundColor="topleft" />
+		<panel name="Setup-Default" />
+		<panel name="2RG-Source" />
+		<widget source="help" render="Label" position="1012,227" size="248,340" font="Regular;18" foregroundColor="colour2" backgroundColor="midright" transparent="1" />
+	</screen>
+
+	<screen name="AutoTimerFAQ" position="0,0" size="1280,720" title="AutoTimer FAQ" flags="wfNoBorder" backgroundColor="mid">
+		<panel name="template1" />
+		<panel name="h-separator-tr" />
+		<eLabel text="AutoTimer Help" position="10,450" size="300,194" halign="center" font="Regular;23" transparent="1" foregroundColor="white" backgroundColor="topleft" />
+		<widget name="detailtext" position="351,230" size="628,440" font="Regular;20" foregroundColor="white" backgroundColor="mid" transparent="1" />
+		<panel name="4RGYB-Source" />
+	</screen>
+
+	<screen name="AutoTimerHelp" position="0,0" size="1280,720" title="AutoTimer Help" flags="wfNoBorder" backgroundColor="mid">
+		<panel name="AutoTimerFAQ" />
+	</screen>
+
+	<screen name="AutoTimerWizard" position="fill" title="Welcome..." flags="wfNoBorder" backgroundColor="mid">
+		<panel name="WizardTemplate" />
+	</screen>
+	
+	<screen name="AutoTimerPreview" title="Preview AutoTimer" position="center,center" size="600,450">
+		<widget source="timerlist" render="Listbox" position="0,0" size="600,350" foregroundColor="white" backgroundColor="messageboxbg" foregroundColorSelected="white" backgroundColorSelected="bg-selected" selectionPixmap="o-selectbars/select-600-70.png" itemHeight="70" enableWrapAround="1" scrollbarMode="showOnDemand" transparent="1" zPosition="1">
+			<convert type="TemplatedMultiContent">{"template": [
+						MultiContentEntryText(pos=(10,2), size=(580,24), text = 3, font = 0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER),
+						MultiContentEntryText(pos=(10,23), size=(580,30), text = 0, font = 1, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER),
+						MultiContentEntryText(pos=(10,47), size=(280,20), text = 4, font = 1, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER),
+						MultiContentEntryText(pos=(310,47), size=(280,20), text = 2, font = 1, flags = RT_HALIGN_RIGHT|RT_VALIGN_CENTER),
+					],
+				 "fonts": [gFont("Regular", 20),gFont("Regular", 16)],
+				 "itemHeight": 70
+				}</convert>
+		</widget>
+		<widget name="list" position="0,0" size="600,350" font="Regular;20" foregroundColor="white" backgroundColor="messageboxbg" foregroundColorSelected="white" backgroundColorSelected="bg-selected" selectionPixmap="o-selectbars/select-600-70.png" itemHeight="70" enableWrapAround="1" scrollbarMode="showOnDemand" transparent="1" zPosition="1" />
+		<ePixmap pixmap="buttons/key_red.png" position="0,e-30" size="25,25" alphatest="blend" />
+		<widget source="key_red" render="Label" position="30,e-32" size="250,25" font="Regular;20" foregroundColor="white" backgroundColor="messageboxbg" valign="center" noWrap="1" transparent="1" />
+		<ePixmap pixmap="buttons/key_yellow.png" position="300,e-30" size="25,25" alphatest="blend" zPosition="2" />
+		<widget source="key_yellow" render="Label" position="330,e-32" size="250,25" font="Regular;20" foregroundColor="white" backgroundColor="messageboxbg" valign="center" noWrap="1" transparent="1" />
+	</screen>
+
+	<!-- CronTimer -->
+	<screen name="CronTimers" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="mid" title="Cron Manager">
+		<panel name="CronManager" />
+	</screen>
+</skin>
+
+

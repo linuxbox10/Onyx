@@ -1,0 +1,115 @@
+
+
+<skin>
+	<!-- movie planner eventview -->
+	<screen name="EventViewSimple" flags="wfNoBorder" position="0,0" size="1280,720" backgroundColor="transparent">
+		<eLabel position="0,488" size="1280,232" backgroundColor="blackglass" transparent="0" zPosition="-2" />
+		<ePixmap position="0,470" size="1280,250" pixmap="o-infobars/infobar1.png" alphatest="blend" zPosition="-1" />
+		<!-- record icon -->
+		<widget render="Pixmap" pixmap="o-icons/record.png" source="session.RecordState" position="630,478" size="20,20" alphatest="blend" zPosition="6">
+			<convert type="ConditionalShowHide" />
+		</widget>
+		
+               <!-- picons / xpicons - see picons.xml -->
+	         <panel name="movie-eventview-picons"/>
+		
+		<!-- date -->
+		<panel name="date" />
+		<!-- icons -->
+		<panel name="infobar-icons" />
+		<!-- progress bar -->
+		<ePixmap position="666,692" size="218,4" pixmap="o-infobars/220-progress-bg.png" alphatest="blend" zPosition="1" />
+		<widget source="session.Event_Now" render="Progress" position="665,691" size="220,6" pixmap="o-infobars/220-progress.png" transparent="1" zPosition="2">
+			<convert type="EventTime">Progress</convert>
+		</widget>
+		<ePixmap position="665,691" size="220,6" pixmap="o-infobars/220-progress-border.png" alphatest="blend" zPosition="3" />
+		<!-- channel -->
+		<widget name="channel" position="351,500" size="300,30" font="Bold;23" foregroundColor="white" backgroundColor="blackglass" transparent="1" />
+		<!-- programme name -->
+		<widget source="Title" render="Label" position="351,530" size="585,30" font="Bold;23" foregroundColor="white" backgroundColor="blackglass" noWrap="1" transparent="1" />
+		<!-- programme description -->
+		<widget source="session.Event_Now" render="RunningText" options="movetype=running,startpoint=0,direction=top,steptime=80,repeat=0,always=0,oneshot=0,startdelay=6000,wrap" position="351,562" size="585,100" font="Regular;20" foregroundColor="white" backgroundColor="blackglass" transparent="1">
+			<convert type="EventName">ExtendedDescription</convert>
+		</widget>
+		<widget source="Event" render="Label" position="994,500" size="286,29" font="Bold;23" foregroundColor="white" backgroundColor="blackglass" transparent="1">
+			<convert type="EventTime">StartTime</convert>
+			<convert type="ClockToText">Format:%a %d %B %Y</convert>
+		</widget>
+		<widget source="Event" render="Label" position="994,530" size="258,29" font="Bold;23" foregroundColor="white" backgroundColor="blackglass" transparent="1">
+			<convert type="EventTime">StartTime</convert>
+			<convert type="SlykClockToText">SlykHDTime</convert>
+		</widget>
+		<widget source="Event" render="Label" position="994,623" size="258,26" foregroundColor="white" backgroundColor="blackglass" font="Regular;20" transparent="1">
+			<convert type="EventTime">Duration</convert>
+			<convert type="SlykClockToText">SlykAsLength</convert>
+		</widget>
+	</screen>
+
+	<screen name="EventView" flags="wfNoBorder" position="0,0" size="1280,720" backgroundColor="transparent">
+		<eLabel position="0,488" size="1280,232" backgroundColor="blackglass" transparent="0" zPosition="-2" />
+		<ePixmap position="0,470" size="1280,250" pixmap="o-infobars/infobar1.png" alphatest="blend" zPosition="-1" />
+		<!-- record icon -->
+		<widget render="Pixmap" pixmap="o-icons/record.png" source="session.RecordState" position="630,478" size="20,20" alphatest="blend" zPosition="6">
+			<convert type="ConditionalShowHide" />
+		</widget>
+		
+	         <!-- picons / xpicons - see picons.xml -->
+	         <panel name="eventview-picons"/>
+	         
+		<!-- date -->
+		<panel name="date" />
+		<!-- channel -->
+		<widget name="channel" position="351,500" size="300,30" font="Bold;23" foregroundColor="white" backgroundColor="blackglass" transparent="1" />
+		<!-- programme name -->
+		<widget source="Title" render="Label" position="351,530" size="585,30" font="Bold;23" foregroundColor="white" backgroundColor="blackglass" noWrap="1" transparent="1" />
+		<!-- programme description -->
+		<widget source="session.Event_Now" render="RunningText" options="movetype=running,startpoint=0,direction=top,steptime=80,repeat=0,always=0,oneshot=0,startdelay=6000,wrap" position="351,562" size="585,100" font="Regular;20" foregroundColor="white" backgroundColor="blackglass" transparent="1">
+			<convert type="EventName">ExtendedDescription</convert>
+		</widget>
+		<!-- started xx mins ago -->
+		<widget source="session.Event_Now" render="Label" position="696,500" size="240,50" font="Regular;23" halign="right" foregroundColor="white" backgroundColor="blackglass" transparent="1">
+			<convert type="EventTime">Elapsed</convert>
+			<convert type="SlykRemainingToText">OnlyMinute</convert>
+		</widget>
+		<panel position="994,507" size="138,50">
+			<panel name="channel-icons" />
+		</panel>
+		<!-- progress bar -->
+		<ePixmap position="995,570" size="256,4" pixmap="o-infobars/256-progress-bg.png" alphatest="blend" zPosition="1" />
+		<widget source="session.Event_Now" render="Progress" position="994,569" size="258,6" pixmap="o-infobars/258-progress.png" transparent="1" zPosition="2">
+			<convert type="EventTime">Progress</convert>
+		</widget>
+		<ePixmap position="994,569" size="258,6" pixmap="o-infobars/258-progress-border.png" alphatest="blend" zPosition="3" />
+		<!-- programme duration -->
+		<eLabel text="Duration:" position="994,623" size="90,26" foregroundColor="white" backgroundColor="blackglass" font="Regular;20" transparent="1" />
+		<widget source="Event" render="Label" position="1084,623" size="168,26" foregroundColor="white" backgroundColor="blackglass" font="Regular;20" transparent="1">
+			<convert type="EventTime">Duration</convert>
+			<convert type="SlykClockToText">SlykAsLength</convert>
+		</widget>
+		<widget name="red" pixmap="buttons/key_red.png" position="339,685" size="25,25" alphatest="blend" />
+		<widget name="key_red" position="369,683" size="158,25" font="Regular;20" valign="center" transparent="1" noWrap="1" foregroundColor="white" backgroundColor="button-bg" halign="left" />
+		<widget name="green" pixmap="buttons/key_green.png" position="552,685" size="25,25" alphatest="blend" />
+		<widget name="key_green" position="582,683" size="158,25" font="Regular;20" valign="center" transparent="1" noWrap="1" foregroundColor="white" backgroundColor="button-bg" halign="left" />
+		<widget name="yellow" pixmap="buttons/key_yellow.png" position="765,685" size="25,25" alphatest="blend" />
+		<widget name="key_yellow" position="795,683" size="158,25" font="Regular;20" valign="center" transparent="1" noWrap="1" foregroundColor="white" backgroundColor="button-bg" halign="left" />
+		<widget name="blue" pixmap="buttons/key_blue.png" position="978,685" size="25,25" alphatest="blend" />
+		<widget name="key_blue" position="1008,683" size="158,25" font="Regular;20" valign="center" transparent="1" noWrap="1" foregroundColor="white" backgroundColor="button-bg" halign="left" />
+		<ePixmap pixmap="o-backgrounds/v-divider.png" position="539 ,670" size="2,50" alphatest="blend" zPosition="5" />
+		<ePixmap pixmap="o-backgrounds/v-divider.png" position="752,670" size="2,50" alphatest="blend" zPosition="5" />
+		<ePixmap pixmap="o-backgrounds/v-divider.png" position="1178,670" size="2,50" alphatest="blend" zPosition="5" />
+		<panel name="MenuButton" />
+	</screen>
+
+	<screen name="EventViewContextMenu" position="0,0" size="1280,720" backgroundColor="mid" flags="wfNoBorder">
+		<panel name="template1" />
+		<panel name="h-separator-tr" />
+		<panel name="title2" />
+		<ePixmap pixmap="o-backgrounds/menu-gradient.png" position="351,600" size="636,50" alphatest="blend" zPosition="2" />
+		<panel name="whatson-top" />
+		<panel name="whatson-right" />
+		<widget name="menu" textOffset="10,10" position="351,214" size="636,430" foregroundColor="white" backgroundColor="mid" backgroundColorSelected="bg-selected" selectionPixmap="o-selectbars/select-636-48.png" backgroundPixmap="o-selectbars/blank.png" alphatest="blend" itemHeight="48" font="Regular;23" transparent="1" enableWrapAround="1" scrollbarMode="showNever" />
+		<panel name="ExitButton" />
+	</screen>
+</skin>
+
+

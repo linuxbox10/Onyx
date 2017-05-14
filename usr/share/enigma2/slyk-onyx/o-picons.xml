@@ -1,0 +1,81 @@
+<skin>
+
+# Edit the number at the end of each of these 3 panels for your desired picon option. i.e change the 1s to a 2 or 3
+
+# 1 = standard picon - 100 x 60 (/media/hdd/picon)
+# 2 = xpicon - 200 x 132 (/media/hdd/XPicons/picon)
+# 3 = picon - 200 x 132 (/media/hdd/picon)
+
+<screen name="infobar-picons">
+        <panel name="infobar-picons-1"/>
+</screen>
+
+<screen name="eventview-picons">
+        <panel name="eventview-picons-1"/>
+</screen>
+
+<screen name="movie-eventview-picons">
+        <panel name="movie-eventview-picons-1"/>
+</screen>
+
+#####################################################################################################################
+
+# do not edit any code past this line
+
+#####################################################################################################################
+
+<screen name="infobar-picons-1">
+        <widget source="session.CurrentService" render="Picon" position="111,552" size="100,60" alphatest="blend">
+                <convert type="ServiceName">Reference</convert>
+        </widget>	
+</screen>
+
+<screen name="infobar-picons-2">
+        <widget source="session.CurrentService" render="SlykPicon" position="51,516" size="220,132" alphatest="blend">
+                <convert type="ServiceName">Reference</convert>
+        </widget>		
+</screen>
+
+<screen name="infobar-picons-3">
+        <widget source="session.CurrentService" render="Picon" position="51,516" size="220,132" alphatest="blend">
+                <convert type="ServiceName">Reference</convert>
+        </widget>		
+</screen>
+
+<screen name="eventview-picons-1">	
+        <widget source="Service" render="Picon" position="111,552" size="100,60" alphatest="blend">
+                <convert type="ServiceName">Reference</convert>
+        </widget>	
+</screen>
+
+<screen name="eventview-picons-2">
+        <widget source="Service" render="SlykPicon" position="51,516" size="220,132" alphatest="blend">
+                <convert type="ServiceName">Reference</convert>
+        </widget>
+</screen>
+
+<screen name="eventview-picons-3">
+        <widget source="Service" render="Picon" position="51,516" size="220,132" alphatest="blend">
+                <convert type="ServiceName">Reference</convert>
+        </widget>
+</screen>
+
+<screen name="movie-eventview-picons-1">		
+	<widget source="Service" render="Picon" position="111,552" size="100,60" alphatest="blend">
+	        <convert type="MovieReference">Reference</convert>
+	</widget>
+</screen>
+
+<screen name="movie-eventview-picons-2">
+	<widget source="Service" render="SlykPicon" position="51,516" size="220,132" alphatest="blend">
+	        <convert type="MovieReference">Reference</convert>
+	</widget>
+</screen>
+
+<screen name="movie-eventview-picons-3">
+	<widget source="Service" render="Picon" position="51,516" size="220,132" alphatest="blend">
+	        <convert type="MovieReference">Reference</convert>
+	</widget>
+</screen>
+		
+</skin>

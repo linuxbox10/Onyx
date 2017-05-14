@@ -1,0 +1,23 @@
+<skin>
+	<screen name="whatson-top">
+	         <ePixmap pixmap="whatson-gfx/whatson1.png" position="327,0" size="131,194" zPosition="2" />
+                 <ePixmap pixmap="whatson-gfx/whatson2.png" position="464,0" size="131,194"   zPosition="2"/>
+	         <ePixmap pixmap="whatson-gfx/whatson3.png" position="601,0" size="131,194"   zPosition="2"/>
+	         <ePixmap pixmap="whatson-gfx/whatson4.png" position="738,0" size="131,194"   zPosition="2"/>
+	         <ePixmap pixmap="whatson-gfx/whatson5.png" position="875,0" size="131,194"   zPosition="2"/>
+	         <ePixmap pixmap="whatson-gfx/whatson6.png" position="1012,0" size="131,194"   zPosition="2"/>
+	         <ePixmap pixmap="whatson-gfx/whatson7.png" position="1149,0" size="131,194"  zPosition="2" />
+	         <ePixmap pixmap="whatson-logos/logo7.png" position="1169,5" size="106,20" alphatest="blend" zPosition="3"  />
+        </screen>
+
+       	<screen name="whatson-right">
+       	         <!-- artwork -->
+                 <ePixmap pixmap="whatson-gfx/whatson8.png" position="1012,200" size="268,151"   zPosition="2"/>
+	         <ePixmap pixmap="whatson-gfx/whatson9.png" position="1012,357" size="268,151"   zPosition="2"/>
+	         <ePixmap pixmap="whatson-gfx/whatson10.png" position="1012,514" size="268,151"  zPosition="2" />
+	         <!-- logos -->
+	         <ePixmap pixmap="whatson-logos/logo8.png" position="1131,205" size="144,33" alphatest="blend"   zPosition="3" />
+                 <ePixmap pixmap="whatson-logos/logo9.png" position="1131,362" size="144,33" alphatest="blend"   zPosition="3" />
+                 <ePixmap pixmap="whatson-logos/logo10.png" position="1131,519" size="144,33" alphatest="blend"   zPosition="3" />
+        </screen>
+</skin>
