@@ -57,9 +57,9 @@
 		<panel name="template1" />
 		<panel name="Setup-Default" />
 		<panel name="2RG-Source"  />
-		<panel name="description-template" />
-	        <panel name="footnote-template" />
-                <panel name="HelpWindow-template" />
+		<panel name="description" />
+	        <panel name="footnote" />
+                <panel name="HelpWindow" />
 	</screen>
 
 </skin>

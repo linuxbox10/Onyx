@@ -58,12 +58,12 @@
 		<!-- now duration -->
 		<widget source="ServiceEvent" render="Label" position="1000,91" size="260,24" font="Regular;20" foregroundColor="white" backgroundColor="topright" transparent="1">
 			<convert type="EventTime">Duration</convert>
-			<convert type="SlykClockToText">SlykAsLength</convert>
+			<convert type="OnyxClockToText">SlykAsLength</convert>
 		</widget>
 		<!-- now times -->
 		<widget source="ServiceEvent" render="Label" position="1000,119" size="260,24" font="Regular;20" foregroundColor="white" backgroundColor="topright" transparent="1">
 			<convert type="EventTime">Elapsed</convert>
-			<convert type="SlykRemainingToText">OnlyMinute</convert>
+			<convert type="OnyxRemainingToText">OnlyMinute</convert>
 		</widget>
 		<!-- progress bar -->
 		<widget source="ServiceEvent" render="Progress" pixmap="o-progressbars/progress-260-6.png" position="1000,156" size="260,6" backgroundColor="#00000000" borderWidth="0" transparent="0">
@@ -75,7 +75,7 @@
 		</widget>
 		<widget source="ServiceEvent" render="Label" position="1000,296" size="260,22" font="Regular;18" foregroundColor="white" backgroundColor="midright" noWrap="1" transparent="1">
 			<convert type="EventTime">NextStartTime</convert>
-			<convert type="SlykClockToText">SlykQStartTime</convert>
+			<convert type="OnyxClockToText">SlykQStartTime</convert>
 		</widget>
 		<widget source="ServiceEvent" render="Label" position="1000,341" size="260,218" font="Regular;15" foregroundColor="white" backgroundColor="midright" transparent="1">
 			<convert type="EventName">NextDescription</convert>
@@ -102,9 +102,114 @@
 	</screen>
 	
 	<!--  alternative channel list service mode - available via context menu -->
-	<!-- not used in this skin - clone channelselect instead -->
 	<screen name="SlimChannelSelection" position="0,0" size="1280,720" backgroundColor="mid" flags="wfNoBorder">
-		<panel name="ChannelSelection" />
+	
+        <eLabel position="0,0" size="1280,720" backgroundColor="#25000000" transparent="0" zPosition="-1"/>
+        <ePixmap pixmap="o-backgrounds/h-divider.png" position="969,193" size="311,2"  alphatest="blend"  />
+        
+         <!-- <ePixmap pixmap="o-backgrounds/onyx-logo.png" alphatest="blend" position="976,548" size="287,111"  /> -->
+         
+       	<widget source="Title" render="Label" position="341,21" size="607,36" font="Bold;20" transparent="1" foregroundColor="white" backgroundColor="#25000000" />
+       	
+        <!-- now programme -->
+        <widget source="ServiceEvent" render="Label" position="20,21" size="281,20" font="Bold;18" foregroundColor="colour2" backgroundColor="#25000000" transparent="1">
+	        <convert type="EventName">NowName</convert>
+	</widget>
+	
+	<widget source="ServiceEvent" render="RunningText" options="movetype=running,startpoint=0,direction=top,steptime=80,repeat=0,always=0,oneshot=0,startdelay=6000,wrap"
+         position="20,48" size="281,173" font="Regular;16" foregroundColor="white" backgroundColor="#25000000" transparent="1">
+	        <convert type="EventName">FullDescription</convert>
+	</widget>
+
+	<!-- next programme -->
+	<widget source="ServiceEvent" render="Label" position="20,237" size="281,20" font="Bold;18" foregroundColor="colour2" backgroundColor="#25000000" transparent="1">
+	        <convert type="EventName">NextName</convert>
+	</widget>
+
+	<widget source="ServiceEvent" render="RunningText" options="movetype=running,startpoint=0,direction=top,steptime=80,repeat=0,always=0,oneshot=0,startdelay=6000,wrap"
+         position="20,264" size="281,173" font="Regular;16" foregroundColor="white" backgroundColor="#25000000" transparent="1">
+	        <convert type="EventName">NextDescription</convert>
+	</widget>
+	
+	<!-- third programme -->
+	<widget source="ServiceEvent" render="Label" position="20,453" size="281,20" font="Bold;18" foregroundColor="colour2" backgroundColor="#25000000" transparent="1">
+	        <convert type="EventName">ThirdName</convert>
+	</widget>
+	
+	<widget source="ServiceEvent" render="RunningText" options="movetype=running,startpoint=0,direction=top,steptime=80,repeat=0,always=0,oneshot=0,startdelay=6000,wrap"
+                 position="20,480" size="281,173" font="Regular;16" foregroundColor="white" backgroundColor="#25000000" transparent="1">
+	        <convert type="EventName">ThirdDescription</convert>
+	</widget>
+		
+         <widget name="list"
+                position="341,60"
+                size="607,590"
+                foregroundColor="white"
+                foregroundColorSelected="white"
+                foregroundColorEvent="tvguidecolor"
+                foregroundColorEventSelected="white"
+                foregroundColorMarked="white"
+                foregroundColorMarkedSelected="tvguidecolor"
+                foregroundColorServiceNotAvail="notavailable"
+                backgroundColor="#25000000"
+                backgroundColorSelected="bg-selected-text"
+                backgroundColorMarked="black"
+                backgroundColorMarkedSelected="bg-selected-text"
+                colorServiceRecorded="red"
+                serviceItemHeight="36"
+                serviceNameFont="Regular;18"
+                serviceInfoFont="Regular;18"
+                serviceNumberFont="Regular;18"
+                picServiceEventProgressbar="o-progressbars/progress-50-4.png"
+                progressbarHeight="4"
+                progressbarBorderWidth="1"
+                progressBarWidth="50"
+                colorEventProgressbar="colour2"
+                colorEventProgressbarSelected="colour2"
+                colorEventProgressbarBorder="white"
+                colorEventProgressbarBorderSelected="white"
+                fieldMargins="5"
+                nonplayableMargins="5"
+                itemsDistances="5"
+                transparent="1"
+                scrollbarMode="showOnDemand"
+                />
+                
+                <!-- picon -->
+		<widget source="Service" render="Picon" position="1000,25" size="100,60" alphatest="blend">
+			<convert type="ServiceName">Reference</convert>
+		</widget>
+		
+               	<panel position="1122,31" size="138,50">
+			<panel name="channel-icons" />
+		</panel>
+		
+		<!-- now duration -->
+		<widget source="ServiceEvent" render="Label" position="1000,91" size="260,24" font="Regular;20" foregroundColor="white" backgroundColor="#25000000" transparent="1">
+			<convert type="EventTime">Duration</convert>
+			<convert type="OnyxClockToText">SlykAsLength</convert>
+		</widget>
+		<!-- now times -->
+		<widget source="ServiceEvent" render="Label" position="1000,119" size="260,24" font="Regular;20" foregroundColor="white" backgroundColor="#25000000" transparent="1">
+			<convert type="EventTime">Elapsed</convert>
+			<convert type="OnyxRemainingToText">OnlyMinute</convert>
+		</widget>
+		<!-- progress bar -->
+		<widget source="ServiceEvent" render="Progress" pixmap="o-progressbars/progress-260-6.png" position="1000,156" size="260,6" backgroundColor="#00000000" borderWidth="0" transparent="0">
+			<convert type="EventTime">Progress</convert>
+		</widget>
+
+		 <widget source="ServiceEvent" render="OnyxNextEvents2" position="1000,220" size="240,500" font="Regular;14" start="0" lines="26" foregroundColor="white" backgroundColor="#25000000" noWrap="1" transparent="1">
+			<convert type="ServiceName">Reference</convert>
+	         </widget>
+
+                <panel name="divider1" />
+
+                <panel name="button-bg" />
+               	<panel name="date" />
+               	<panel name="4RGYB" />
+		<panel name="MenuButton" />
+		<panel name="InfoButton-pos2" />
 	</screen>
 	
 	<!-- alternative radio mode = no -->
@@ -130,12 +235,12 @@
 		<!-- now duration -->
 		<widget source="ServiceEvent" render="Label" position="1000,91" size="260,24" font="Regular;20" foregroundColor="white" backgroundColor="topright" transparent="1">
 			<convert type="EventTime">Duration</convert>
-			<convert type="SlykClockToText">SlykAsLength</convert>
+			<convert type="OnyxClockToText">SlykAsLength</convert>
 		</widget>
 		<!-- now times -->
 		<widget source="ServiceEvent" render="Label" position="1000,119" size="260,24" font="Regular;20" foregroundColor="white" backgroundColor="topright" transparent="1">
 			<convert type="EventTime">Elapsed</convert>
-			<convert type="SlykRemainingToText">OnlyMinute</convert>
+			<convert type="OnyxRemainingToText">OnlyMinute</convert>
 		</widget>
 		<!-- progress bar -->
 		<widget source="ServiceEvent" render="Progress" pixmap="o-progressbars/progress-260-6.png" position="1000,156" size="260,6" backgroundColor="#00000000" borderWidth="0" transparent="0">
@@ -147,7 +252,7 @@
 		</widget>
 		<widget source="ServiceEvent" render="Label" position="1000,296" size="260,22" font="Regular;18" foregroundColor="white" backgroundColor="midright" noWrap="1" transparent="1">
 			<convert type="EventTime">NextStartTime</convert>
-			<convert type="SlykClockToText">SlykQStartTime</convert>
+			<convert type="OnyxClockToText">SlykQStartTime</convert>
 		</widget>
 		<widget source="ServiceEvent" render="Label" position="1000,341" size="260,218" font="Regular;15" foregroundColor="white" backgroundColor="midright" transparent="1">
 			<convert type="EventName">NextDescription</convert>

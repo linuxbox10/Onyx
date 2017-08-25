@@ -1,7 +1,4 @@
-
-
 <skin>
-
 	<screen name="VIXMenu" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="mid" title="Main Menu">
 		<panel name="Menu" />
 	</screen>
@@ -32,7 +29,7 @@
 		<ePixmap name="green" pixmap="buttons/key_green.png" position="552,685" size="25,25" alphatest="blend" zPosition="3" />
 		<widget name="key_green" position="582,683" size="158,25" font="Regular;20" valign="center" transparent="1" noWrap="1" foregroundColor="white" backgroundColor="button-bg" halign="left" />
 		<ePixmap name="yellow" pixmap="buttons/key_yellow.png" position="765,685" size="25,25" alphatest="blend" zPosition="3" />
-		<widget name="key_yellow" position="785,683" size="158,25" font="Regular;20" valign="center" transparent="1" noWrap="1" foregroundColor="white" backgroundColor="button-bg" halign="left" />
+		<widget name="key_yellow" position="795,683" size="158,25" font="Regular;20" valign="center" transparent="1" noWrap="1" foregroundColor="white" backgroundColor="button-bg" halign="left" />
 		<ePixmap name="blue" pixmap="buttons/key_blue.png" position="978,685" size="25,25" alphatest="blend" zPosition="3" />
 		<widget name="key_blue" position="1008,683" size="300,25" font="Regular;20" valign="center" transparent="1" noWrap="1" foregroundColor="white" backgroundColor="button-bg" halign="left" />
 	</screen>
@@ -88,10 +85,10 @@
 		<widget name="activecam" position="361,220" size="608,55" font="Regular;20" backgroundColor="mid" foregroundColor="white" noWrap="1" valign="center" halign="right" transparent="1" />
 		<!-- <widget name="lab1" position="350,210" size="200,30" font="Regular;23" halign="right" zPosition="2" foregroundColor="white" backgroundColor="mid" transparent="1" />   -->
 		<ePixmap pixmap="o-backgrounds/setup-30-bg.png"  position="350,300" size="628,300" alphatest="blend" zPosition="1" />
-		<widget name="list" position="351,300285" size="628,210" font="Regular;20" foregroundColor="white" backgroundColor="mid" backgroundColorSelected="bg-selected" selectionPixmap="o-selectbars/select-628-30.png" scrollbarMode="showNever" backgroundPixmap="o-selectbars/blank.png" selectionDisabled="1" enableWrapAround="1" transparent="1" zPosition="2" />
-		<applet type="onLayoutFinish">self["list"].instance.setItemHeight(30)</applet>
+		<widget name="list" position="351,300" size="628,210" font="Regular;20" foregroundColor="white" backgroundColor="mid" backgroundColorSelected="bg-selected" selectionPixmap="o-selectbars/select-628-30.png" scrollbarMode="showNever" backgroundPixmap="o-selectbars/blank.png" enableWrapAround="1" transparent="1" zPosition="2" />
 		<panel name="4RGYB" />
 		<panel name="MenuButton" />
+		<applet type="onLayoutFinish">self["list"].instance.setItemHeight(30)</applet>
 	</screen>
 
 	<screen name="VIXStartCam" position="center,center" size="484, 150" title="Starting Softcam" backgroundColor="messageboxbg">

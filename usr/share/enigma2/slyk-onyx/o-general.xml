@@ -74,8 +74,9 @@
 		<applet type="onLayoutFinish">self.autoResize()</applet>
 	</screen>
 
-	<screen name="Console" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="mid">
+	<screen name="Console" position="0,0" size="1280,720" flags="wfNoBorder" title="Console" backgroundColor="mid">
 		<panel name="template1" />
+		<panel name="title2" />
 		<widget name="text" position="351,21" size="904,626" font="Console;16" foregroundColor="white" backgroundColor="mid" scrollbarMode="showOnDemand" transparent="1" />
 	</screen>
 
@@ -158,7 +159,7 @@
 		<widget name="config" textOffset="10,0" position="10,10" size="280,60" font="Regular;21" itemHeight="30" foregroundColor="white" backgroundColor="messageboxbg" foregroundColorSelected="white" backgroundColorSelected="bg-selected-text" transparent="0" />
 	</screen>
 
-	<!-- setup / usage &amp; gui / extended gui /  input devices -->
+	<!-- setup / usage & gui / extended gui /  input devices -->
 	<screen name="InputDeviceSelection" position="0,0" size="1280,720" backgroundColor="mid" flags="wfNoBorder">
 		<panel name="template1" />
 		<panel name="h-separator-tr" />
@@ -167,7 +168,7 @@
 		<widget source="list" render="Listbox" position="351,230" size="628,420" foregroundColor="white" backgroundColor="mid" backgroundColorSelected="bg-selected" selectionPixmap="o-selectbars/select-628-60.png" backgroundPixmap="o-selectbars/blank.png" enableWrapAround="1" scrollbarMode="showNever" transparent="1">
 			<convert type="TemplatedMultiContent">{"template": [
                                                 MultiContentEntryPixmapAlphaBlend(pos = (10, 6), size = (48, 48), png = 2), # index 2 is the interface pixmap
-						MultiContentEntryText(pos = (70, 0), size = (550, 60), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1), # index 0 is the name
+						MultiContentEntryText(pos = (70, 0), size = (550, 60), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1),  # index 1 is the interface name
 					],
 			                "fonts": [gFont("Regular", 20),gFont("Regular", 16)],
                                         "itemHeight": 60
@@ -403,7 +404,7 @@
 				"itemHeight": 100
 				}</convert>
 		</widget>
-		<panel name="2RG-Source" />
+		<panel name="3RGY-Source" />
 	</screen>
 
 	<!-- tuner config - ok menu -->
@@ -425,9 +426,9 @@
 		<panel name="h-separator-tr" />
 		<panel name="title2" />
 		<widget name="list" position="351,220" size="628,420" font="Regular;20" foregroundColor="white" backgroundColor="mid" backgroundColorSelected="bg-selected" selectionPixmap="o-selectbars/select-628-30.png" backgroundPixmap="o-selectbars/blank.png" alphatest="blend" scrollbarMode="showNever" enableWrapAround="1" transparent="1" zPosition="1" />
-		<applet type="onLayoutFinish">self["list"].instance.setItemHeight(30)</applet>
 		<widget name="hint" position="1012,227" size="248,340" font="Regular;18" foregroundColor="colour2" backgroundColor="midright" transparent="1" />
 		<panel name="4RGYB" />
+		<applet type="onLayoutFinish">self["list"].instance.setItemHeight(30)</applet>
 	</screen>
 
 	<!-- ScanSetup -->
@@ -526,15 +527,15 @@
 		</widget>
 		<!-- timeshift start time -->
 		<widget source="session.CurrentService" render="Label" position="47,584" size="130,30" font="Regular;23" foregroundColor="white" backgroundColor="blackglass" halign="right" transparent="1">
-			<convert type="SlykServicePosition">QTimeshiftStart</convert>
+			<convert type="OnyxServicePosition">QTimeshiftStart</convert>
 		</widget>
 		<!-- timeshift end time (now) -->
 		<widget source="global.CurrentTime" render="Label" position="1105,584" size="133,30" font="Regular;23" foregroundColor="white" backgroundColor="blackglass" transparent="1">
-			<convert type="SlykClockToText">SlykHDTime</convert>
+			<convert type="OnyxClockToText">SlykHDTime</convert>
 		</widget>
 		<!-- timeshift position -->
 		<widget source="session.CurrentService" render="Label" position="center,630" size="124,30" font="Bold;23" foregroundColor="colour2" backgroundColor="blackglass" halign="center" transparent="1">
-			<convert type="SlykServicePosition">QTimeshiftPosition</convert>
+			<convert type="OnyxServicePosition">QTimeshiftPosition</convert>
 		</widget>
 		<panel name="InfoButton" />
 	</screen>

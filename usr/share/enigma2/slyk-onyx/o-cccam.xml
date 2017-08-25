@@ -5,7 +5,7 @@
 		<panel name="template1" />
 		<eLabel text="CCcam" position="10,450" size="300,194" halign="center" font="Regular;23" transparent="1" foregroundColor="white" backgroundColor="topleft" />
 		<ePixmap pixmap="o-backgrounds/setup-30-bg.png" alphatest="blend" position="351,189" size="628,440" zPosition="-1" />
-		<widget name="menu" position="351,190," size="628,480" foregroundColor="white" backgroundColor="bg-selected" font="Regular;20" backgroundColorSelected="bg-selected" selectionPixmap="o-selectbars/select-628-30.png" backgroundPixmap="o-selectbars/blank.png" alphatest="blend" itemHeight="30" enableWrapAround="1" scrollbarMode="showOnDemand" transparent="1" />
+		<widget name="menu" position="351,190," size="628,480" foregroundColor="white" backgroundColor="bg-selected" font="Regular;20" backgroundColorSelected="bg-selected" selectionPixmap="o-selectbars/select-628-30.png" backgroundPixmap="o-selectbars/blank.png"  itemHeight="30" enableWrapAround="1" scrollbarMode="showOnDemand" transparent="1" />
 		<eLabel text="Menu config" position="369,683" size="158,25" font="Regular;20" valign="center" transparent="1" noWrap="1" foregroundColor="white" backgroundColor="button-bg" />
 		<eLabel text="Local box" position="582,683" size="158,25" font="Regular;20" valign="center" transparent="1" noWrap="1" foregroundColor="white" backgroundColor="button-bg" />
 		<eLabel text="Remote box" position="795,683" size="158,25" font="Regular;20" valign="center" transparent="1" noWrap="1" foregroundColor="white" backgroundColor="button-bg" />
@@ -19,7 +19,6 @@
 		<panel name="template1" />
 		<panel name="h-separator-tr" />
 		<eLabel text="CCcam" position="10,450" size="300,194" halign="center" font="Regular;23" transparent="1" foregroundColor="white" backgroundColor="topleft" />
-		<ePixmap pixmap="o-backgrounds/boxflare.png" alphatest="blend" position="351,230" size="630,401" zPosition="-1" />
 		<widget name="text" position="371,250" size="588,344" font="Regular;20" foregroundColor="white" backgroundColor="mid" enableWrapAround="1" valign="center" scrollbarMode="showOnDemand" transparent="1" />
 		<panel name="OKButton" />
 	</screen>
@@ -30,7 +29,7 @@
 		<panel name="h-separator-tr" />
 		<eLabel text="CCcam" position="10,450" size="300,194" halign="center" font="Regular;23" transparent="1" foregroundColor="white" backgroundColor="topleft" />
 		<ePixmap pixmap="o-backgrounds/setup-30-bg.png" alphatest="blend" position="351,230" size="628,124" zPosition="-1" />
-		<widget name="list" textOffset="10,0" position="351,231" size="628,120" font="Regular;20" foregroundColor="white" backgroundColor="mid" backgroundColorSelected="bg-selected" selectionPixmap="o-selectbars/select-628-30.png" backgroundPixmap="o-selectbars/blank.png" alphatest="blend" itemHeight="30" enableWrapAround="1" scrollbarMode="showOnDemand" transparent="1" />
+		<widget name="list" textOffset="10,0" position="351,231" size="628,120" font="Regular;20" foregroundColor="white" backgroundColor="mid" backgroundColorSelected="bg-selected" selectionPixmap="o-selectbars/select-628-30.png" backgroundPixmap="o-selectbars/blank.png" itemHeight="30" enableWrapAround="1" scrollbarMode="showOnDemand" transparent="1" />
 		<widget name="info" position="351,377" size="628,275" font="Regular;20" foregroundColor="white" backgroundColor="mid" transparent="1" />
 		<panel name="OKButton" />
 	</screen>

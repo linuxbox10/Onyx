@@ -25,7 +25,7 @@
 #####################################################################################################################
 
 <screen name="infobar-picons-1">
-        <widget source="session.CurrentService" render="Picon" position="111,552" size="100,60" alphatest="blend">
+        <widget source="session.CurrentService" render="Picon" position="10,500" size="300,170" alphatest="blend">
                 <convert type="ServiceName">Reference</convert>
         </widget>	
 </screen>
@@ -43,7 +43,7 @@
 </screen>
 
 <screen name="eventview-picons-1">	
-        <widget source="Service" render="Picon" position="111,552" size="100,60" alphatest="blend">
+        <widget source="Service" render="Picon" position="10,500" size="300,170" alphatest="blend">
                 <convert type="ServiceName">Reference</convert>
         </widget>	
 </screen>

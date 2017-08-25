@@ -164,7 +164,7 @@
 		<panel name="title2" />
 		<widget source="menu" render="Listbox" position="351,214" size="636,430" font="Regular;21" secondfont="Regular;21" foregroundColor="white" backgroundColor="mid" backgroundColorSelected="bg-selected" selectionPixmap="o-selectbars/select-636-48.png" backgroundPixmap="o-selectbars/blank.png" enableWrapAround="1" scrollbarMode="showNever" transparent="1">
 			<convert type="TemplatedMultiContent">{"template": [	
-                                                MultiContentEntryText(pos = (10,0), size = (417,48), flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1), # index 0 is the MenuText
+                                                MultiContentEntryText(pos = (10,0), size = (417,48), flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1), # index 1 is the MenuText
                                                 ],
 				                "fonts": [gFont("Regular",21)],
 				                "itemHeight": 48
@@ -334,7 +334,7 @@
 		<widget source="list" render="Listbox" position="351,220" size="628,420" foregroundColor="white" backgroundColor="mid" backgroundColorSelected="bg-selected" selectionPixmap="o-selectbars/select-628-60.png" backgroundPixmap="o-selectbars/blank.png" enableWrapAround="1" scrollbarMode="showNever" itemHeight="60" transparent="1">
 			<convert type="TemplatedMultiContent">{"template": [
 				MultiContentEntryText(pos = (10, 4), size = (550, 28), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 0,  color = 0x00ffffff, color_sel = 0x00ffffff), # index 0 is the name
-				MultiContentEntryText(pos = (10, 29), size = (550, 20), font=1, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 2, color = 0x00ffffff, color_sel = 0x00ffffff), # index 1 is the state
+				MultiContentEntryText(pos = (10, 29), size = (550, 20), font=1, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 2, color = 0x00ffffff, color_sel = 0x00ffffff), # index 2 is the description
 				MultiContentEntryPixmapAlphaBlend(pos = (560, 6), size = (48, 48), png = 4),  # index 4 is the status pixmap
   		                MultiContentEntryPixmapAlphaBlend(pos = (0, 60), size = (628, 2), png = 5),  # index 5 is the div pixmap
 				],
@@ -344,6 +344,8 @@
 				}</convert>
 		</widget>
 		<panel name="2RG-Source" />
+		<widget source="status" render="Label" position="1012,227" size="248,340" font="Regular;18" foregroundColor="colour2" backgroundColor="midright"   transparent="1" />
+
 	</screen>
 	
 	<!-- software management - install local extension -->
@@ -391,7 +393,6 @@
 	      <panel name="template1" />
                 <panel name="h-separator-tr" />
 		<panel name="title2" />
-		<ePixmap pixmap="o-backgrounds/boxflare.png" alphatest="blend" position="351,201" size="630,401" zPosition="1" />
 		<widget name="version" position="360,220" size="608,420" foregroundColor="white" backgroundColor="mid" font="Regular;18" transparent="1" zPosition="1" />
 		<widget name="create" position="360,252" size="608,420" foregroundColor="white" backgroundColor="mid" font="Regular;18" transparent="1" zPosition="1" />
 		<widget name="last_update" position="360,284" size="608,420" foregroundColor="white" backgroundColor="mid" font="Regular;18" transparent="1" zPosition="1" />
@@ -579,7 +580,6 @@
 	
 	<screen name="AutoBouquetsMaker_About" position="0,0" size="1280,720" title="AutoBouquetsMaker - About" flags="wfNoBorder" backgroundColor="mid">
 		<panel name="template1" />
-		<ePixmap pixmap="o-backgrounds/boxflare.png" alphatest="blend" position="351,212" size="666,401" />
 		<widget name="about" position="364,233" size="612,359" foregroundColor="white" backgroundColor="mid" font="Regular;20" transparent="1" zPosition="1" />
 		<panel name="1R" />
 	</screen>
@@ -677,7 +677,7 @@
 		<widget name="key_red" position="369,683" size="170,25" font="Regular;20" valign="center" halign="left" transparent="1" noWrap="1" foregroundColor="white" backgroundColor="button-bg"  />
                 <ePixmap name="green" pixmap="buttons/key_green.png" position="552,685" size="25,25" alphatest="blend"  />
 		<widget name="key_green" position="582,683" size="170,25" font="Regular;20" valign="center" halign="left" transparent="1" noWrap="1" foregroundColor="white" backgroundColor="button-bg"  />
-                <ePixmap name="yellow" pixmap="buttons/key_yellow.png" position="765,665" size="25,25" alphatest="blend" />
+                <ePixmap name="yellow" pixmap="buttons/key_yellow.png" position="765,685" size="25,25" alphatest="blend" />
 		<widget name="key_yellow" position="795,683" size="250,25" font="Regular;20" valign="center" halign="left" transparent="1" noWrap="1" foregroundColor="white" backgroundColor="button-bg"  />
 	</screen>
 	
@@ -821,6 +821,25 @@
 		<panel name="InfoButton" />
 		<panel name="4RGYB-Source" />
 	</screen>
+	
+	<!-- dsayers custom mix plugin -->
+	
+	<screen name="DsayersCustomMixImporterScreen" position="0,0" size="1280,720" backgroundColor="mid" flags="wfNoBorder" >
+          	<panel name="Setup-Default" />
+		<panel name="2RG-Source"  />	
+                <panel name="4RGYB-Source" />
+                <panel name="whatson-top" />
+                <panel name="whatson-right" />
+         </screen>
+
+         <screen name="ChannelsImporterScreen" position="0,0" size="1280,720" backgroundColor="mid" flags="wfNoBorder" >
+               <panel name="Setup-Default" />
+		<panel name="2RG-Source"  />	
+                <panel name="4RGYB-Source" />
+                <panel name="whatson-top" />
+                <panel name="whatson-right" />
+         </screen>
+	
 </skin>
 
 

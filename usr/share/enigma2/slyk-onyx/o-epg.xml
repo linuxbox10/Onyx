@@ -25,12 +25,12 @@
 		<!-- now duration -->
 		<widget source="Event" render="Label" position="1000,91" size="260,24" font="Regular;20" foregroundColor="white" backgroundColor="topright" transparent="1">
 			<convert type="EventTime">Duration</convert>
-			<convert type="SlykClockToText">SlykAsLength</convert>
+			<convert type="OnyxClockToText">SlykAsLength</convert>
 		</widget>
 		<!-- now times -->
 		<widget source="Event" render="Label" position="1000,119" size="260,24" font="Regular;20" foregroundColor="white" backgroundColor="topright" transparent="1">
 			<convert type="EventTime">StartTime</convert>
-			<convert type="SlykClockToText">SlykQStartTime</convert>
+			<convert type="OnyxClockToText">SlykQStartTime</convert>
 		</widget>
 		<!-- progress bar -->
 		<widget source="Event" render="Progress" pixmap="o-progressbars/progress-260-6.png" position="1000,156" size="260,6" backgroundColor="#00000000" borderWidth="0" transparent="0">
@@ -49,13 +49,14 @@
 		<widget name="timeline4" position="0,194" size="12,38" alphatest="blend" pixmap="epg/timeline-seperator.png" zPosition="2" />
 		<widget name="timeline5" position="0,194" size="12,38" alphatest="blend" pixmap="epg/timeline-seperator.png" zPosition="2" />
 		<widget name="timeline6" position="0,194" size="12,38" alphatest="blend" pixmap="epg/timeline-seperator.png" zPosition="2" />
-		<widget name="timeline_now" position="0,232" size="15,440" pixmap="epg/timeline-now.png" alphatest="blend" zPosition="2" />
+		<widget name="timeline_now" position="0,231" size="15,439" pixmap="epg/timeline-now.png" alphatest="blend" zPosition="2" />
 		<!-- loading epg text -->
 		<widget name="lab1" position="326,230" size="954,440" font="Regular;23" halign="center" valign="center" foregroundColor="white" backgroundColor="mid" transparent="1" zPosition="1" />
 		
                 <widget name="list"
                 position="326,230"
                 size="954,440"
+                backgroundColor="mid"
                 ServiceFontGraphical="Regular;20"
                 EntryFontGraphical="Regular;20"
                 ServiceForegroundColor="white"
@@ -115,6 +116,7 @@
                 <widget name="list"
                 position="0,37"
                 size="1280,633"
+                backgroundColor="mid"
                 ServiceFontGraphical="Regular;20"
                 EntryFontGraphical="Regular;20"
                 ServiceForegroundColor="white"
@@ -178,6 +180,7 @@
                 <widget name="list"
                 position="0,530"
                 size="1280,140"
+                backgroundColor="mid"
                 ServiceFontInfobar="Regular;20"
                 EventFontInfobar="Regular;20"
                 ServiceForegroundColor="white"
@@ -243,12 +246,12 @@
 		<!-- now duration -->
 		<widget source="Event" render="Label" position="1000,91" size="260,24" font="Regular;20" foregroundColor="white" backgroundColor="topright" transparent="1">
 			<convert type="EventTime">Duration</convert>
-			<convert type="SlykClockToText">SlykAsLength</convert>
+			<convert type="OnyxClockToText">SlykAsLength</convert>
 		</widget>
 		<!-- now times -->
 		<widget source="Event" render="Label" position="1000,119" size="260,24" font="Regular;20" foregroundColor="white" backgroundColor="topright" transparent="1">
 			<convert type="EventTime">StartTime</convert>
-			<convert type="SlykClockToText">SlykQStartTime</convert>
+			<convert type="OnyxClockToText">SlykQStartTime</convert>
 		</widget>
 		<!-- progress bar -->
 		<widget source="Event" render="Progress" pixmap="o-progressbars/progress-260-6.png" position="1000,156" size="260,6" backgroundColor="#00000000" borderWidth="0" transparent="0">
@@ -293,12 +296,12 @@
 		<!-- Duration -->
 		<widget source="Event" render="Label" position="1000,91" size="260,24" font="Regular;20" foregroundColor="white" backgroundColor="topright" transparent="1">
 			<convert type="EventTime">Duration</convert>
-			<convert type="SlykClockToText">SlykAsLength</convert>
+			<convert type="OnyxClockToText">SlykAsLength</convert>
 		</widget>
 		<!-- Start time -->
 		<widget source="Event" render="Label" position="1000,119" size="260,24" font="Regular;20" foregroundColor="white" backgroundColor="topright" transparent="1">
 			<convert type="EventTime">StartTime</convert>
-			<convert type="SlykClockToText">SlykQStartTime</convert>
+			<convert type="OnyxClockToText">SlykQStartTime</convert>
 		</widget>
 		<!-- progress bar -->
 		<widget source="Event" render="Progress" pixmap="o-progressbars/progress-260-6.png" position="1000,156" size="260,6" backgroundColor="#00000000" borderWidth="0" transparent="0">
@@ -312,14 +315,50 @@
 	</screen>
 
 	<screen name="EPGSelectionMulti" position="0,0" size="1280,720" backgroundColor="mid" flags="wfNoBorder">
-		<panel name="EPGSelection" />
+	
 		<ePixmap pixmap="o-backgrounds/flare.png" position="197,186" size="250,19" alphatest="blend" zPosition="6" />
 		<!-- timeline background -->
 		<ePixmap pixmap="epg/TimeLineBG.png" position="0,195" size="1280,55" alphatest="blend" zPosition="1" />
 		<ePixmap pixmap="o-backgrounds/v-divider.png" position="543,194" size="2,38" alphatest="blend" zPosition="3" />
 		<ePixmap pixmap="o-backgrounds/v-divider.png" position="761,194" size="2,38" alphatest="blend" zPosition="3" />
 		<ePixmap pixmap="o-backgrounds/v-divider.png" position="979,194" size="2,38" alphatest="blend" zPosition="3" />
-		<widget name="list" position="351,240" size="623,420" foregroundColor="white" foregroundColorSelected="white" backgroundColor="mid" backgroundColorSelected="bg-selected-text" EventFontMulti="Regular;20" transparent="1" scrollbarMode="showOnDemand" />
+		
+			<panel name="template1" />
+		<panel name="title2" />
+		<!-- dividers -->
+		<panel name="h-separator-tr" />
+		<panel name="v-separator-tr" />
+		<!-- now name -->
+		<widget source="Event" render="Label" position="351,21" size="603,26" font="Bold;20" foregroundColor="colour2" backgroundColor="topmid" noWrap="1" transparent="1">
+			<convert type="EventName">Name</convert>
+		</widget>
+		<!-- now description -->
+		<widget source="Event" render="RunningText" options="movetype=running,startpoint=0,direction=top,steptime=80,repeat=0,always=0,oneshot=0,startdelay=6000,wrap" position="351,50" size="603,125" foregroundColor="white" backgroundColor="topmid" font="Regular;20" transparent="1">
+			<convert type="EventName">FullDescription</convert>
+		</widget>
+		<!-- picon -->
+		<widget source="Service" render="Picon" position="1000,25" size="100,60" alphatest="blend">
+			<convert type="ServiceName">Reference</convert>
+		</widget>
+		<panel position="1122,31" size="138,50">
+			<panel name="channel-icons" />
+		</panel>
+		<!-- Duration -->
+		<widget source="Event" render="Label" position="1000,91" size="260,24" font="Regular;20" foregroundColor="white" backgroundColor="topright" transparent="1">
+			<convert type="EventTime">Duration</convert>
+			<convert type="OnyxClockToText">SlykAsLength</convert>
+		</widget>
+		<!-- Start time -->
+		<widget source="Event" render="Label" position="1000,119" size="260,24" font="Regular;20" foregroundColor="white" backgroundColor="topright" transparent="1">
+			<convert type="EventTime">StartTime</convert>
+			<convert type="OnyxClockToText">SlykQStartTime</convert>
+		</widget>
+		<!-- progress bar -->
+		<widget source="Event" render="Progress" pixmap="o-progressbars/progress-260-6.png" position="1000,156" size="260,6" backgroundColor="#00000000" borderWidth="0" transparent="0">
+			<convert type="EventTime">Progress</convert>
+		</widget>
+		
+		<widget name="list" position="351,240" size="623,420" foregroundColor="white" foregroundColorSelected="white" backgroundColor="mid" backgroundColorSelected="bg-selected-text" EventFontMulti="Regular;20" transparent="1" enableWrapAround="1" scrollbarMode="showOnDemand" />
 		<widget name="bouquetlist" position="0,230" size="320,440" font="Regular;20" itemHeight="44" foregroundColor="white" foregroundColorSelected="white" backgroundColor="#1a1a24" backgroundColorSelected="#006fce" transparent="1" borderColor="#33333d" borderWidth="1" scrollbarMode="showNever" zPosition="4" />
 		<widget name="now_button_sel" position="326,195" size="218,36" pixmap="o-selectbars/multi-epg.png" zPosition="2" />
 		<widget name="next_button_sel" position="544,195" size="218,36" pixmap="o-selectbars/multi-epg.png" zPosition="2" />
@@ -328,7 +367,13 @@
 		<widget name="next_text" position="544,200" size="218,36" text="Next" font="Bold;20" halign="center" foregroundColor="white" backgroundColor="mid" transparent="1" zPosition="3" />
 		<widget name="more_text" position="762,200" size="218,36" text="More" font="Bold;20" halign="center" foregroundColor="white" backgroundColor="mid" transparent="1" zPosition="3" />
 		<widget name="date" position="10,200" size="300,194" halign="center" font="Regular;20" foregroundColor="white" backgroundColor="topleft" transparent="1" zPosition="3" />
+		<panel name="4RGYB" />
+		<panel name="MenuButton" />
+		<panel name="InfoButton-pos2" />
+		
 		<applet type="onLayoutFinish">self["bouquetlist"].bouquetNamePadding = 20</applet>
+		
+		
 	</screen>
 	
 	<!-- epg tabs hack - red button popup -->

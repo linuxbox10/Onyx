@@ -1,21 +1,22 @@
 
 <skin>
 
-	<!-- https://github.com/openatv/enigma2/blob/master/lib/python/Screens/MovieSelection.py -->
 	<screen name="MovieContextMenu" position="0,0" size="1280,720" backgroundColor="mid" flags="wfNoBorder">
-		<panel name="template1" />
+ 	<panel name="template1" />
 		<panel name="h-separator-tr" />
 		<panel name="title2" />
-		<widget name="config" textOffset="10,2" position="351,214" size="636,430" font="Regular;21" secondfont="Regular;21" foregroundColor="white" backgroundColor="mid" backgroundColorSelected="bg-selected" selectionPixmap="o-selectbars/select-636-30.png" backgroundPixmap="o-selectbars/blank.png" itemHeight="30" enableWrapAround="1" scrollbarMode="showNever" transparent="1" />
-		<ePixmap pixmap="o-backgrounds/menu-gradient.png" position="351,600" size="636,50" alphatest="blend" zPosition="2" />
+	         <widget name="config" textOffset="10,10" position="351,214" size="636,430" font="Regular;21" secondfont="Regular;21" foregroundColor="white" backgroundColor="mid"
+                 backgroundColorSelected="bg-selected" selectionPixmap="o-selectbars/select-636-48.png" backgroundPixmap="o-selectbars/blank.png"
+                 itemHeight="48" enableWrapAround="1"  scrollbarMode="showNever" transparent="1" />
 		<panel name="2RG-Source" />
 		<panel name="description" />
 		<panel name="whatson-top" />
 		<panel name="HelpWindow" />
 		<widget name="footnote" position="1012,616" size="248,20" font="Regular;14" foregroundColor="white" backgroundColor="botright" transparent="1" />
-		<panel name="VKeyIcon" />
+		<panel name="VKeyIcon" />        	
 	</screen>
 	
+	<!-- https://github.com/openatv/enigma2/blob/master/lib/python/Screens/MovieSelection.py -->
 	<screen name="MovieSelection" position="0,0" size="1280,720" backgroundColor="mid" flags="wfNoBorder">
 		<panel name="background" />
 		<panel name="logo" />
@@ -37,7 +38,7 @@
 			<convert type="EventName">ShortDescription</convert>
 		</widget>
 		<widget source="Service" render="RunningText" options="movetype=running,startpoint=0,direction=top,steptime=80,repeat=0,always=0,oneshot=0,startdelay=6000,wrap" position="351,50" size="603,125" foregroundColor="white" backgroundColor="topmid" font="Regular;20" transparent="1">
-			<convert type="SlykMovieInfo">MetaDescription</convert>
+			<convert type="OnyxMovieInfo">MetaDescription</convert>
 		</widget>
 		<widget source="Service" render="Picon" position="1000,25" size="100,60" alphatest="blend">
 			<convert type="MovieReference">Reference</convert>
@@ -47,7 +48,7 @@
 		</panel>
 		<widget source="Service" render="Label" position="1000,91" size="260,24" font="Regular;20" foregroundColor="white" backgroundColor="topright" transparent="1">
 			<convert type="ServiceTime">Duration</convert>
-			<convert type="SlykClockToText">SlykAsLength</convert>
+			<convert type="OnyxClockToText">SlykAsLength</convert>
 		</widget>
 		<widget name="freeDiskSpace" position="1000,122" size="260,23" foregroundColor="white" backgroundColor="topright" font="Regular;16" transparent="1" />
 		<widget source="Service" render="Label" position="1000,147" size="260,23" foregroundColor="white" backgroundColor="topright" font="Regular;16" transparent="1">
@@ -89,10 +90,10 @@
 		</widget>
 		<eLabel text="0m" position="47,584" size="130,30" font="Regular;23" foregroundColor="white" backgroundColor="blackglass" halign="right" transparent="1" />
 		<widget source="session.CurrentService" render="Label" position="1105,584" size="133,30" font="Regular;23" foregroundColor="white" backgroundColor="blackglass" transparent="1">
-			<convert type="SlykServicePosition">QMovieLength</convert>
+			<convert type="OnyxServicePosition">QMovieLength</convert>
 		</widget>
 		<widget source="session.CurrentService" render="Label" position="center,630" size="124,30" font="Bold;23" foregroundColor="colour2" backgroundColor="blackglass" halign="center" transparent="1">
-			<convert type="SlykServicePosition">QMoviePosition</convert>
+			<convert type="OnyxServicePosition">QMoviePosition</convert>
 		</widget>
 		<!-- icons -->
 		<panel name="infobar-icons" />

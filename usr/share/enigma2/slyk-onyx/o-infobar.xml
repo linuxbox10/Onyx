@@ -8,7 +8,7 @@
 			<convert type="ConditionalShowHide" />
 		</widget>
 		
-                <!-- picons / xpicons - see picons.xml -->
+                <!-- picons / xpicons - see q-picons.xml -->
 		<panel name="infobar-picons"/>
 		
 	
@@ -16,6 +16,7 @@
 		<panel name="date" />
 		<!-- icons -->
 		<panel name="infobar-icons" />
+		
 		<!-- channel -->
 		<widget source="session.CurrentService" render="Label" position="351,500" size="300,30" font="Bold;23" foregroundColor="white" backgroundColor="blackglass" transparent="1">
 			<convert type="ServiceName">Name</convert>
@@ -31,7 +32,7 @@
 		<!-- started xx mins ago -->
 		<widget source="session.Event_Now" render="Label" position="696,500" size="240,50" font="Regular;23" halign="right" foregroundColor="white" backgroundColor="blackglass" transparent="1">
 			<convert type="EventTime">Elapsed</convert>
-			<convert type="SlykRemainingToText">OnlyMinute</convert>
+			<convert type="OnyxRemainingToText">OnlyMinute</convert>
 		</widget>
 		<!-- progress bar -->
 		<ePixmap position="666,692" size="218,4" pixmap="o-infobars/220-progress-bg.png" alphatest="blend" zPosition="1" />
@@ -52,7 +53,7 @@
 		<!-- next start time -->
 		<widget source="session.Event_Next" render="Label" position="994 ,500" size="258,50" font="Regular;23" foregroundColor="white" backgroundColor="blackglass" halign="right" transparent="1">
 			<convert type="EventTime">StartTime</convert>
-			<convert type="SlykClockToText">SlykHDTime</convert>
+			<convert type="OnyxClockToText">SlykHDTime</convert>
 		</widget>
 	</screen>
 	
@@ -135,7 +136,7 @@
 	        
 		<!-- date -->
 		<panel name="date" />
-		<widget name="list" position="351,500" size="585,150" font="Regular;20" foregroundColor="white" backgroundColor="blackglass" transparent="1" />
+		<widget name="list" position="351,500" size="585,150" EventFontInfobar="Regular;20" foregroundColor="white" backgroundColor="blackglass" transparent="1" />
 		<!-- program description -->
 		<!--
 	        <widget source="Event" render="RunningText" options="movetype=running,startpoint=0,direction=top,steptime=80,repeat=0,always=0,oneshot=0,startdelay=6000,wrap" position="351,600" size="640,50"   foregroundColor="white" backgroundColor="blackglass" font="Regular;20" transparent="1" zPosition="3">
@@ -153,13 +154,13 @@
 		<!-- event start time -->
 		<widget source="Event" render="Label" position="994,593" size="258,26" font="Regular;20" foregroundColor="white" backgroundColor="blackglass" transparent="1">
 			<convert type="EventTime">Elapsed</convert>
-			<convert type="SlykRemainingToText">OnlyMinute</convert>
+			<convert type="OnyxRemainingToText">OnlyMinute</convert>
 		</widget>
 		<!-- event Duration -->
 		<eLabel text="Duration:" position="994,623" size="90,26" foregroundColor="white" backgroundColor="blackglass" font="Regular;20" transparent="1" />
 		<widget source="Event" render="Label" position="1084,623" size="168,26" foregroundColor="white" backgroundColor="blackglass" font="Regular;20" transparent="1">
 			<convert type="EventTime">Duration</convert>
-			<convert type="SlykClockToText">SlykAsLength</convert>
+			<convert type="OnyxClockToText">SlykAsLength</convert>
 		</widget>
 		<panel name="4RGYB" />
 		<ePixmap pixmap="o-backgrounds/v-divider.png" position="539 ,670" size="2,50" alphatest="blend" zPosition="3" />

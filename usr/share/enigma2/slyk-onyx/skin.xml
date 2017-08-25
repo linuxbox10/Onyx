@@ -46,7 +46,7 @@
 		<font name="Console" filename="/usr/share/enigma2/slyk-onyx/fonts/lucon.ttf" scale="100" />
 	
 	        <!-- alias -->
-		<alias name="Body" font="Regular" size="23" height="28" />
+		<alias name="Body" font="Regular" size="20" height="30" />
 		<alias name="TextNormal" font="Regular" size="20" height="30" />
 		
 		<!-- context menu -->
@@ -130,6 +130,22 @@
 			<pixmap pos="bpBottomRight" filename="screens/b_br.png" />
 		</borderset>
 	</windowstyle>
+	
+	<windowstyle type="skinned" id="1">
+	        <color name="Background" color="#111119" />
+	  	<color name="LabelForeground" color="white" />
+	        <color name="ListboxBackground" color="#1a1a24" />
+	        <color name="ListboxForeground" color="white" />
+		<color name="ListboxSelectedBackground" color="bg-selected-text" />
+		<color name="ListboxSelectedForeground" color="white" />
+		<color name="ListboxMarkedBackground" color="bg-selected-text" />
+		<color name="ListboxMarkedForeground" color="red" />
+		<color name="ListboxMarkedAndSelectedBackground" color="bg-selected-text" />
+		<color name="ListboxMarkedAndSelectedForeground" color="black" />
+		<color name="WindowTitleForeground" color="white" />
+		<color name="WindowTitleBackground" color="titlebackground" />
+	</windowstyle>
+
 
 	<parameters>
 		<!-- <parameter name="ChoicelistDash" value="0,2,650,42"/> -->

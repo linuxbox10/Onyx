@@ -15,6 +15,10 @@
        <screen name="divider3">
                	<ePixmap pixmap="o-backgrounds/v-glass-div.png" alphatest="blend" position="788,0" size="24,720" zPosition="2" />
        </screen>
+       
+         <screen name="divider4">
+               	<ePixmap pixmap="o-backgrounds/v-glass-div.png" alphatest="blend" position="955,0" size="24,720" zPosition="2" />
+       </screen>
 
        <screen name="h-separator-tl">
                 <ePixmap pixmap="o-backgrounds/h-divider.png" position="0,193" size="320,2" transparent="1" alphatest="blend"  />
@@ -53,7 +57,7 @@
 		</widget>
                 <!-- tv overlay-->
                 <eLabel  position="0,180" size="320,14" backgroundColor="#0f1015"  zPosition="2" />
-          	<widget source="session.CurrentService" render="Label" position="0,179" size="320,14" font="Bold;12" foregroundColor="white" backgroundColor="transparent" borderWidth="1" borderColor="black" valign="center" halign="center" noWrap="1" transparent="1" zPosition="3" >
+          	<widget source="session.CurrentService" render="Label" position="0,179" size="320,14" font="Bold;12" foregroundColor="white" backgroundColor="black" borderWidth="0" borderColor="black" valign="center" halign="center" noWrap="1" transparent="1" zPosition="3" >
 			<convert type="ServiceName">Name</convert>
 		</widget>
                 <panel name="h-separator-tl" />	
@@ -61,7 +65,7 @@
 
 	<screen name="date">
 		<widget source="global.CurrentTime" render="Label" position="0,670" size="320,50" font="Regular;20" foregroundColor="white" backgroundColor="botleft" valign="center" halign="center" transparent="1" >
-			<convert type="SlykClockToText">SlykQDate</convert>
+			<convert type="OnyxClockToText">SlykQDate</convert>
 		</widget>
 	</screen>
 

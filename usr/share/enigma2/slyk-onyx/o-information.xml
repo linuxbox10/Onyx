@@ -8,18 +8,16 @@
 		<widget source="lab1" render="Label" position="351,75" size="628,27" font="Regular;23" foregroundColor="white" backgroundColor="topmid" valign="center" transparent="1" />
 		<widget source="lab2" render="Label" position="351,105" size="628,27" font="Regular;23" foregroundColor="white" backgroundColor="topmid" valign="center" transparent="1" />
 		<widget source="lab3" render="Label" position="351,135" size="628,27" font="Regular;23" foregroundColor="white" backgroundColor="topmid" valign="center" transparent="1" />
-		<ePixmap pixmap="o-backgrounds/boxflare.png" alphatest="blend" position="351,212" size="666,401" />
 		<widget name="AboutScrollLabel" position="364,233" size="612,359" foregroundColor="white" backgroundColor="mid" font="Regular;20" transparent="1" zPosition="1" />
 		<panel name="2RG" />
 		<panel name="InfoButton" />
 		<ePixmap pixmap="o-backgrounds/sidebar-246.png" alphatest="blend" position="1010,219" size="216,246" />
-		<eLabel text="Slyk Onyx HD V1.000 \nby Kidda C (2017)\n\nFor the latest version of my skins or if you would like to treat me to a beer, please visit slyk1hd.yolasite.com\n\nSupport on Linuxsat Forum. Kidda C" font="Regular;16" position="1020,227" size="200,220" foregroundColor="white" backgroundColor="midright" transparent="1" zPosition="1" />
+		<eLabel text="Skin: Slyk Onyx HD  \nBy Kidda C\n\nSkin has been slightly modified for this release but all credit must remain with the original author\n\nBuy him a beer at\nslyk1hd.yolasite.com" font="Regular;16" position="1020,227" size="200,220" foregroundColor="white" backgroundColor="midright" transparent="1" zPosition="1" />
 	</screen>
 
 	<screen name="Devices" title="Device Information" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="mid">
 		<panel name="template1" />
 		<panel name="h-separator-tr" />
-		<ePixmap pixmap="o-backgrounds/boxflare.png" alphatest="blend" position="351,212" size="666,401" />
 		<widget source="TunerHeader" render="Label" position="364,233" size="612,26" font="Bold;23" foregroundColor="white" backgroundColor="mid" transparent="1" zPosition="1" />
 		<widget source="nims" render="Label" position="364,259" size="612,104" font="Regular;20" foregroundColor="white" backgroundColor="mid" transparent="1" zPosition="1" />
 		<widget source="HDDHeader" render="Label" position="364,368" size="612,26" font="Bold;23" foregroundColor="white" backgroundColor="mid" transparent="1" zPosition="1" />
@@ -27,22 +25,22 @@
 		<widget source="MountsHeader" render="Label" position="364,503" size="612,26" font="Bold;23" foregroundColor="white" backgroundColor="mid" transparent="1" zPosition="1" />
 		<widget source="mounts" render="Label" position="364,529" size="612,52" font="Regular;20" foregroundColor="white" backgroundColor="mid" transparent="1" zPosition="1" />
 		<panel name="1R" />
+ 	        <panel name="whatson-top" />
 	</screen>
 
 	<screen name="SystemMemoryInfo" title="Memory Information" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="mid">
 		<panel name="template1" />
 		<panel name="h-separator-tr" />
-		<ePixmap pixmap="o-backgrounds/boxflare.png" alphatest="blend" position="351,212" size="666,401" />
 		<widget source="lab1" render="Label" position="351,75" size="628,27" font="Regular;23" foregroundColor="white" backgroundColor="topmid" valign="center" transparent="1" zPosition="1" />
 		<widget source="lab2" render="Label" position="351,105" size="628,27" font="Regular;23" foregroundColor="white" backgroundColor="topmid" valign="center" transparent="1" zPosition="1" />
 		<widget name="AboutScrollLabel" position="364,233" size="612,359" foregroundColor="white" backgroundColor="mid" font="Regular;20" transparent="1" zPosition="1" />
 		<panel name="1R" />
+ 	        <panel name="whatson-top" />
 	</screen>
 
 	<screen name="SystemNetworkInfo" title="Network Information" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="mid">
 		<panel name="template1" />
 		<panel name="h-separator-tr" />
-		<ePixmap pixmap="o-backgrounds/boxflare.png" alphatest="blend" position="351,212" size="666,401" />
 		<widget name="AboutScrollLabel" position="364,233" size="612,270" foregroundColor="white" backgroundColor="mid" font="Regular;20" transparent="1" zPosition="1" />
 		<ePixmap position="351,519" size="628,2" pixmap="div-h.png" alphatest="blend" />
 		<widget source="IFtext" render="Label" position="364,529" size="120,30" valign="center" zPosition="10" font="Regular;20" foregroundColor="white" backgroundColor="botmid" transparent="1" />
@@ -50,6 +48,7 @@
 		<widget source="Statustext" render="Label" position="364,555" size="115,30" valign="center" zPosition="10" font="Regular;20" foregroundColor="white" backgroundColor="botmid" transparent="1" />
 		<widget name="statuspic" pixmaps="skin_default/buttons/button_green.png,skin_default/buttons/button_green_off.png" position="545,562" zPosition="10" size="15,16" alphatest="blend" />
 		<panel name="1R" />
+ 	        <panel name="whatson-top" />
 	</screen>
 
 	<screen name="SoftwareUpdateChanges" title="OE Changes" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="mid">
@@ -70,11 +69,11 @@
 	<screen name="ServiceInfo" position="0,0" size="1280,720" title="Service Information" flags="wfNoBorder" backgroundColor="mid">
 		<panel name="template1" />
 		<panel name="h-separator-tr" />
-		<!-- <ePixmap pixmap="o-backgrounds/boxflare.png" alphatest="blend" position="351,212" size="666,401" zPosition="1" />  -->
 		<widget name="infolist" position="364,233" size="901,400" foregroundColor="white" backgroundColor="mid" font="Regular;20" scrollbarMode="showOnDemand" selectionDisabled="1" transparent="1" />
 		<panel name="4RGYB" />
+ 	        <panel name="whatson-top" />
 	</screen>
-	<!-- finished -->
+
 	<screen name="ServiceInfoSimple" position="0,0" size="1280,720" title="Service Information" flags="wfNoBorder" backgroundColor="mid">
 		<panel name="ServiceInfo" />
 	</screen>
