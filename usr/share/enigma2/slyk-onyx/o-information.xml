@@ -12,7 +12,7 @@
 		<panel name="2RG" />
 		<panel name="InfoButton" />
 		<ePixmap pixmap="o-backgrounds/sidebar-246.png" alphatest="blend" position="1010,219" size="216,246" />
-		<eLabel text="Skin: Slyk Onyx HD  \nBy Kidda C\n\nSkin has been slightly modified for this release but all credit must remain with the original author\n\nBuy him a beer at\nslyk1hd.yolasite.com" font="Regular;16" position="1020,227" size="200,220" foregroundColor="white" backgroundColor="midright" transparent="1" zPosition="1" />
+		<eLabel text="Slyk Onyx HD V1.015 \nby Kidda C (2017)\n\nFor the latest version of my skins or if you would like to treat me to a beer, please visit slyk1hd.yolasite.com\n\nSupport on Linuxsat Forum. Kidda C" font="Regular;16" position="1020,227" size="200,220" foregroundColor="white" backgroundColor="midright" transparent="1" zPosition="1" />
 	</screen>
 
 	<screen name="Devices" title="Device Information" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="mid">

@@ -25,13 +25,13 @@
 #####################################################################################################################
 
 <screen name="infobar-picons-1">
-        <widget source="session.CurrentService" render="Picon" position="10,500" size="300,170" alphatest="blend">
+        <widget source="session.CurrentService" render="Picon" position="111,552" size="100,60" alphatest="blend">
                 <convert type="ServiceName">Reference</convert>
         </widget>	
 </screen>
 
 <screen name="infobar-picons-2">
-        <widget source="session.CurrentService" render="SlykPicon" position="51,516" size="220,132" alphatest="blend">
+        <widget source="session.CurrentService" render="OnyxPicon" position="51,516" size="220,132" alphatest="blend">
                 <convert type="ServiceName">Reference</convert>
         </widget>		
 </screen>
@@ -43,13 +43,13 @@
 </screen>
 
 <screen name="eventview-picons-1">	
-        <widget source="Service" render="Picon" position="10,500" size="300,170" alphatest="blend">
+        <widget source="Service" render="Picon" position="111,552" size="100,60" alphatest="blend">
                 <convert type="ServiceName">Reference</convert>
         </widget>	
 </screen>
 
 <screen name="eventview-picons-2">
-        <widget source="Service" render="SlykPicon" position="51,516" size="220,132" alphatest="blend">
+        <widget source="Service" render="OnyxPicon" position="51,516" size="220,132" alphatest="blend">
                 <convert type="ServiceName">Reference</convert>
         </widget>
 </screen>
@@ -67,7 +67,7 @@
 </screen>
 
 <screen name="movie-eventview-picons-2">
-	<widget source="Service" render="SlykPicon" position="51,516" size="220,132" alphatest="blend">
+	<widget source="Service" render="OnyxPicon" position="51,516" size="220,132" alphatest="blend">
 	        <convert type="MovieReference">Reference</convert>
 	</widget>
 </screen>
