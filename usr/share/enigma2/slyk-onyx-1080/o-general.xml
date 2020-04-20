@@ -1,0 +1,710 @@
+
+<skin>
+	<!-- AudioSelection -->
+	<!-- https://github.com/openatv/enigma2/blob/6.1/lib/python/Screens/AudioSelection.py -->
+	<!-- audio button -->
+	<screen name="AudioSelection" position="center,center" size="780,420" backgroundColor="messageboxbg">
+		<widget source="key_red" render="Pixmap" pixmap="buttons/key_red.png" position="15,15" size="38,38" alphatest="blend">
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="key_green" render="Pixmap" pixmap="buttons/key_green.png" position="15,60" size="38,38" alphatest="blend">
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="key_yellow" render="Pixmap" pixmap="buttons/key_yellow.png" position="15,105" size="38,38" alphatest="blend">
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="key_blue" render="Pixmap" pixmap="buttons/key_blue.png" position="15,150" size="38,38" alphatest="blend">
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget name="config" textOffset="15,0" position="60,6" size="705,180" font="Regular;30" secondfont="Regular;30" foregroundColor="white" backgroundColor="messageboxbg" foregroundColorSelected="white" backgroundColorSelected="bg-selected" selectionPixmap="o-selectbars/select-470-30.png" backgroundPixmap="o-selectbars/blank.png" itemHeight="45" scrollbarMode="showNever" transparent="1" />
+		<ePixmap pixmap="div-h.png" position="0,204" size="780,6" alphatest="blend" />
+		<widget source="streams" render="Listbox" position="60,225" size="705,180" foregroundColor="white" backgroundColor="messageboxbg" foregroundColorSelected="white" backgroundColorSelected="bg-selected" selectionPixmap="o-selectbars/select-470-30.png" itemHeight="45" transparent="1" scrollbarMode="showNever">
+			<convert type="TemplatedMultiContent">{"templates":
+				{"default": (45, [
+			
+				MultiContentEntryText(pos = (15, 3), size = (75, 45), font = 0, flags = RT_HALIGN_LEFT, text = 2), # number,
+				MultiContentEntryText(pos = (90, 3), size = (150, 45), font = 0, flags = RT_HALIGN_LEFT, text = 3), # description,
+				MultiContentEntryText(pos = (240, 3), size = (375, 45), font = 0, flags = RT_HALIGN_LEFT, text = 4), # language,
+				MultiContentEntryText(pos = (615, 3), size = (75, 45), font = 1, flags = RT_HALIGN_RIGHT, text = 5), # selection,
+				], True, "showNever"),
+				"notselected": (45, [
+			
+				MultiContentEntryText(pos = (15, 3), size = (75, 45), font = 0, flags = RT_HALIGN_LEFT, text = 2), # number,
+				MultiContentEntryText(pos = (90, 3), size = (150, 45), font = 0, flags = RT_HALIGN_LEFT, text = 3), # description,
+				MultiContentEntryText(pos = (240, 3), size = (375, 45), font = 0, flags = RT_HALIGN_LEFT, text = 4), # language,
+				MultiContentEntryText(pos = (615, 3), size = (75, 45), font = 1, flags = RT_HALIGN_RIGHT, text = 5), # selection,
+				], False, "showNever")
+				},
+				"fonts": [gFont("Regular", 30), gFont("Regular", 30)],
+				"itemHeight": 45
+				}</convert>
+		</widget>
+	</screen>
+	
+	<!-- subtitle long press - red button -->
+	<screen name="QuickSubtitlesConfigMenu" position="center,center" size="705,420" title="Subtitle Settings" backgroundColor="messageboxbg">
+		<widget name="config" textOffset="15,0" position="15,15" size="705,405" font="Regular;27" secondfont="Regular;27" foregroundColor="white" backgroundColor="messageboxbg" foregroundColorSelected="white" backgroundColorSelected="bg-selected" selectionPixmap="o-selectbars/select-470-30.png" backgroundPixmap="o-selectbars/blank.png" itemHeight="45" scrollbarMode="showNever" transparent="1" />
+	</screen>
+	
+	<!-- ButtonSetup -->
+	<!-- /lib/python/Screens/ButtonSetup.py -->
+	<!-- hotkey buttons -->
+	<screen name="ButtonSetup" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="mid">
+		<panel name="template1" />
+		<panel name="h-separator-tr" />
+		<panel name="title2" />
+		<panel name="description" />
+		<widget name="list" position="527,329" size="942,450" font="Regular;32" foregroundColor="white" backgroundColor="mid" backgroundColorSelected="bg-selected" selectionPixmap="o-selectbars/select-628-30.png" backgroundPixmap="o-selectbars/blank.png" itemHeight="45" enableWrapAround="1" scrollbarMode="showNever" transparent="1" />
+		<ePixmap position="525,828" size="942,3" pixmap="div-h.png" alphatest="blend" />
+		<widget name="choosen" position="525,842" size="960,135" font="Regular;32" foregroundColor="white" backgroundColor="mid" backgroundColorSelected="bg-selected" selectionPixmap="o-selectbars/select-628-30.png" backgroundPixmap="o-selectbars/blank.png" itemHeight="45" enableWrapAround="1" scrollbarMode="showNever" transparent="1" />
+		<panel name="ExitButton" />
+	</screen>
+	
+	<screen name="ButtonSetupSelect" position="0,0" size="1920,1080" title="Setup" flags="wfNoBorder" backgroundColor="mid">
+		<panel name="ButtonSetup" />
+		<panel name="New-Buttons" />
+	</screen>
+	
+	<!-- ChoiceBox -->
+	<!-- /lib/python/Screens/ChoiceBox.py -->
+	<screen name="ChoiceBox" position="center,center" size="780,195" backgroundColor="messageboxbg">
+		<widget name="text" position="0,0" size="780,45" font="Regular;30" foregroundColor="white" backgroundColor="messageboxbg" />
+		<widget name="list" position="150,150" size="780,0" font="Regular;30" foregroundColor="white" backgroundColor="messageboxbg" foregroundColorSelected="white" backgroundColorSelected="bg-selected-text" enableWrapAround="1" transparent="1" itemHeight="45" />
+		<applet type="onLayoutFinish">from enigma import getDesktop, eSize, ePoint
+desktop_w = getDesktop(0).size().width()
+desktop_h = getDesktop(0).size().height()
+itemheight = self["list"].getItemHeight()
+count = len(self.list)
+
+if count &gt; 12:
+	count = 12
+width = self["list"].instance.size().width()
+if width &lt; 0 or width &gt; desktop_w:
+	width = int(0.40625 * desktop_w)
+if not self["text"].text:
+	# move list
+	textsize = (width, 0)
+	listsize = (width, itemheight * count)
+	self["list"].instance.move(ePoint(0, 0))
+	self["list"].instance.resize(eSize(*listsize))
+else:
+	textsize = self["text"].getSize()
+	if textsize[0] &lt; textsize[1]:
+		textsize = (textsize[1], textsize[0] + 10)
+	if textsize[0] &gt; width:
+		textsize = (textsize[0], textsize[1] + itemheight)
+	else:
+		textsize = (width, textsize[1] + itemheight)
+	listsize = (textsize[0], itemheight * count)
+	# resize label
+	self["text"].instance.resize(eSize(*textsize))
+	self["text"].instance.move(ePoint(10, 10))
+	# move list
+	self["list"].instance.move(ePoint(0, textsize[1]))
+	self["list"].instance.resize(eSize(*listsize))
+
+wsizex = textsize[0]
+wsizey = textsize[1]+listsize[1]
+wsize = (wsizex, wsizey)
+self.instance.resize(eSize(*wsize))
+
+# center window
+self.instance.move(ePoint((desktop_w-wsizex)/2, (desktop_h-wsizey)/2))</applet>
+	</screen>
+	
+	<screen name="Console" position="0,0" size="1920,1080" flags="wfNoBorder" title="Console" backgroundColor="mid">
+		<panel name="template1" />
+		<panel name="title2" />
+		<widget name="text" position="527,32" size="1356,939" font="Console;24" foregroundColor="white" backgroundColor="mid" scrollbarMode="showOnDemand" transparent="1" />
+		<panel name="New-Buttons" />
+	</screen>
+	
+	<screen name="HarddiskSetup" title="Harddisk Setup" position="center,center" size="840,225" backgroundColor="messageboxbg">
+		<widget name="model" position="0,0" size="570,42" font="Regular;35" foregroundColor="white" backgroundColor="messageboxbg" transparent="1" />
+		<widget name="capacity" position="0,45" size="570,42" font="Regular;35" foregroundColor="white" backgroundColor="messageboxbg" transparent="1" />
+		<widget name="bus" position="0,90" size="570,42" font="Regular;35" foregroundColor="white" backgroundColor="messageboxbg" transparent="1" />
+		<panel position="0,180" size="0,41">
+			<panel name="Red-New-Button" />
+		</panel>
+		<panel position="319,180" size="0,41">
+			<panel name="Green-New-Button" />
+		</panel>
+	</screen>
+	
+	<!-- /lib/python/Screens/HarddiskSetup.py  -->
+	<screen name="HarddiskSelection" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="mid">
+		<panel name="template1" />
+		<panel name="h-separator-tr" />
+		<panel name="title2" />
+		<widget name="hddlist" textOffset="15,15" position="527,321" size="954,648" foregroundColor="white" backgroundColor="mid" backgroundColorSelected="bg-selected" selectionPixmap="o-selectbars/select-636-48.png" backgroundPixmap="o-selectbars/blank.png" itemHeight="72" font="Regular;35" transparent="1" enableWrapAround="1" scrollbarMode="showNever" />
+		<panel name="OKButton" />
+	</screen>
+	
+	<!-- infoBarGenerics -->
+	<!-- /lib/python/Screens/InfoBarGenerics.py -->
+	<screen name="BufferIndicator" title="Channel" position="c-240,68" size="480,53" backgroundColor="transparent" flags="wfNoBorder">
+		<widget name="status" position="0,0" size="480,53" backgroundColor="transparent" transparent="1" font="Bold;39" borderColor="black" borderWidth="2" valign="center" halign="center" zPosition="100" />
+	</screen>
+	
+	<!-- numberzap -->
+	<screen name="NumberZap" position="75,893" size="675,113" flags="wfNoBorder">
+		<eLabel position="0,0" size="675,113" backgroundColor="blackglass" transparent="0" zPosition="-1" />
+		<ePixmap pixmap="o-backgrounds/volume-bg.png" position="0,0" size="675,113" alphatest="blend" zPosition="-1" />
+		<widget name="number" position="30,0" size="105,113" foregroundColor="white" backgroundColor="blackglass" transparent="1" font="Regular;45" borderWidth="0" valign="center" halign="left" zPosition="1" />
+		<widget name="servicename" position="165,0" size="480,113" foregroundColor="white" backgroundColor="blackglass" transparent="1" font="Regular;45" borderWidth="0" valign="center" halign="left" zPosition="1" />
+	</screen>
+	
+	<screen name="NumberZapPicon" position="75,893" size="675,113" flags="wfNoBorder">
+		<eLabel position="0,0" size="675,113" backgroundColor="blackglass" transparent="0" zPosition="-1" />
+		<ePixmap pixmap="o-backgrounds/volume-bg.png" position="0,0" size="675,113" alphatest="blend" zPosition="-1" />
+		<widget name="number" position="30,0" size="105,113" foregroundColor="white" backgroundColor="blackglass" transparent="1" font="Regular;45" borderWidth="0" valign="center" halign="left" zPosition="1" />
+		<widget name="servicename" position="165,0" size="480,113" foregroundColor="white" backgroundColor="blackglass" transparent="1" font="Regular;45" borderWidth="0" valign="center" halign="left" zPosition="1" />
+	</screen>
+	
+	<!-- InputBox -->
+	<!-- quick record - set duration -->
+	<!-- /lib/python/Screens/InputBox.py -->
+	<screen name="InputBox" position="center,center" size=" 840, 105" backgroundColor="messageboxbg">
+		<widget name="text" position="15,15" size="810,45" font="Regular;35" foregroundColor="white" backgroundColor="messageboxbg" valign="center" halign="center" />
+		<widget name="input" position="15,60" size="810,45" font="Regular;35" foregroundColor="white" backgroundColor="messageboxbg" valign="center" halign="center" />
+	</screen>
+	
+	<!-- setup / usage & gui / extended gui /  input devices -->
+	<screen name="InputDeviceSelection" position="0,0" size="1920,1080" backgroundColor="mid" flags="wfNoBorder">
+		<panel name="template1" />
+		<panel name="h-separator-tr" />
+		<panel name="title2" />
+		<ePixmap pixmap="o-backgrounds/setup-60-bg.png" alphatest="blend" position="527,344" size="942,630" zPosition="-1" />
+		<widget source="list" render="Listbox" position="527,345" size="942,630" foregroundColor="white" backgroundColor="mid" backgroundColorSelected="bg-selected" selectionPixmap="o-selectbars/select-628-60.png" backgroundPixmap="o-selectbars/blank.png" enableWrapAround="1" scrollbarMode="showNever" transparent="1">
+			<convert type="TemplatedMultiContent">{"template": [
+                                                MultiContentEntryPixmapAlphaBlend(pos = (15, 9), size = (72, 72), png = 2), # index 2 is the interface pixmap
+						MultiContentEntryText(pos = (105, 0), size = (825, 90), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1),  # index 1 is the interface name
+					],
+			                "fonts": [gFont("Regular", 30),gFont("Regular", 24)],
+                                        "itemHeight": 90
+				}</convert>
+		</widget>
+		<widget source="introduction" render="Label" position="1518,341" size="372,510" font="Regular;27" foregroundColor="colour2" backgroundColor="midright" transparent="1" />
+		<panel name="New-Buttons" />
+		<panel name="OKButton" />
+		<panel name="whatson-top" />
+	</screen>
+	
+	<screen name="InputDeviceSetup" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="mid">
+		<panel name="Setup-Default" />
+		<widget source="introduction" render="Label" position="1518,341" size="372,510" font="Regular;27" foregroundColor="colour2" backgroundColor="midright" transparent="1" />
+	</screen>
+	
+	<!-- Ipkg -->
+	<!-- ipk install progress bar -->
+	<!-- /lib/python/Screens/Ipkg.py -->
+	<screen name="Ipkg" position="0,0" size="1920,1080" title="Message" backgroundColor="transparent" flags="wfNoBorder">
+		<eLabel position="0,732" size="1920,348" backgroundColor="blackglass" transparent="0" zPosition="-2" />
+		<ePixmap position="0,705" size="1920,375" pixmap="o-infobars/infobar1.png" alphatest="blend" zPosition="-1" />
+		<panel name="date" />
+		<widget name="activityslider" position="516,771" size="900,9" pixmap="o-infobars/600-progress.png" borderWidth="2" borderColor="#80ffffff" zPosition="3" />
+		<widget name="package" position="485,810" size="962,45" font="Regular;30" foregroundColor="white" backgroundColor="blackglass" valign="center" halign="center" noWrap="1" transparent="1" />
+		<widget name="status" position="485,891" size="962,45" font="Regular;30" foregroundColor="white" backgroundColor="blackglass" valign="center" halign="center" noWrap="1" transparent="1" />
+		<widget name="slider" position="516,966" size="900,9" pixmap="o-infobars/600-progress.png" borderWidth="2" borderColor="#80ffffff" zPosition="3" />
+	</screen>
+	
+	<!-- LanguageSelection -->
+	<!-- /lib/python/Screens/LanguageSelection.py -->
+	<screen name="LanguageSelection" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="mid" title="Language selection" zPosition="4">
+		<panel name="template1" />
+		<panel name="h-separator-tr" />
+		<panel name="title2" />
+		<ePixmap pixmap="o-backgrounds/setup-48-bg.png" alphatest="blend" position="527,329" size="942,648" zPosition="1" />
+		<widget source="languages" render="Listbox" position="527,330" size="942,648" foregroundColor="white" backgroundColor="mid" foregroundColorSelected="white" backgroundColorSelected="bg-selected" selectionPixmap="o-selectbars/select-628-48-full.png" backgroundPixmap="o-selectbars/blank.png" itemHeight="72" enableWrapAround="1" scrollbarMode="showNever" transparent="1" zPosition="2">
+			<convert type="TemplatedMultiContent">{"template": [
+      	         	        MultiContentEntryPixmapAlphaBlend(pos = (15,6), size = (90,60), png = 2), # index 2 is the pixmap
+				MultiContentEntryText(pos = (150,0), size = (795,72), flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1), # index 1 is the language name
+			
+				],
+				"fonts": [gFont("Regular",32)],
+				"itemHeight": 72
+				}</convert>
+		</widget>
+		<panel name="description" />
+		<panel name="New-Buttons" />
+		<panel name="OKButton" />
+		<panel name="whatson-top" />
+	</screen>
+	
+	<!-- LocationBox -->
+	<!-- lib/python/Screens/LocationBox.py -->
+	<screen name="LocationBox" position="0,0" size="1920,1080" title="Setup" flags="wfNoBorder" backgroundColor="mid">
+		<panel name="template1" />
+		<panel name="h-separator-tr" />
+		<panel name="title2" />
+		<widget name="text" position="525,32" size="960,203" font="Regular;30" foregroundColor="white" backgroundColor="topmid" transparent="1" />
+		<ePixmap pixmap="o-backgrounds/1box.png" position="525,329" size="947,84" alphatest="blend" zPosition="1" />
+		<widget name="target" position="542,330" size="912,83" font="Regular;30" foregroundColor="white" backgroundColor="mid" noWrap="1" valign="center" halign="left" transparent="1" />
+		<widget name="targetfreespace" position="542,330" size="912,83" font="Regular;30" backgroundColor="mid" foregroundColor="white" noWrap="1" valign="center" halign="right" transparent="1" />
+		<widget name="filelist" position="527,428" size="942,315" font="Regular;30" foregroundColor="white" backgroundColor="mid" backgroundColorSelected="bg-selected" selectionPixmap="o-selectbars/select-628-30.png" scrollbarMode="showNever" backgroundPixmap="o-selectbars/blank.png" selectionDisabled="1" enableWrapAround="1" transparent="1" zPosition="1" />
+		<ePixmap position="525,774" size="960,6" pixmap="div-h.png" alphatest="blend" />
+		<widget name="textbook" position="527,797" size="960,45" font="Bold;30" foregroundColor="white" backgroundColor="mid" transparent="1" />
+		<widget name="booklist" textOffset="15,0" position="527,842" size="960,135" font="Regular;30" foregroundColor="white" backgroundColor="mid" backgroundColorSelected="bg-selected" selectionPixmap="o-selectbars/select-628-30.png" backgroundPixmap="o-selectbars/blank.png" scrollbarMode="showNever" enableWrapAround="1" transparent="1" zPosition="1" itemHeight="45" />
+		<ePixmap pixmap="o-backgrounds/sidebar-246.png" alphatest="blend" position="1515,329" size="324,369" />
+		<eLabel text="Use CH+/- to toggle between the lists.\n\nMenu for more options." font="Regular;27" position="1530,341" size="300,330" foregroundColor="white" backgroundColor="midright" transparent="1" zPosition="1" />
+		<panel name="New-Buttons" />
+		<panel name="MenuButton" />
+	</screen>
+	
+	<!-- LogManager -->
+	<!-- lib/python/Screens/LogManager.py -->
+	<!-- show in extensions -->
+	<screen name="LogManager" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="mid" title="Log Manager">
+		<panel name="template1" />
+		<panel name="h-separator-tr" />
+		<panel name="title2" />
+		<widget name="list" position="527,330" size="942,630" font="Regular;30" foregroundColor="white" backgroundColor="mid" backgroundColorSelected="bg-selected" selectionPixmap="o-selectbars/select-628-30.png" backgroundPixmap="o-selectbars/blank.png" scrollbarMode="showNever" enableWrapAround="1" transparent="1" zPosition="1" />
+		<widget name="LogsSize" position="1518,341" size="372,510" font="Regular;27" foregroundColor="colour2" backgroundColor="midright" transparent="1" />
+		<panel name="New-Buttons" />
+		<panel name="OKButton" />
+		<applet type="onLayoutFinish">self["list"].instance.setItemHeight(45)</applet>
+	</screen>
+	
+	<screen name="LogManagerViewLog" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="mid" title="Log Manager">
+		<panel name="template1" />
+		<eLabel position="489,0" size="1431,1005" backgroundColor="black" transparent="0" zPosition="-1" />
+		<widget source="Title" render="Label" position="527,32" size="905,39" font="Bold;30" foregroundColor="colour2" backgroundColor="topmid" noWrap="1" transparent="1" />
+		<widget name="list" position="527,90" size="1335,900" font="Console;18" foregroundColor="white" backgroundColor="black" scrollbarMode="showOnDemand" transparent="1" zPosition="3" />
+		<panel name="New-Buttons" />
+	</screen>
+	
+	<screen name="LogManagerFb" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="mid">
+		<panel name="template1" />
+		<panel name="h-separator-tr" />
+		<panel name="title2" />
+		<widget name="list" position="527,330" size="942,630" font="Regular;30" foregroundColor="white" backgroundColor="mid" backgroundColorSelected="bg-selected" selectionPixmap="o-selectbars/select-628-30.png" backgroundPixmap="o-selectbars/blank.png" scrollbarMode="showNever" enableWrapAround="1" transparent="1" zPosition="1" />
+		<panel name="New-Buttons" />
+		<applet type="onLayoutFinish">self["list"].instance.setItemHeight(45)</applet>
+	</screen>
+	
+	<screen name="MessageBox" position="center,center" size="1170,15" title="Message" backgroundColor="messageboxbg">
+		<widget name="ErrorPixmap" pixmap="icons/input_error.png" position="8,8" size="80,80" alphatest="blend" />
+		<widget name="QuestionPixmap" pixmap="icons/input_question.png" position="8,8" size="80,80" alphatest="blend" />
+		<widget name="InfoPixmap" pixmap="icons/input_info.png" position="8,8" size="80,80" alphatest="blend" />
+		<widget name="text" position="98,8" size="1170,0" font="Regular;32" backgroundColor="messageboxbg" transparent="1" />
+		<widget name="list" textOffset="15,0" font="Regular;32" position="1170,150" backgroundColor="messageboxbg" transparent="1" size="780,0" itemHeight="38" />
+		<applet type="onLayoutFinish">from enigma import getDesktop, eSize, ePoint
+import math
+desktop_w = getDesktop(0).size().width()
+desktop_h = getDesktop(0).size().height()
+count = len(self.list)
+width = int(0.40625 * desktop_w)
+itemheight = 25	
+if desktop_w == 1920:
+	scale = 1.5
+else:
+    scale = 1
+if not self["text"].text:
+	textsize = (width, 0)
+	listsize = (width, int(math.ceil(itemheight*scale)*count))
+	if self["ErrorPixmap"].visible or self["QuestionPixmap"].visible or self["InfoPixmap"].visible:
+		self["list"].instance.move(ePoint(int(math.ceil(65*scale)), 0))
+		wsizex = textsize[0]+int(math.ceil(65*scale))
+	else:
+		self["list"].instance.move(ePoint(0, 0))
+		wsizex = textsize[0]
+	self["list"].instance.resize(eSize(*listsize))
+else:
+	textsize = self["text"].getSize()
+	if textsize[0] &lt; textsize[1]:
+		textsize = (textsize[1],textsize[0]+10)
+	if textsize[0] &gt; width:
+		textsize = (textsize[0], textsize[1]+int(math.ceil(itemheight*scale)))
+	else:
+		textsize = (width, textsize[1]+int(math.ceil(itemheight*scale)))
+	listsize = (textsize[0], int(math.ceil(itemheight*scale)*count))
+
+	self["text"].instance.resize(eSize(*textsize))
+	if self["ErrorPixmap"].visible or self["QuestionPixmap"].visible or self["InfoPixmap"].visible:
+		self["text"].instance.move(ePoint(int(math.ceil(65*scale)), 0))
+	else:
+		self["text"].instance.move(ePoint(10, 10))
+
+	if self["ErrorPixmap"].visible or self["QuestionPixmap"].visible or self["InfoPixmap"].visible:
+		self["list"].instance.move(ePoint(int(math.ceil(65*scale)), textsize[1]))
+		wsizex = textsize[0]+int(math.ceil(65*scale))
+	else:
+		self["list"].instance.move(ePoint(0, textsize[1]))
+		wsizex = textsize[0]
+	self["list"].instance.resize(eSize(*listsize))
+
+wsizey = textsize[1]+listsize[1]
+wsize = (wsizex, wsizey)
+self.instance.resize(eSize(*wsize))
+self.instance.move(ePoint((desktop_w-wsizex)/2, (desktop_h-wsizey)/2))</applet>
+	</screen>
+	
+	<screen name="MessageBoxSimple" position="center,center" size="780,15" title="Message" backgroundColor="messageboxbg">
+		<panel name="MessageBox" />
+	</screen>
+	
+	<!-- MinuteInput -->
+	<!-- as found on movies long ff press -->
+	<screen name="MinuteInput" position="center,center" size="300,90" title="Jump to..." backgroundColor="messageboxbg">
+		<widget name="minutes" position="0,23" size="300,45" valign="center" halign="center" font="Regular;35" backgroundColor="messageboxbg" transparent="1" />
+	</screen>
+	
+	<!-- mute -->
+	<screen name="Mute" position="54,54" zPosition="10" size="113,113" backgroundColor="transparent" flags="wfNoBorder">
+		<eLabel position="0,0" size="113,113" backgroundColor="blackglass" transparent="0" zPosition="-1" />
+		<ePixmap position="0,0" size="113,113" pixmap="o-icons/mute.png" alphatest="blend" />
+	</screen>
+	
+	<screen name="Multiboot" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Setup-Default" />
+	        <widget source="labe14" render="Label" position="1518,341" size="372,200" font="Regular;27" foregroundColor="colour2" backgroundColor="midright" transparent="1" />
+                <widget source="labe15" render="Label" position="1518,541" size="372,400" font="Regular;27" foregroundColor="colour2" backgroundColor="midright" transparent="1" />
+	</screen>
+	
+	<screen name="Multiboot Image Selector" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Setup-Default" />
+	        <widget source="description" render="Label" position="1518,341" size="372,200" font="Regular;27" foregroundColor="colour2" backgroundColor="midright" transparent="1" />
+                <widget source="options" render="Label" position="1518,541" size="372,400" font="Regular;27" foregroundColor="colour2" backgroundColor="midright" transparent="1" />
+	</screen>
+	
+	
+	<!-- NumericalTextInputHelpDialog -->
+	<!-- input helper text -->
+	<screen name="NumericalTextInputHelpDialog" position="0,0" zPosition="10" size="1920,38" backgroundColor="transparent" flags="wfNoBorder">
+		<ePixmap pixmap="o-backgrounds/helper-text.png" position="0,0" size="1920,38" zPosition="9" alphatest="blend" />
+		<ePixmap pixmap="buttons/key_1.png" position="45,0" size="38,38" zPosition="10" alphatest="blend" />
+		<ePixmap pixmap="buttons/key_2.png" position="195,0" size="38,38" zPosition="10" alphatest="blend" />
+		<ePixmap pixmap="buttons/key_3.png" position="345,0" size="38,38" zPosition="10" alphatest="blend" />
+		<ePixmap pixmap="buttons/key_4.png" position="495,0" size="38,38" zPosition="10" alphatest="blend" />
+		<ePixmap pixmap="buttons/key_5.png" position="645,0" size="38,38" zPosition="10" alphatest="blend" />
+		<ePixmap pixmap="buttons/key_6.png" position="795,0" size="38,38" zPosition="10" alphatest="blend" />
+		<ePixmap pixmap="buttons/key_7.png" position="945,0" size="38,38" zPosition="10" alphatest="blend" />
+		<ePixmap pixmap="buttons/key_8.png" position="1095,0" size="38,38" zPosition="10" alphatest="blend" />
+		<ePixmap pixmap="buttons/key_9.png" position="1245,0" size="38,38" zPosition="10" alphatest="blend" />
+		<ePixmap pixmap="buttons/key_0.png" position="1395,0" size="38,38" zPosition="10" alphatest="blend" />
+		<ePixmap pixmap="buttons/key_text.png" position="1685,0" size="38,38" zPosition="10" alphatest="blend" />
+		<widget name="key1" position="83,0" size="105,38" font="Regular;18" backgroundColor="blackglass" foregroundColor="white" valign="center" transparent="1" zPosition="12" />
+		<widget name="key2" position="233,0" size="105,38" font="Regular;18" backgroundColor="blackglass" foregroundColor="white" valign="center" transparent="1" zPosition="12" />
+		<widget name="key3" position="383,0" size="105,38" font="Regular;18" backgroundColor="blackglass" foregroundColor="white" valign="center" transparent="1" zPosition="12" />
+		<widget name="key4" position="533,0" size="105,38" font="Regular;18" backgroundColor="blackglass" foregroundColor="white" valign="center" transparent="1" zPosition="12" />
+		<widget name="key5" position="683,0" size="105,38" font="Regular;18" backgroundColor="blackglass" foregroundColor="white" valign="center" transparent="1" zPosition="12" />
+		<widget name="key6" position="833,0" size="105,38" font="Regular;18" backgroundColor="blackglass" foregroundColor="white" valign="center" transparent="1" zPosition="12" />
+		<widget name="key7" position="983,0" size="105,38" font="Regular;18" backgroundColor="blackglass" foregroundColor="white" valign="center" transparent="1" zPosition="12" />
+		<widget name="key8" position="1133,0" size="105,38" font="Regular;18" backgroundColor="blackglass" foregroundColor="white" valign="center" transparent="1" zPosition="12" />
+		<widget name="key9" position="1283,0" size="105,38" font="Regular;18" backgroundColor="blackglass" foregroundColor="white" valign="center" transparent="1" zPosition="12" />
+		<widget name="help1" position="0,1080" size="0,0" font="Regular;18" backgroundColor="blackglass" foregroundColor="white" valign="center" transparent="1" zPosition="12" />
+		<widget name="key0" position="1433,0" size="180,38" font="Regular;18" backgroundColor="blackglass" foregroundColor="white" valign="center" transparent="1" zPosition="12" />
+		<widget name="help2" position="0,1080" size="0,0" font="Regular;18" backgroundColor="blackglass" foregroundColor="white" valign="center" transparent="1" zPosition="12" />
+	</screen>
+	
+	<!-- timeshift PVR screens -->
+	<screen name="TimeshiftState" flags="wfNoBorder" position="0,0" size="1920,1080" title="InfoBar" backgroundColor="transparent">
+		<eLabel position="0,732" size="1920,348" backgroundColor="blackglass" transparent="0" zPosition="-2" />
+		<ePixmap position="0,705" size="1920,375" pixmap="o-infobars/infobar-blank.png" alphatest="blend" zPosition="-1" />
+		<panel name="date" />
+		<widget name="eventname" position="center,758" size="1920,45" font="Regular;35" foregroundColor="white" backgroundColor="blackglass" halign="center" noWrap="1" transparent="1" />
+		<widget name="statusicon" position="center,858" size="81,81" alphatest="blend" pixmaps="o-infobars/play.png,o-infobars/pause.png,o-infobars/stop.png,o-infobars/forward.png,o-infobars/backward.png,o-infobars/slow.png,o-infobars/blank.png" zPosition="5" />
+		<widget name="speed" position="center,809" size="126,45" font="Regular;35" foregroundColor="white" backgroundColor="blackglass" halign="center" transparent="1" zPosition="5" />
+		<!-- progress background -->
+		<ePixmap position="309,896" size="1302,6" pixmap="o-infobars/progress-bg.png" alphatest="blend" zPosition="1" />
+		<!--progress border -->
+		<ePixmap position="308,894" size="1305,9" pixmap="o-infobars/progress-border.png" alphatest="blend" zPosition="4" />
+		<!-- progress bar-->
+		<widget source="session.CurrentService" render="Progress" position="308,894" size="1305,9" pixmap="o-infobars/progress.png" transparent="1" zPosition="3">
+			<convert type="ServicePosition">Position</convert>
+		</widget>
+		<!-- timeshift start time -->
+		<widget source="session.CurrentService" render="Label" position="71,876" size="195,45" font="Regular;35" foregroundColor="white" backgroundColor="blackglass" halign="right" transparent="1">
+			<convert type="Slyk18ServicePosition">TimeshiftStart</convert>
+		</widget>
+		<!-- timeshift end time (now) -->
+		<widget source="global.CurrentTime" render="Label" position="1658,876" size="200,45" font="Regular;35" foregroundColor="white" backgroundColor="blackglass" transparent="1">
+			<convert type="Slyk18ClockToText">Slyk18Time</convert>
+		</widget>
+		<!-- timeshift position -->
+		<widget source="session.CurrentService" render="Label" position="center,945" size="186,45" font="Bold;35" foregroundColor="colour2" backgroundColor="blackglass" halign="center" transparent="1">
+			<convert type="Slyk18ServicePosition">TimeshiftPosition</convert>
+		</widget>
+		<panel name="InfoButton" />
+	</screen>
+	
+	<!-- parental control pin -->
+	<screen name="PinInput" position="center,center" size=" 840,180" backgroundColor="messageboxbg">
+		<widget name="text" position="15,15" size="810,45" font="Regular;35" foregroundColor="white" backgroundColor="messageboxbg" valign="center" halign="center" transparent="1" />
+		<widget name="input" position="15,90" size="810,45" font="Regular;35" foregroundColor="white" backgroundColor="messageboxbg" valign="center" halign="center" transparent="1" />
+		<widget name="tries" position="15,135" size="810,45" font="Regular;35" foregroundColor="white" backgroundColor="messageboxbg" valign="center" halign="center" transparent="1" />
+	</screen>
+	
+	<screen name="PinInputPopup" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="mid">
+		<ePixmap pixmap="o-backgrounds/pin-protected.jpg" position="0,0" size="1920,1080" zPosition="-1" />
+		<widget name="service" position="center,56" size="1920,48" font="Bold;39" foregroundColor="white" backgroundColor="topmid" halign="center" transparent="1" />
+		<widget name="text" position="center,95" size="1920,48" font="Regular;39" foregroundColor="white" backgroundColor="topmid" halign="center" transparent="1" />
+		<eLabel text="Please enter your PIN" position="0,842" size="1920,48" font="Regular;39" foregroundColor="white" backgroundColor="botmid" halign="center" transparent="1" />
+		<widget name="input" position="center,921" size="330,53" font="Regular;72" foregroundColor="white" valign="center" backgroundColor="botmid" halign="center" transparent="1" />
+		<widget name="tries" position="center,1007" size="1920,48" font="Regular;39" foregroundColor="white" backgroundColor="botmid" valign="center" halign="center" transparent="1" />
+	</screen>
+	
+	<!-- parental control -->
+	<screen name="ParentalControlSetup" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="mid">
+		<panel name="Setup-Default" />
+	</screen>
+	
+	<screen name="ParentalControlChangePin" position="center,center" size="450,161" backgroundColor="messageboxbg">
+		<widget name="config" textOffset="15,0" position="15,15" size="420,90" font="Regular;32" secondfont="Regular;32" itemHeight="45" foregroundColor="white" backgroundColor="messageboxbg" foregroundColorSelected="white" backgroundColorSelected="bg-selected-text" transparent="0" />
+		<panel position="0,120" size="0,41">
+			<panel name="Red-New-Button" />
+		</panel>
+		<panel position="319,120" size="0,41">
+			<panel name="Green-New-Button" />
+		</panel>
+	</screen>
+	
+	<!-- PiPSetup -->
+	<!-- lib/python/Screens/PiPSetup.py -->
+	<screen name="PiPSetup" position="center,center" size="1200,300" backgroundColor="messageboxbg" title="PiPSetup">
+		<widget name="text" position="0,0" size="1200,300" backgroundColor="transparent" transparent="1" font="Regular;32" valign="center" halign="center" />
+	</screen>
+	
+	<screen name="PluginBrowser" position="0,0" size="1920,1080" backgroundColor="mid" flags="wfNoBorder" title="Plugin browser">
+		<panel name="template1" />
+		<panel name="h-separator-tr" />
+		<panel name="title2" />
+		<ePixmap pixmap="o-backgrounds/setup-60-bg.png" alphatest="blend" position="527,329" size="942,630" zPosition="1" />
+		<widget name="list" position="527,330" size="942,630" foregroundColor="white" backgroundColor="mid" backgroundColorSelected="bg-selected" selectionPixmap="o-selectbars/select-628-60.png" backgroundPixmap="o-selectbars/blank.png" enableWrapAround="1" scrollbarMode="showNever" itemHeight="90" transparent="1" zPosition="2" />
+		<panel name="New-Buttons" />
+		<panel name="MenuButton-pos2" />
+		<panel name="OKButton" />
+		<panel name="whatson-top" />
+	</screen>
+	
+	<screen name="PluginDownloadBrowser" position="0,0" size="1920,1080" backgroundColor="mid" flags="wfNoBorder" title="Downloadable plugins">
+		<panel name="template1" />
+		<panel name="h-separator-tr" />
+		<panel name="title2" />
+		<widget name="text" position="1518,341" size="372,510" font="Regular;27" foregroundColor="colour2" backgroundColor="midright" transparent="1" />
+		<widget name="list" position="527,330" size="942,630" foregroundColor="white" backgroundColor="mid" backgroundColorSelected="bg-selected" selectionPixmap="o-selectbars/select-628-60.png" backgroundPixmap="o-selectbars/blank.png" enableWrapAround="1" scrollbarMode="showNever" itemHeight="90" transparent="1" />
+		<panel name="OKButton" />
+		<panel name="whatson-top" />
+	</screen>
+	
+	<!-- tuner config - ok menu -->
+	<screen name="NimSetup" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="mid">
+		<panel name="Setup-Default" />
+		<panel name="description" />
+	</screen>
+	
+	<!--  Satconfig -->
+	<!-- /lib/python/Screens/Satconfig.py -->
+	<!-- tuner configuration -->
+	<screen name="NimSelection" position="0,0" size="1920,1080" backgroundColor="mid" flags="wfNoBorder">
+		<panel name="template1" />
+		<panel name="h-separator-tr" />
+		<panel name="title2" />
+		<ePixmap pixmap="o-backgrounds/setup-100row-bg.png" alphatest="blend" position="527,329" size="942,600" zPosition="1" />
+		<widget source="nimlist" render="Listbox" position="527,330" size="942,600" foregroundColor="white" backgroundColor="mid" foregroundColorSelected="white" backgroundColorSelected="bg-selected" selectionPixmap="o-selectbars/select-628-100.png" backgroundPixmap="o-selectbars/blank.png" itemHeight="150" scrollbarMode="showNever" transparent="1" zPosition="2">
+			<convert type="TemplatedMultiContent">{"template": [
+				MultiContentEntryText(pos = (15,15), size = (912,45), flags = RT_HALIGN_LEFT, text = 1), # index 1 is the nim name,
+				MultiContentEntryText(pos = (30,60), size = (1182,75), font = 1, flags = RT_HALIGN_LEFT, text = 2), # index 2 is a description of the nim settings,
+				],
+				"fonts": [gFont("Regular",35), gFont("Regular",30)],
+				"itemHeight": 150
+				}</convert>
+		</widget>
+		<panel name="New-Buttons" />
+	</screen>
+	
+	<!-- tuner configuration - Mode - Positioner (selecting satelittes) -->
+	<screen name="SelectSatsEntryScreen" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="mid">
+		<panel name="template1" />
+		<panel name="h-separator-tr" />
+		<panel name="title2" />
+		<widget name="list" position="527,330" size="942,630" font="Regular;30" foregroundColor="white" backgroundColor="mid" backgroundColorSelected="bg-selected" selectionPixmap="o-selectbars/select-628-30.png" backgroundPixmap="o-selectbars/blank.png" scrollbarMode="showNever" enableWrapAround="1" transparent="1" zPosition="1" />
+		<widget name="hint" position="1518,341" size="372,510" font="Regular;27" foregroundColor="colour2" backgroundColor="midright" transparent="1" />
+		<panel name="New-Buttons" />
+		<applet type="onLayoutFinish">self["list"].instance.setItemHeight(45)</applet>
+	</screen>
+	
+	<!-- Manual Scan -->
+	<!-- lib/python/Screens/ScanSetup.py -->
+	<screen name="ScanSetup" position="0,0" size="1920,1080" backgroundColor="transparent" flags="wfNoBorder" title="Manual Scan">
+		<panel name="Setup-Default" />
+		<widget name="introduction" position="1518,341" size="372,510" font="Regular;27" foregroundColor="colour2" backgroundColor="midright" transparent="1" />
+	</screen>
+	
+	<!-- automatic scan -->
+	<screen name="ScanSimple" position="0,0" size="1920,1080" backgroundColor="transparent" flags="wfNoBorder">
+		<panel name="Setup-Default" />
+		<widget name="footer" position="1518,341" size="372,510" font="Regular;27" foregroundColor="colour2" backgroundColor="midright" transparent="1" />
+	</screen>
+	
+	<!-- Manual Scan - Scan -->
+	<!--/lib/python/Screens/ServiceScan.py-->
+	<screen name="ServiceScan" position="0,0" size="1920,1080" backgroundColor="mid" flags="wfNoBorder">
+		<panel name="template1" />
+		<panel name="h-separator-tr" />
+		<panel name="title2" />
+		<ePixmap pixmap="o-backgrounds/2box.png" alphatest="blend" position="507,62" size="947,168" zPosition="1" />
+		<widget source="FrontendInfo" render="Pixmap" pixmap="icons/scan-s.png" position="525,96" size="96,96" alphatest="blend">
+			<convert type="FrontendInfo">TYPE</convert>
+			<convert type="ValueRange">0,0</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="FrontendInfo" render="Pixmap" pixmap="icons/scan-c.png" position="525,96" size="96,96" alphatest="blend">
+			<convert type="FrontendInfo">TYPE</convert>
+			<convert type="ValueRange">1,1</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="FrontendInfo" render="Pixmap" pixmap="icons/scan-t.png" position="525,96" size="96,96" alphatest="blend">
+			<convert type="FrontendInfo">TYPE</convert>
+			<convert type="ValueRange">2,2</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		
+		<widget name="network" position="653,104" size="833,42" font="Bold;35" foregroundColor="white" backgroundColor="topmid" transparent="1" />
+		<widget name="transponder" position="653,158" size="833,42" font="Regular;35" foregroundColor="white" backgroundColor="topmid" transparent="1" />
+		
+		<widget name="scan_state" position="527,315" size="942,42" font="Regular;30" foregroundColor="white" backgroundColor="mid" transparent="1" />
+		<widget name="pass" position="527,357" size="942,42" font="Regular;30" foregroundColor="white" backgroundColor="mid" transparent="1" />
+		<!-- progress background -->
+		<ePixmap position="528,404" size="939,6" pixmap="o-progressbars/628-progress-bg.png" alphatest="blend" zPosition="1" />
+		<!--progress border -->
+		<ePixmap position="527,402" size="942,9" pixmap="o-progressbars/628-progress-border.png" alphatest="blend" zPosition="4" />
+		<!-- progress bar-->
+		<widget name="scan_progress" position="527,402" size="942,9" pixmap="o-progressbars/628-progress.png" transparent="1" alphatest="blend" zPosition="3" />
+		
+		<widget name="servicelist" position="527,432" size="942,532" font="Regular;30" itemHeight="38" selectionDisabled="1" foregroundColor="white" backgroundColor="mid" transparent="1" />
+		<panel name="New-Buttons" />
+	</screen>
+	
+	<screen name="CableScanScreen" position="0,0" size="1920,1080" backgroundColor="transparent" flags="wfNoBorder">
+		<panel name="Setup-Default" />
+		<widget name="introduction" position="1518,341" size="372,510" font="Regular;27" foregroundColor="colour2" backgroundColor="midright" transparent="1" />
+	</screen>
+	
+	<screen name="CableScanStatus" position="0,0" size="1920,1080" backgroundColor="mid" flags="wfNoBorder">
+		<panel name="template1" />
+		<panel name="h-separator-tr" />
+		<panel name="title2" />
+		<ePixmap pixmap="o-backgrounds/2box.png" alphatest="blend" position="507,62" size="947,168" zPosition="1" />
+		<widget name="frontend" pixmap="icons/scan-c.png" position="525,96" size="96,96" alphatest="blend" />
+		<widget name="scan_state" position="527,315" size="942,42" font="Regular;30" foregroundColor="white" backgroundColor="mid" transparent="1" />
+		<widget name="scan_progress" position="527,402" size="942,9" pixmap="o-progressbars/628-progress.png" transparent="1" alphatest="blend" zPosition="3" />
+		<panel name="New-Buttons" />
+	</screen>
+	
+	<!-- Screensaver -->
+	<!-- lib/python/Screens/ScreenSaver.py -->
+	<screen name="Screensaver" position="fill" flags="wfNoBorder">
+		<eLabel position="fill" backgroundColor="#54111112" zPosition="0" />
+		<widget name="picture" pixmap="o-backgrounds/screensaver.png" position="0,0" size="450,248" alphatest="blend" zPosition="1" />
+	</screen>
+	
+	<screen name="SkinSelector" position="0,0" size="1920,1080" title="Skin Selector" flags="wfNoBorder" backgroundColor="mid">
+		<panel name="template1" />
+		<panel name="h-separator-tr" />
+		<panel name="title2" />
+		<ePixmap pixmap="o-backgrounds/setup-48-bg.png" alphatest="blend" position="527,320" size="942,645" zPosition="1" />
+		<widget name="SkinList" textOffset="15,15" position="527,321" size="942,645" font="Regular;32" foregroundColor="white" backgroundColor="mid" backgroundColorSelected="bg-selected" selectionPixmap="o-selectbars/select-628-48.png" backgroundPixmap="o-selectbars/blank.png" itemHeight="72" enableWrapAround="1" scrollbarMode="showNever" transparent="1" />
+		<widget name="Preview" position="1515,324" size="324,243"  />
+		<widget source="introduction" render="Label" position="527,32" size="942,39" font="Bold;30" foregroundColor="colour2" backgroundColor="topmid" noWrap="1" transparent="1" />
+		<panel name="New-Buttons" />
+		<panel name="OKButton" />
+	</screen>
+	
+	<!-- SleepTimerEdit via standby menu -->
+	<!--lib/python/Screens/SleepTimerEdit.py -->
+	<screen name="SleepTimerEdit" position="0,0" size="1920,1080" backgroundColor="transparent" flags="wfNoBorder" zPosition="4">
+		<panel name="Setup-Default" />
+		<panel name="description" />
+	</screen>
+	
+	<screen name="Standby" flags="wfNoBorder" position="fill" title="Standby" backgroundColor="black" />
+	
+        <!-- shutdown screen -->
+	<screen name="QuitMainloopScreen" flags="wfNoBorder" position="fill">
+		<ePixmap pixmap="o-backgrounds/reboot.png" position="0,0" size="1920,1080" alphatest="blend" zPosition="10" />
+		<widget name="text" position="center,780" size="1080,150" font="Regular;35" foregroundColor="colour2" transparent="1" halign="center" zPosition="11" />
+	</screen>
+	
+	<screen name="SubtitleDisplay" position="0,0" size="1920,1080" zPosition="-2" flags="wfNoBorder" backgroundColor="transparent" />
+
+	<!-- taskview.py -->
+	<!-- initialise storage device -->
+	<screen name="JobView" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="transparent">
+		<eLabel position="0,732" size="1920,348" backgroundColor="blackglass" transparent="0" zPosition="-2" />
+		<ePixmap position="0,705" size="1920,375" pixmap="o-infobars/infobar1.png" alphatest="blend" zPosition="-1" />
+		<panel name="date" />
+		<widget source="job_name" render="Label" position="485,750" size="962,45" font="Bold;30" foregroundColor="white" backgroundColor="blackglass" valign="center" halign="center" noWrap="1" transparent="1" />
+		<widget source="job_task" render="Label" position="center,795" size="962,45" font="Regular;30" foregroundColor="white" backgroundColor="blackglass" valign="center" halign="center" noWrap="1" transparent="1" />
+		<widget source="job_progress" render="Progress" position="516,848" size="900,45" pixmap="o-infobars/600-30-progress.png" borderWidth="2" borderColor="#80ffffff" zPosition="1" />
+		<widget source="job_progress" render="Label" position="485,848" size="962,45" font="Regular;30" foregroundColor="white" backgroundColor="#1c8cc6" valign="center" halign="center" noWrap="1" transparent="1" zPosition="2">
+			<convert type="ProgressToText" />
+		</widget>
+		<widget source="job_status" render="Label" position="485,900" size="962,45" font="Regular;30" foregroundColor="white" backgroundColor="blackglass" valign="center" halign="center" noWrap="1" transparent="1" />
+		<widget name="config" textOffset="15,0" position="516,945" size="900,45" foregroundColor="white" backgroundColor="blackglass" backgroundColorSelected="bg-selected" selectionPixmap="o-selectbars/select-600-30.png" backgroundPixmap="o-selectbars/blank.png" scrollbarMode="showNever" transparent="1" />
+		<widget source="cancelable" render="Pixmap" pixmap="buttons/key_red.png" position="509,1028" size="38,38" alphatest="blend" zPosition="2">
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="cancelable" render="FixedLabel" text="Cancel" position="554,1025" size="237,38" font="Regular;30" valign="center" transparent="1" noWrap="1" foregroundColor="white" backgroundColor="button-bg" halign="left">
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="finished" render="Pixmap" pixmap="buttons/key_green.png" position="828,1028" size="38,38" alphatest="blend" zPosition="3">
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="finished" render="FixedLabel" text="OK" position="873,1025" size="237,38" font="Regular;30" valign="center" transparent="1" noWrap="1" foregroundColor="white" backgroundColor="button-bg" halign="left">
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="backgroundable" render="Pixmap" pixmap="buttons/key_blue.png" position="1467,1028" size="38,38" alphatest="blend" zPosition="3">
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="backgroundable" render="FixedLabel" text="Continue in background" position="1512,1025" size="408,38" font="Regular;30" valign="center" transparent="1" noWrap="1" foregroundColor="white" backgroundColor="button-bg" halign="left">
+			<convert type="ConditionalShowHide" />
+		</widget>
+	</screen>
+
+	<screen name="TimeDateInput" position="center,center" size="840,195" backgroundColor="messageboxbg">
+		<widget name="config" textOffset="15,0" position="0,0" size="840,90" font="Regular;30" secondfont="Regular;30" foregroundColor="white" backgroundColor="messageboxbg" foregroundColorSelected="white" backgroundColorSelected="bg-selected-text" itemHeight="45" transparent="1" />
+		<panel position="15,153" size="0,41">
+			<panel name="Red-New-Button" />
+		</panel>
+		<panel position="390,153" size="0,41">
+			<panel name="Green-New-Button" />
+		</panel>
+	</screen>
+	
+	<!-- unhandled event / error -->
+	<screen name="UnhandledKey" position="e-167,54" zPosition="10" size="113,113" backgroundColor="transparent" flags="wfNoBorder">
+		<eLabel position="0,0" size="113,113" backgroundColor="blackglass" transparent="0" zPosition="-1" />
+		<widget name="UnhandledKeyPixmap" pixmap="o-icons/unhandled.png" position="0,0" size="113,113" alphatest="blend" zPosition="11" />
+	</screen>
+	
+
+	<screen name="VirtualKeyBoard" title="Virtual Keyboard" position="center,center" size="980,513" zPosition="99" backgroundColor="#000000">
+		<widget name="prompt" position="16,10" size="948,33" font="Regular;21" noWrap="1" transparent="1" />
+		<ePixmap pixmap="buttons/vkey_text.png" position="16,50" size="948,68" alphatest="blend" zPosition="-4" />
+		<widget name="text" position="34,69" size="912,36" font="Regular;24" halign="right" noWrap="1" transparent="1" />
+		<widget name="list" position="14,120" size="952,340" backgroundColor="#283138" foregroundColor="white" selectionDisabled="1" transparent="1" />
+		<widget name="locale" position="14,468" size="800,33" font="Regular;21" transparent="1" />
+		<widget name="mode" position="892,468" size="60,33" font="Regular;21" halign="right" transparent="1" valign="center" />
+		<widget name="language" position="0,0" size="0,0" font="Regular;21" transparent="1" />
+	</screen>
+	
+	<!-- volume slider -->
+	<screen name="Volume" position="center,54" size="675,113" title="Volume" flags="wfNoBorder" backgroundColor="transparent" zPosition="10">
+		<eLabel position="0,0" size="675,113" backgroundColor="blackglass" transparent="0" zPosition="11" />
+		<ePixmap pixmap="o-backgrounds/volume-bg.png" position="0,0" size="675,113" alphatest="blend" zPosition="12" />
+		<ePixmap pixmap="o-icons/volume.png" position="0,0" size="113,113" alphatest="blend" zPosition="13" />
+		<ePixmap pixmap="o-icons/volume-bar-bg.png" position="center,center" size="390,12" alphatest="blend" zPosition="13" />
+		<widget name="Volume" pixmap="o-icons/volume-bar.png" position="center,center" size="390,12" transparent="1" zPosition="14" />
+		<widget render="VolumeText" source="global.CurrentTime" position="e-113,0" size="113,113" font="Bold;39" foregroundColor="white" backgroundColor="blackglass" halign="center" valign="center" zPosition="13" transparent="1" />
+	</screen>
+
+	<screen name="Subtitles" position="0,0" size="1920,1080" backgroundColor="transparent" flags="wfNoBorder" zPosition="-1">
+		<panel name="Setup-Default" />
+	</screen>
+	
+
+	
+</skin>
+
+

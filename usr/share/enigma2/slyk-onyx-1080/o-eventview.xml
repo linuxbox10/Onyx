@@ -1,0 +1,99 @@
+
+<skin>
+	<screen name="EventViewContextMenu" position="0,0" size="1920,1080" backgroundColor="mid" flags="wfNoBorder">
+		<panel name="template1" />
+		<panel name="h-separator-tr" />
+		<panel name="title2" />
+		<ePixmap pixmap="o-backgrounds/menu-gradient.png" position="527,900" size="954,75" alphatest="blend" zPosition="2" />
+		<panel name="whatson-top" />
+		<panel name="whatson-right" />
+		<widget name="menu" textOffset="15,15" position="527,321" size="954,645" foregroundColor="white" backgroundColor="mid" backgroundColorSelected="bg-selected" selectionPixmap="o-selectbars/select-636-48.png" backgroundPixmap="o-selectbars/blank.png" itemHeight="72" font="Regular;35" transparent="1" enableWrapAround="1" scrollbarMode="showNever" />
+		<panel name="ExitButton" />
+	</screen>
+	
+	<!-- movie planner eventview -->
+	<screen name="EventViewSimple" flags="wfNoBorder" position="0,0" size="1920,1080" backgroundColor="transparent">
+		<eLabel position="0,732" size="1920,348" backgroundColor="blackglass" transparent="0" zPosition="-2" />
+		<ePixmap position="0,705" size="1920,375" pixmap="o-infobars/infobar1.png" alphatest="blend" zPosition="-1" />
+		<!-- record icon -->
+		<widget render="Pixmap" pixmap="o-icons/record.png" source="session.RecordState" position="945,717" size="30,30" alphatest="blend" zPosition="6">
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<!-- picons / xpicons - see picons.xml -->
+		<panel name="movie-eventview-picons" />
+		<panel name="date" />
+		<panel name="infobar-icons" />
+		<!-- progress bar -->
+		<ePixmap position="999,1038" size="327,6" pixmap="o-infobars/220-progress-bg.png" alphatest="blend" zPosition="1" />
+		<widget source="Event" render="Progress" position="998,1037" size="330,9" pixmap="o-infobars/220-progress.png" transparent="1" zPosition="2">
+			<convert type="EventTime">Progress</convert>
+		</widget>
+		<ePixmap position="998,1037" size="330,9" pixmap="o-infobars/220-progress-border.png" alphatest="blend" zPosition="3" />
+		<widget source="Service" render="Label" position="527,750" size="450,45" font="Bold;35" foregroundColor="white" backgroundColor="blackglass" transparent="1">
+			<convert type="MovieInfo">RecordServiceName</convert>
+		</widget>
+		<!-- programme name -->
+		<widget source="Title" render="Label" position="527,795" size="878,45" font="Bold;35" foregroundColor="white" backgroundColor="blackglass" noWrap="1" transparent="1" />
+		<!-- programme description -->
+		<widget source="Event" render="RunningText" options="movetype=running,startpoint=0,direction=top,steptime=80,repeat=0,always=0,oneshot=0,startdelay=6000,wrap" position="527,843" size="878,147" font="Regular;30" foregroundColor="white" backgroundColor="blackglass" transparent="1">
+			<convert type="EventName">ExtendedDescription</convert>
+		</widget>
+		<widget source="Event" render="Label" position="1491,750" size="429,44" font="Bold;35" foregroundColor="white" backgroundColor="blackglass" transparent="1">
+			<convert type="EventTime">StartTime</convert>
+			<convert type="ClockToText">Format:%a %d %B %Y</convert>
+		</widget>
+		<widget source="Event" render="Label" position="1491,795" size="387,44" font="Bold;35" foregroundColor="white" backgroundColor="blackglass" transparent="1">
+			<convert type="EventTime">StartTime</convert>
+			<convert type="Slyk18ClockToText">Slyk18Time</convert>
+		</widget>
+		<widget source="Event" render="Label" position="1491,935" size="387,39" foregroundColor="white" backgroundColor="blackglass" font="Regular;30" transparent="1">
+			<convert type="EventTime">Duration</convert>
+			<convert type="Slyk18ClockToText">Slyk18AsLength</convert>
+		</widget>
+	</screen>
+	
+	<screen name="EventView" flags="wfNoBorder" position="0,0" size="1920,1080" backgroundColor="transparent">
+		<eLabel position="0,732" size="1920,348" backgroundColor="blackglass" transparent="0" zPosition="-2" />
+		<ePixmap position="0,705" size="1920,375" pixmap="o-infobars/infobar1.png" alphatest="blend" zPosition="-1" />
+		<!-- record icon -->
+		<widget render="Pixmap" pixmap="o-icons/record.png" source="session.RecordState" position="945,717" size="30,30" alphatest="blend" zPosition="6">
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<!-- picons / xpicons - see picons.xml -->
+		<panel name="eventview-picons" />
+		<panel name="date" />
+		<widget name="channel" position="527,750" size="450,45" font="Bold;35" foregroundColor="white" backgroundColor="blackglass" transparent="1" />
+		<!-- programme name -->
+		<widget source="Title" render="Label" position="527,795" size="878,45" font="Bold;35" foregroundColor="white" backgroundColor="blackglass" noWrap="1" transparent="1" />
+		<!-- programme description -->
+		<widget source="Event" render="RunningText" options="movetype=running,startpoint=0,direction=top,steptime=80,repeat=0,always=0,oneshot=0,startdelay=6000,wrap" position="527,843" size="878,147" font="Regular;30" foregroundColor="white" backgroundColor="blackglass" transparent="1">
+			<convert type="EventName">ExtendedDescription</convert>
+		</widget>
+		<!-- started xx mins ago -->
+		<widget source="Event" render="Label" position="1044,750" size="360,75" font="Regular;35" halign="right" foregroundColor="white" backgroundColor="blackglass" transparent="1">
+			<convert type="EventTime">Elapsed</convert>
+			<convert type="Slyk18RemainingToText">OnlyMinute</convert>
+		</widget>
+		<panel position="1491,761" size="207,75">
+			<panel name="channel-icons" />
+		</panel>
+		<!-- progress bar -->
+		<ePixmap position="1493,855" size="384,6" pixmap="o-infobars/256-progress-bg.png" alphatest="blend" zPosition="1" />
+		<widget source="Event" render="Progress" position="1491,854" size="387,9" pixmap="o-infobars/258-progress.png" transparent="1" zPosition="2">
+			<convert type="EventTime">Progress</convert>
+		</widget>
+		<ePixmap position="1491,854" size="387,9" pixmap="o-infobars/258-progress-border.png" alphatest="blend" zPosition="3" />
+		<!-- programme duration -->
+		<eLabel text="Duration:" position="1491,935" size="135,39" foregroundColor="white" backgroundColor="blackglass" font="Regular;30" transparent="1" />
+		<widget source="Event" render="Label" position="1626,935" size="252,39" foregroundColor="white" backgroundColor="blackglass" font="Regular;30" transparent="1">
+			<convert type="EventTime">Duration</convert>
+			<convert type="Slyk18ClockToText">Slyk18AsLength</convert>
+		</widget>
+		<panel name="New-Buttons" />
+		<ePixmap pixmap="o-backgrounds/v-divider.png" position="809 ,1005" size="3,75" alphatest="blend" zPosition="5" />
+		<ePixmap pixmap="o-backgrounds/v-divider.png" position="1128,1005" size="3,75" alphatest="blend" zPosition="5" />
+		<ePixmap pixmap="o-backgrounds/v-divider.png" position="1767,1005" size="3,75" alphatest="blend" zPosition="5" />
+		<panel name="MenuButton" />
+	</screen>
+</skin>
+

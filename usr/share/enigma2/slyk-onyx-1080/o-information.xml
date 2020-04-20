@@ -1,0 +1,95 @@
+
+<skin>
+	<!-- ##About## -->
+    <!-- /lib/python/Screens/About.py -->
+	<screen name="AboutOE" title="Image Information" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="mid">
+		<panel name="template1" />
+		<panel name="h-separator-tr" />
+                <panel name="title2" />
+		<widget source="lab1" render="Label" position="527,113" size="942,41" font="Regular;35" foregroundColor="white" backgroundColor="topmid" valign="center" transparent="1" />
+		<widget source="lab2" render="Label" position="527,158" size="942,41" font="Regular;35" foregroundColor="white" backgroundColor="topmid" valign="center" transparent="1" />
+		<widget source="lab3" render="Label" position="527,203" size="942,41" font="Regular;35" foregroundColor="white" backgroundColor="topmid" valign="center" transparent="1" />
+		<widget name="AboutScrollLabel" position="546,350" size="918,539" foregroundColor="white" backgroundColor="mid" font="Regular;30" transparent="1" zPosition="1" />
+                <panel name="New-Buttons" />
+		<panel name="InfoButton" />
+		<ePixmap pixmap="o-backgrounds/sidebar-246.png" alphatest="blend" position="1515,329" size="324,369" />
+		<eLabel text="Slyk Onyx 1080 V2.25 \nby Kidda C (2019)\n\nThis is an unnoficial build for the vuplus-images community" font="Regular;24" position="1530,341" size="300,330" foregroundColor="white" backgroundColor="midright" transparent="1" zPosition="1" />
+	</screen>
+	
+	<!-- legacy -->
+	<screen name="About" title="Image Information" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="mid">
+		<panel name="AboutOE" />
+	</screen>
+
+	<screen name="Devices" title="Device Information" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="mid">
+		<panel name="template1" />
+		<panel name="h-separator-tr" />
+		<panel name="title2" />
+		<widget source="TunerHeader" render="Label" position="546,350" size="918,39" font="Bold;35" foregroundColor="white" backgroundColor="mid" transparent="1" zPosition="1" />
+		<widget source="nims" render="Label" position="546,389" size="918,156" font="Regular;30" foregroundColor="white" backgroundColor="mid" transparent="1" zPosition="1" />
+		<widget source="HDDHeader" render="Label" position="546,552" size="918,39" font="Bold;35" foregroundColor="white" backgroundColor="mid" transparent="1" zPosition="1" />
+		<widget source="hdd" render="Label" position="546,591" size="918,156" font="Regular;30" foregroundColor="white" backgroundColor="mid" transparent="1" zPosition="1" />
+		<widget source="MountsHeader" render="Label" position="546,755" size="918,39" font="Bold;35" foregroundColor="white" backgroundColor="mid" transparent="1" zPosition="1" />
+		<widget source="mounts" render="Label" position="546,794" size="918,78" font="Regular;30" foregroundColor="white" backgroundColor="mid" transparent="1" zPosition="1" />
+                <panel name="New-Buttons" />
+ 	        <panel name="whatson-top" />
+	</screen>
+
+	<screen name="SystemMemoryInfo" title="Memory Information" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="mid">
+		<panel name="template1" />
+		<panel name="h-separator-tr" />
+		<panel name="title2" />
+		<widget source="lab1" render="Label" position="527,113" size="942,41" font="Regular;35" foregroundColor="white" backgroundColor="topmid" valign="center" transparent="1" zPosition="1" />
+		<widget source="lab2" render="Label" position="527,158" size="942,41" font="Regular;35" foregroundColor="white" backgroundColor="topmid" valign="center" transparent="1" zPosition="1" />
+		<widget name="AboutScrollLabel" position="546,350" size="918,539" foregroundColor="white" backgroundColor="mid" font="Regular;30" transparent="1" zPosition="1" />
+                <panel name="New-Buttons" />
+ 	        <panel name="whatson-top" />
+	</screen>
+
+	<screen name="SystemNetworkInfo" title="Network Information" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="mid">
+		<panel name="template1" />
+		<panel name="h-separator-tr" />
+		<panel name="title2" />
+		<widget name="AboutScrollLabel" position="546,350" size="918,405" foregroundColor="white" backgroundColor="mid" font="Regular;30" transparent="1" zPosition="1" />
+		<ePixmap position="527,779" size="942,3" pixmap="div-h.png" alphatest="blend" />
+		<widget source="IFtext" render="Label" position="546,794" size="180,45" valign="center" zPosition="10" font="Regular;30" foregroundColor="white" backgroundColor="botmid" transparent="1" />
+		<widget source="IF" render="Label" position="818,794" size="563,45" zPosition="10" valign="center" font="Regular;30" foregroundColor="white" backgroundColor="botmid" transparent="1" />
+		<widget source="Statustext" render="Label" position="546,833" size="173,45" valign="center" zPosition="10" font="Regular;30" foregroundColor="white" backgroundColor="botmid" transparent="1" />
+		<widget name="statuspic" pixmaps="buttons/button_green.png,buttons/button_green_off.png" position="818,843" zPosition="10" size="23,24" alphatest="blend" />
+                <panel name="New-Buttons" />
+ 	        <panel name="whatson-top" />
+	</screen>
+
+        <!-- info button on about screen -->
+	<screen name="SoftwareUpdateChanges" title="OE Changes" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="mid">
+		<panel name="template1" />
+                <panel name="title2" />
+		<widget name="text" position="527,32" size="1356,939" font="Console;21" foregroundColor="white" backgroundColor="mid" scrollbarMode="showOnDemand" transparent="1" />
+                <panel name="New-Buttons" />
+	</screen>
+
+	<!-- lib/python/Screens/ServiceInfo.py  -->
+	<screen name="ServiceInfo" position="0,0" size="1920,1080" title="Service Information" flags="wfNoBorder" backgroundColor="mid">
+		<panel name="template1" />
+		<panel name="h-separator-tr" />
+		<panel name="title2" />
+		<widget name="infolist" position="546,350" size="1352,570" foregroundColor="white" backgroundColor="mid" font="Regular;30" scrollbarMode="showOnDemand" itemHeight="38" selectionDisabled="1" transparent="1" />
+                <panel name="New-Buttons" />
+ 	        <panel name="whatson-top" />
+	</screen>
+
+	<screen name="ServiceInfoSimple" position="0,0" size="1920,1080" title="Service Information" flags="wfNoBorder" backgroundColor="mid">
+		<panel name="ServiceInfo" />
+	</screen>
+	
+	<screen name="StreamingClientsInfo" title="Image Information" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="mid">
+		<panel name="template1" />
+		<panel name="h-separator-tr" />
+                <panel name="title2" />
+		<widget name="ScrollLabel" position="546,113" size="918,120" foregroundColor="white" backgroundColor="mid" font="Regular;30" transparent="1" zPosition="1" />
+		<widget name="ScrollLabel2" position="546,350" size="918,539" foregroundColor="white" backgroundColor="mid" font="Regular;30" transparent="1" zPosition="1" />
+                <panel name="New-Buttons" />
+	</screen>	
+</skin>
+
+

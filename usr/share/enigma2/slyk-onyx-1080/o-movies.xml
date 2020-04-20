@@ -1,0 +1,112 @@
+
+<skin>
+	
+  <!-- https://github.com/openatv/enigma2/blob/6.1/lib/python/Screens/MovieSelection.py -->
+	<screen name="MovieSelection" position="0,0" size="1920,1080" backgroundColor="mid" flags="wfNoBorder">
+		<panel name="background" />
+		<panel name="logo" />
+		<panel name="tv" />
+		<panel name="date" />
+		<panel name="divider1" />
+		<ePixmap pixmap="o-backgrounds/button-bg.png" position="0,e-102" size="1920,102" alphatest="blend" zPosition="-1" />
+		<ePixmap pixmap="o-backgrounds/v-divider.png" position="809 ,1005" size="3,75" alphatest="blend" />
+		<ePixmap pixmap="o-backgrounds/v-divider.png" position="1128,1005" size="3,75" alphatest="blend" />
+		<ePixmap pixmap="o-backgrounds/v-divider.png" position="1448,1005" size="3,75" alphatest="blend" />
+		<ePixmap pixmap="o-backgrounds/flare.png" position="296,992" size="375,29" alphatest="blend" zPosition="6" />
+		<ePixmap pixmap="o-backgrounds/flare.png" position="1260,992" size="375,29" alphatest="blend" zPosition="6" />
+		<eLabel text="Movies" position="15,675" size="450,291" halign="center" font="Regular;35" zPosition="1" transparent="1" foregroundColor="white" backgroundColor="topleft" />
+		<panel name="h-separator-tr" />
+		<panel name="v-separator-tr" />
+		<widget name="list" position="527,330" size="1364,675" font="Regular;27" foregroundColor="white" backgroundColor="mid" foregroundColorSelected="white" backgroundColorSelected="bg-selected-text" enableWrapAround="1" scrollbarMode="showOnDemand" transparent="1" />
+		<widget name="waitingtext" position="527,330" size="1364,675" font="Regular;30" halign="center" valign="center" zPosition="2" foregroundColor="white" backgroundColor="mid" transparent="1" />
+		<widget source="Service" render="Label" position="527,32" size="905,39" font="Bold;30" foregroundColor="colour2" backgroundColor="topmid" noWrap="1" transparent="1">
+			<convert type="EventName">ShortDescription</convert>
+		</widget>
+		<widget source="Service" render="RunningText" options="movetype=running,startpoint=0,direction=top,steptime=80,repeat=0,always=0,oneshot=0,startdelay=6000,wrap" position="527,75" size="905,174" foregroundColor="white" backgroundColor="topmid" font="Regular;30" transparent="1">
+			<convert type="Slyk18MovieInfo">MetaDescription</convert>
+		</widget>
+		<widget source="Service" render="Slyk18Picon" position="1500,38" size="150,90" alphatest="blend">
+			<convert type="MovieReference">Reference</convert>
+		</widget>
+		<panel position="1683,47" size="207,75">
+			<panel name="channel-icons" />
+		</panel>
+		<widget source="Service" render="Label" position="1500,137" size="390,36" font="Regular;30" foregroundColor="white" backgroundColor="topright" transparent="1">
+			<convert type="ServiceTime">Duration</convert>
+			<convert type="Slyk18ClockToText">Slyk18AsLength</convert>
+		</widget>
+		<widget name="freeDiskSpace" position="1500,183" size="390,35" foregroundColor="white" backgroundColor="topright" font="Regular;24" transparent="1" />
+		<widget source="Service" render="Label" position="1500,221" size="390,35" foregroundColor="white" backgroundColor="topright" font="Regular;24" transparent="1">
+			<convert type="MovieInfo">FileSize</convert>
+		</widget>
+		<panel position="527,330" size="1364,675">
+			<widget name="chosenletter" position="center,center" size="90,90" foregroundColor="white" backgroundColor="black" font="Regular;75" halign="center" valign="center" transparent="0" zPosition="4" />
+		</panel>
+		<widget name="movie_sort" position="1793,221" size="53,30" pixmaps="icons/az.png,icons/newtop.png,icons/shuffle.png,icons/za.png,icons/oldtop.png,icons/faz.png,icons/fza.png" zPosition="10" alphatest="blend" />
+		<widget name="movie_off" position="1845,221" size="53,30" pixmaps="icons/ask.png,icons/movielist.png,icons/quit.png,icons/pause.png,icons/playlist.png,icons/playlistquit.png,icons/loop.png,icons/rep.png" zPosition="10" alphatest="blend" />
+		<panel name="New-Buttons" />	
+		<ePixmap pixmap="buttons/key_info.png" position="1740,1025" size="38,38" alphatest="blend" zPosition="3" />
+		<ePixmap pixmap="buttons/key_menu.png" position="1793,1025" size="38,38" alphatest="blend" zPosition="3" />
+		<ePixmap pixmap="buttons/key_help.png" position="1845,1025" size="38,38" alphatest="blend" zPosition="3" />
+	</screen>
+	
+	<screen name="MovieSelectionSlim" position="0,0" size="1920,1080" backgroundColor="mid" flags="wfNoBorder">
+		<panel name="MovieSelection" />
+	</screen>
+
+	<screen name="PVRState" flags="wfNoBorder" position="0,0" size="0,0" title="InfoBar" backgroundColor="transparent" />
+
+	<screen name="MoviePlayer" flags="wfNoBorder" position="0,0" size="1920,1080" title="InfoBar" backgroundColor="transparent">
+		<eLabel position="0,732" size="1920,348" backgroundColor="blackglass" transparent="0" zPosition="-2" />
+		<ePixmap position="0,705" size="1920,375" pixmap="o-infobars/infobar-blank.png" alphatest="blend" zPosition="-1" />
+		<panel name="date" />
+		<widget source="session.CurrentService" render="Label" position="center,758" size="1920,45" font="Regular;35" foregroundColor="white" backgroundColor="blackglass" halign="center" noWrap="1" transparent="1">
+			<convert type="ServiceName">Name</convert>
+		</widget>
+		<widget name="statusicon" position="center,858" size="81,81" alphatest="blend" pixmaps="o-infobars/play.png,o-infobars/pause.png,o-infobars/stop.png,o-infobars/forward.png,o-infobars/backward.png,o-infobars/slow.png,o-infobars/blank.png" zPosition="5" />
+		<widget name="speed" position="center,809" size="126,45" font="Regular;35" foregroundColor="white" backgroundColor="blackglass" halign="center" transparent="1" zPosition="5" />
+		<!-- progress background -->
+		<ePixmap position="309,896" size="1302,6" pixmap="o-infobars/progress-bg.png" alphatest="blend" zPosition="1" />
+		<!--progress border -->
+		<ePixmap position="308,894" size="1305,9" pixmap="o-infobars/progress-border.png" alphatest="blend" zPosition="4" />
+		<!-- progress bar-->
+		<widget source="session.CurrentService" render="PositionGauge" position="308,893" size="1305,11" pointer="o-infobars/progress2.png:1305,0" transparent="1" zPosition="3">
+			<convert type="ServicePosition">Gauge</convert>
+		</widget>
+		<eLabel text="0m" position="71,876" size="195,45" font="Regular;35" foregroundColor="white" backgroundColor="blackglass" halign="right" transparent="1" />
+		<widget source="session.CurrentService" render="Label" position="1658,876" size="200,45" font="Regular;35" foregroundColor="white" backgroundColor="blackglass" transparent="1">
+			<convert type="Slyk18ServicePosition">MovieLength</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Label" position="center,945" size="186,45" font="Bold;35" foregroundColor="colour2" backgroundColor="blackglass" halign="center" transparent="1">
+			<convert type="Slyk18ServicePosition">MoviePosition</convert>
+		</widget>
+		<!-- icons -->
+		<panel name="infobar-icons" />
+		<ePixmap pixmap="buttons/key_left.png" position="1083,1028" size="38,38" alphatest="blend" />
+		<ePixmap pixmap="buttons/key_right.png" position="1121,1028" size="38,38" alphatest="blend" />
+		<eLabel text="Hold to Seek" position="1173,1025" size="237,38" font="Regular;30" valign="center" transparent="1" noWrap="1" foregroundColor="white" backgroundColor="button-bg" halign="left" />
+		<ePixmap pixmap="buttons/key_0.png" position="1497,1028" size="38,38" alphatest="blend" />
+		<eLabel text="Set Marker" position="1550,1025" size="237,38" font="Regular;30" valign="center" transparent="1" noWrap="1" foregroundColor="white" backgroundColor="button-bg" halign="left" />
+		<panel name="InfoButton" />
+	</screen>
+
+	<screen name="Seekbar" position="center,54" size="840,113" flags="wfNoBorder" backgroundColor="transparent">
+		<eLabel position="83,0" size="675,113" backgroundColor="blackglass" transparent="0" zPosition="-2" />
+		<ePixmap pixmap="o-backgrounds/seekbar-bg.png" position="0,0" size="840,113" alphatest="blend" zPosition="-1" />
+		<ePixmap pixmap="o-icons/seekbar-bg.png" position="center,center" size="405,12" alphatest="blend" zPosition="1" />
+		<!-- cursor starts at 145px from the left. and 15 pixels down. Progress bar must be 270 pixels long. Cannot be overwritten. Resize outer box and graphics accordingly. -->
+		<widget name="cursor" position="0,23" size="9,54" pixmap="o-icons/position-pointer.png" alphatest="blend" zPosition="2" />
+		<widget name="time" position="90,0" size="113,113" font="Regular;35" valign="center" halign="right" foregroundColor="white" backgroundColor="blackglass" transparent="1" zPosition="2" />
+		<widget source="session.CurrentService" render="Progress" position="218,50" size="405,12" pixmap="o-icons/seekbar.png" transparent="1" zPosition="2">
+			<convert type="ServicePosition">Position</convert>
+		</widget>
+		<widget source="session.CurrentService" render="PositionGauge" position="218,50" size="405,12" transparent="1" zPosition="3">
+			<convert type="ServicePosition">Gauge</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Label" position="e-203,0" size="113,113" font="Regular;35" valign="center" foregroundColor="white" backgroundColor="blackglass" transparent="1" zPosition="2">
+			<convert type="ServicePosition">Length</convert>
+		</widget>
+	</screen>
+</skin>
+
+

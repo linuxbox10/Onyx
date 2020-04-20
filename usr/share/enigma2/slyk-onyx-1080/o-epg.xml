@@ -1,0 +1,720 @@
+<skin>
+    <!--EPG with video picture in graphic-->
+    <!--
+    <screen name="GraphicalEPGPIG" position="0,0" size="1920,1080" backgroundColor="mid" flags="wfNoBorder">
+
+        <panel name="template1" />
+        <ePixmap pixmap="epg/TimeLineBG.png" position="0,272" size="1920,83" alphatest="blend" zPosition="1" />
+        <ePixmap pixmap="o-backgrounds/flare.png" position="296,258" size="375,29" alphatest="blend" zPosition="4" />
+
+        <panel name="h-separator-tr" />
+        <panel name="v-separator-tr" />
+
+        <widget source="Title" render="Label" position="15,272" size="450,52" valign="center" halign="center" font="Regular;30" transparent="1" foregroundColor="white" backgroundColor="topleft" zPosition="3" />
+
+        <eLabel text="EPG" position="15,675" size="450,291" halign="center" font="Regular;35" transparent="1" foregroundColor="white" backgroundColor="topleft" />
+
+        <widget source="Event" render="Label" position="527,32" size="905,39" font="Bold;30" foregroundColor="colour2" backgroundColor="topmid" noWrap="1" transparent="1">
+            <convert type="EventName">Name</convert>
+        </widget>
+        <widget source="Event" render="RunningText" options="movetype=running,startpoint=0,direction=top,steptime=80,repeat=0,always=0,oneshot=0,startdelay=6000,wrap" position="527,75" size="905,174" foregroundColor="white" backgroundColor="topmid" font="Regular;30" transparent="1">
+            <convert type="EventName">FullDescription</convert>
+        </widget>
+        <widget source="Service" render="Slyk18Picon" position="1500,38" size="150,90" alphatest="blend">
+            <convert type="ServiceName">Reference</convert>
+        </widget>
+        <panel position="1683,47" size="207,75">
+            <panel name="channel-icons" />
+        </panel>
+        <widget source="Event" render="Label" position="1500,137" size="390,36" font="Regular;30" foregroundColor="white" backgroundColor="topright" transparent="1">
+            <convert type="EventTime">Duration</convert>
+            <convert type="Slyk18ClockToText">Slyk18AsLength</convert>
+        </widget>
+        <widget source="Event" render="Label" position="1500,179" size="390,36" font="Regular;30" foregroundColor="white" backgroundColor="topright" transparent="1">
+            <convert type="EventTime">StartTime</convert>
+            <convert type="Slyk18ClockToText">Slyk18StartedAt</convert>
+        </widget>
+        <widget source="Event" render="Progress" pixmap="o-progressbars/progress-260-6.png" position="1500,234" size="390,9" backgroundColor="#00000000" borderWidth="0" transparent="0">
+            <convert type="EventTime">Progress</convert>
+        </widget>
+
+
+        <widget name="timeline_text" position="500,279" size="1421,36" TimelineFont="Regular;30" foregroundColor="white" backgroundColor="mid" borderWidth="0" transparent="1" itemHeight="36" zPosition="2" />
+
+        <widget name="timeline0" position="0,271" size="18,714" alphatest="blend" pixmap="epg/timeline-seperator2.png" zPosition="5" />
+        <widget name="timeline1" position="0,271" size="18,57" alphatest="blend" pixmap="epg/timeline-seperator.png" zPosition="2" />
+        <widget name="timeline2" position="0,271" size="18,57" alphatest="blend" pixmap="epg/timeline-seperator.png" zPosition="2" />
+        <widget name="timeline3" position="0,271" size="18,57" alphatest="blend" pixmap="epg/timeline-seperator.png" zPosition="2" />
+        <widget name="timeline4" position="0,271" size="18,57" alphatest="blend" pixmap="epg/timeline-seperator.png" zPosition="2" />
+        <widget name="timeline5" position="0,271" size="18,57" alphatest="blend" pixmap="epg/timeline-seperator.png" zPosition="2" />
+        <widget name="timeline_now" position="0,326" size="23,679" pixmap="epg/timeline-now.png" alphatest="blend" zPosition="2" />
+
+        <widget name="lab1" position="489,324" size="1431,681" font="Regular;35" halign="center" valign="center" foregroundColor="white" backgroundColor="mid" transparent="1" zPosition="1" />
+        <widget name="list" position="489,324" size="1431,681"
+                backgroundColor="mid"
+                ServiceFontGraphical="Regular;30"
+                EntryFontGraphical="Regular;30"
+                ServiceForegroundColor="white"
+                ServiceForegroundColorNow="white"
+                EntryForegroundColor="white"
+                EntryForegroundColorSelected="white"
+                EntryForegroundColorNow="white"
+                EntryForegroundColorNowSelected="white"
+                RecordForegroundColor="white"
+                RecordForegroundColorSelected="white"
+                ZapForegroundColor="white"
+                ZapForegroundColorSelected="white"
+                ServiceBackgroundColor="mid"
+                ServiceBackgroundColorNow="#13131b"
+                EntryBackgroundColor="#1a1a24"
+                EntryBackgroundColorSelected="#006fce"
+                EntryBackgroundColorNow="#2e2d3b"
+                EntryBackgroundColorNowSelected="#006fce"
+                RecordBackgroundColor="red"
+                RecordBackgroundColorSelected="#006fce"
+                EntryForegroundColorPast="notavailable"
+                EntryForegroundColorPastSelected="notavailable"
+                EntryBackgroundColorPast="#1a1a24"
+                EntryBackgroundColorPastSelected="#006fce"
+                ZapBackgroundColor="zapgreen"
+                ZapBackgroundColorSelected="#006fce"
+                ServiceBorderColor="#33333d"
+                ServiceBorderWidth="1"
+                ServiceNamePadding="15"
+                EntryBorderColor="#33333d"
+                EventBorderWidth="1"
+                EventNamePadding="15"
+                NumberOfRows="10"
+                transparent="1" />
+                
+        <widget name="bouquetlist" position="0,324" size="480,681" font="Regular;30" itemHeight="66" foregroundColor="white" foregroundColorSelected="white" backgroundColor="#1a1a24" backgroundColorSelected="#006fce" transparent="1" borderColor="#33333d" borderWidth="2" scrollbarMode="showNever" zPosition="6" />
+        <panel name="New-Buttons" />
+        <panel name="MenuButton" />
+        <panel name="InfoButton-pos2" />
+        <applet type="onLayoutFinish">
+self["bouquetlist"].bouquetNamePadding = 45
+        </applet>
+    </screen>
+    -->
+    
+        <screen name="GraphicalEPGPIG" position="0,0" size="1920,1080" backgroundColor="mid" flags="wfNoBorder">
+
+        <panel name="background" />
+	    <panel name="tv" />
+	    <panel name="date" />	
+	    <panel name="button-bg" />
+        <panel name="divider1" /> 	
+
+        <ePixmap pixmap="epg/TimeLineBG.png" position="0,326" size="1920,83" alphatest="blend" zPosition="1" />
+        <ePixmap pixmap="o-backgrounds/flare.png" position="296,258" size="375,29" alphatest="blend" zPosition="4" />
+
+        <panel name="h-separator-tr" />
+        <panel name="v-separator-tr" />
+
+        <!-- now name -->
+        <widget source="Event" render="Label" position="527,32" size="905,39" font="Bold;30" foregroundColor="colour2" backgroundColor="topmid" noWrap="1" transparent="1">
+            <convert type="EventName">Name</convert>
+        </widget>
+        <!-- now description -->
+        <widget source="Event" render="RunningText" options="movetype=running,startpoint=0,direction=top,steptime=80,repeat=0,always=0,oneshot=0,startdelay=6000,wrap" position="527,75" size="905,174" foregroundColor="white" backgroundColor="topmid" font="Regular;30" transparent="1">
+            <convert type="EventName">FullDescription</convert>
+        </widget>
+        <!-- picon -->
+        <widget source="Service" render="Slyk18Picon" position="1500,38" size="150,90" alphatest="blend">
+            <convert type="ServiceName">Reference</convert>
+        </widget>
+        <panel position="1683,47" size="207,75">
+            <panel name="channel-icons" />
+        </panel>
+        <!-- now duration -->
+        <widget source="Event" render="Label" position="1500,137" size="390,36" font="Regular;30" foregroundColor="white" backgroundColor="topright" transparent="1">
+            <convert type="EventTime">Duration</convert>
+            <convert type="Slyk18ClockToText">Slyk18AsLength</convert>
+        </widget>
+        <!-- now times -->
+        <widget source="Event" render="Label" position="1500,179" size="390,36" font="Regular;30" foregroundColor="white" backgroundColor="topright" transparent="1">
+            <convert type="EventTime">StartTime</convert>
+            <convert type="Slyk18ClockToText">Slyk18StartedAt</convert>
+        </widget>
+        <!-- progress bar -->
+        <widget source="Event" render="Progress" pixmap="o-progressbars/progress-260-6.png" position="1500,234" size="390,9" backgroundColor="#00000000" borderWidth="0" transparent="0">
+            <convert type="EventTime">Progress</convert>
+        </widget>
+
+        <!-- timeline times -->
+        <widget name="timeline_text" position="11,333" size="1909,36" TimelineFont="Regular;30" foregroundColor="white" backgroundColor="mid" borderWidth="0" transparent="1" itemHeight="36" zPosition="2" />
+        <!-- time line seperators -->
+        <widget name="timeline0" position="0,325" size="18,714" alphatest="blend" pixmap="epg/timeline-seperator2.png" zPosition="5" />
+        <widget name="timeline1" position="0,325" size="18,57" alphatest="blend" pixmap="epg/timeline-seperator.png" zPosition="2" />
+        <widget name="timeline2" position="0,325" size="18,57" alphatest="blend" pixmap="epg/timeline-seperator.png" zPosition="2" />
+        <widget name="timeline3" position="0,325" size="18,57" alphatest="blend" pixmap="epg/timeline-seperator.png" zPosition="2" />
+        <widget name="timeline4" position="0,325" size="18,57" alphatest="blend" pixmap="epg/timeline-seperator.png" zPosition="2" />
+        <widget name="timeline5" position="0,325" size="18,57" alphatest="blend" pixmap="epg/timeline-seperator.png" zPosition="2" />
+        <widget name="timeline_now" position="0,380" size="23,625" pixmap="epg/timeline-now.png" alphatest="blend" zPosition="2" />
+        <!-- loading epg text -->
+        <widget name="lab1" position="0,378" size="1920,627" font="Regular;35" halign="center" valign="center" foregroundColor="white" backgroundColor="mid" transparent="1" zPosition="1" />
+        <widget name="list" position="0,378" size="1920,627"
+                backgroundColor="mid"
+                ServiceFontGraphical="Regular;30"
+                EntryFontGraphical="Regular;30"
+                ServiceForegroundColor="white"
+                ServiceForegroundColorNow="white"
+                EntryForegroundColor="white"
+                EntryForegroundColorSelected="white"
+                EntryForegroundColorNow="white"
+                EntryForegroundColorNowSelected="white"
+                RecordForegroundColor="white"
+                RecordForegroundColorSelected="white"
+                ZapForegroundColor="white"
+                ZapForegroundColorSelected="white"
+                ServiceBackgroundColor="mid"
+                ServiceBackgroundColorNow="#13131b"
+                EntryBackgroundColor="#1a1a24"
+                EntryBackgroundColorSelected="#006fce"
+                EntryBackgroundColorNow="#2e2d3b"
+                EntryBackgroundColorNowSelected="#006fce"
+                RecordBackgroundColor="red"
+                RecordBackgroundColorSelected="#006fce"
+                EntryForegroundColorPast="notavailable"
+                EntryForegroundColorPastSelected="notavailable"
+                EntryBackgroundColorPast="#1a1a24"
+                EntryBackgroundColorPastSelected="#006fce"
+                ZapBackgroundColor="zapgreen"
+                ZapBackgroundColorSelected="#006fce"
+                ServiceBorderColor="#33333d"
+                ServiceBorderWidth="1"
+                ServiceNamePadding="15"
+                EntryBorderColor="#33333d"
+                EventBorderWidth="1"
+                EventNamePadding="15"
+                NumberOfRows="10"
+                transparent="1" />
+
+        <widget name="bouquetlist" position="0,324" size="480,681" font="Regular;30" itemHeight="66" foregroundColor="white" foregroundColorSelected="white" backgroundColor="#1a1a24" backgroundColorSelected="#006fce" transparent="1" borderColor="#33333d" borderWidth="2" scrollbarMode="showNever" zPosition="6" />
+        <panel name="New-Buttons" />
+        <panel name="MenuButton" />
+        <panel name="InfoButton-pos2" />
+
+        <widget name="tabsrow" position="489,272" size="1431,54" backgroundColor="transparent" transparent="1" />
+        <widget name="firsttab" position="0,0" size="0,0" font="Bold;30" foregroundColor="white" backgroundColor="#13131b" valign="center" halign="center" noWrap="1" transparent="0" zPosition="2" />
+        <widget name="guidebouquetlist"  position="0,0" size="0,0" font="Regular;30" foregroundColor="white" backgroundColor="mid" valign="center" halign="left" noWrap="1" transparent="1" zPosition="2" />
+
+        <applet type="onLayoutFinish">
+self["bouquetlist"].bouquetNamePadding = 45
+        </applet>
+    </screen>
+    
+    
+    
+    <screen name="GraphicalEPG" position="0,0" size="1920,1080" backgroundColor="mid" flags="wfNoBorder">
+        <panel name="template2" />
+        <!-- timeline background -->
+        <ePixmap pixmap="epg/TimeLineBG.png" position="0,0" size="1920,83" alphatest="blend" zPosition="1" />
+        <panel name="divider1" /> 	
+        <!-- timeline times -->
+        <widget name="timeline_text" position="11,9" size="1910,36" TimelineFont="Regular;30" foregroundColor="white" backgroundColor="mid" borderWidth="0" itemHeight="36" transparent="1" zPosition="2" />
+        <!-- time line seperators -->
+        <widget name="timeline0" position="0,0" size="18,1005" alphatest="blend" pixmap="epg/timeline-seperator2.png" zPosition="5" />
+        <widget name="timeline1" position="0,0" size="18,57" alphatest="blend" pixmap="epg/timeline-seperator.png" zPosition="2" />
+        <widget name="timeline2" position="0,0" size="18,57" alphatest="blend" pixmap="epg/timeline-seperator.png" zPosition="2" />
+        <widget name="timeline3" position="0,0" size="18,57" alphatest="blend" pixmap="epg/timeline-seperator.png" zPosition="2" />
+        <widget name="timeline4" position="0,0" size="18,57" alphatest="blend" pixmap="epg/timeline-seperator.png" zPosition="2" />
+        <widget name="timeline5" position="0,0" size="18,57" alphatest="blend" pixmap="epg/timeline-seperator.png" zPosition="2" />
+        <widget name="timeline_now" position="0,56" size="23,951" pixmap="epg/timeline-now.png" alphatest="blend" zPosition="2" />
+        <!-- loading epg text -->
+        <widget name="lab1" position="0,56" size="1920,950" font="Regular;35" halign="center" valign="center" foregroundColor="white" backgroundColor="mid" transparent="1" zPosition="1" />
+        <widget name="list" position="0,56" size="1920,950"
+                backgroundColor="mid"
+                ServiceFontGraphical="Regular;30"
+                EntryFontGraphical="Regular;30"
+                ServiceForegroundColor="white"
+                ServiceForegroundColorNow="white"
+                EntryForegroundColor="white"
+                EntryForegroundColorSelected="white"
+                EntryForegroundColorNow="white"
+                EntryForegroundColorNowSelected="white"
+                RecordForegroundColor="white"
+                RecordForegroundColorSelected="white"
+                ZapForegroundColor="white"
+                ZapForegroundColorSelected="white"
+                ServiceBackgroundColor="mid"
+                ServiceBackgroundColorNow="#13131b"
+                EntryBackgroundColor="#1a1a24"
+                EntryBackgroundColorSelected="#006fce"
+                EntryBackgroundColorNow="#2e2d3b"
+                EntryBackgroundColorNowSelected="#006fce"
+                RecordBackgroundColor="red"
+                RecordBackgroundColorSelected="#006fce"
+                ZapBackgroundColor="zapgreen"
+                ZapBackgroundColorSelected="#006fce"
+                ServiceBorderColor="#33333d"
+                ServiceBorderWidth="1"
+                ServiceNamePadding="15"
+                EntryBorderColor="#33333d"
+                EventBorderWidth="1"
+                EventNamePadding="15"
+                NumberOfRows="18"
+                EntryFontWrap="yes"
+                transparent="1" />
+        <widget name="bouquetlist" position="0,56" size="1920,950" font="Regular;30" itemHeight="66" foregroundColor="white" foregroundColorSelected="white" backgroundColor="#1a1a24" backgroundColorSelected="#006fce" transparent="1" borderColor="#33333d" borderWidth="2" scrollbarMode="showNever" zPosition="6" />
+        <panel name="New-Buttons" />
+        <panel name="MenuButton" />
+        <panel name="InfoButton-pos2" />
+        <applet type="onLayoutFinish">
+self["bouquetlist"].bouquetNamePadding = 45
+        </applet>
+    </screen>
+    
+    <screen name="GraphicalInfoBarEPG" position="0,0" size="1920,1080" backgroundColor="transparent" flags="wfNoBorder">
+        <!-- backgrounds -->
+        <eLabel position="0,732" size="1920,348" backgroundColor="blackglass" transparent="0" zPosition="-2" />
+        <ePixmap position="0,705" size="1920,375" pixmap="o-infobars/infobar1.png" alphatest="blend" zPosition="-1" />
+        
+        <eLabel position="0,741" size="1920,264" backgroundColor="#22222e" transparent="0" zPosition="1" />
+        
+        <!-- record icon -->
+        <widget render="Pixmap" pixmap="o-icons/record.png" source="session.RecordState" position="945,717" size="30,30" alphatest="blend" zPosition="6">
+            <convert type="ConditionalShowHide" />
+        </widget>
+        <ePixmap pixmap="epg/TimeLineBG.png" position="0,741" size="1920,83" alphatest="blend" zPosition="2" />
+        <!-- timeline times -->
+        <widget name="timeline_text" position="11,749" size="1910,36" TimelineFont="Regular;30" foregroundColor="white" backgroundColor="mid" borderWidth="0" transparent="1" itemHeight="36" zPosition="3" />
+        <widget name="timeline0" position="0,741" size="18,264" alphatest="blend" pixmap="epg/timeline-seperator2.png" zPosition="5" />
+        <widget name="timeline1" position="0,741" size="18,57" alphatest="blend" pixmap="epg/timeline-seperator.png" zPosition="3" />
+        <widget name="timeline2" position="0,741" size="18,57" alphatest="blend" pixmap="epg/timeline-seperator.png" zPosition="3" />
+        <widget name="timeline3" position="0,741" size="18,57" alphatest="blend" pixmap="epg/timeline-seperator.png" zPosition="3" />
+        <widget name="timeline4" position="0,741" size="18,57" alphatest="blend" pixmap="epg/timeline-seperator.png" zPosition="3" />
+        <widget name="timeline5" position="0,741" size="18,57" alphatest="blend" pixmap="epg/timeline-seperator.png" zPosition="3" />
+        <widget name="timeline_now" position="0,797" size="23,209" pixmap="epg/timeline-now.png" alphatest="blend" zPosition="3" />
+        <widget name="lab1" position="0,795" size="1920,210" font="Regular;30" halign="center" valign="center" foregroundColor="white" backgroundColor="blackglass" transparent="1" zPosition="2" />
+        <widget name="list"
+        position="0,795"
+        size="1920,210"
+        backgroundColor="mid"
+        ServiceFontInfobar="Regular;30"
+        EventFontInfobar="Regular;30"
+        ServiceForegroundColor="white"
+        ServiceForegroundColorNow="white"
+        EntryForegroundColor="white"
+        EntryForegroundColorSelected="white"
+        EntryForegroundColorNow="white"
+        EntryForegroundColorNowSelected="white"
+        RecordForegroundColor="white"
+        RecordForegroundColorSelected="white"
+        ZapForegroundColor="white"
+        ZapForegroundColorSelected="white"
+        ServiceBackgroundColor="mid"
+        ServiceBackgroundColorNow="#13131b"
+        EntryBackgroundColor="#1a1a24"
+        EntryBackgroundColorSelected="#006fce"
+         EntryBackgroundColorNow="#2e2d3b"
+         EntryBackgroundColorNowSelected="#006fce"
+         RecordBackgroundColor="red"
+         RecordBackgroundColorSelected="#006fce"
+         ZapBackgroundColor="zapgreen"
+         ZapBackgroundColorSelected="#006fce"
+         ServiceBorderColor="#33333d"
+         ServiceBorderWidth="1"
+         ServiceNamePadding="15"
+         EntryBorderColor="#33333d"
+         EventBorderWidth="1"
+         EventNamePadding="15"
+         EntryFontWrap="no"
+         NumberOfRows="4"
+         zPosition="2"
+         transparent="1" />
+         
+        <widget name="bouquetlist" position="0,795" size="375,210" font="Regular;30" itemHeight="53" foregroundColor="white" foregroundColorSelected="white" backgroundColor="#1a1a24" backgroundColorSelected="#006fce" transparent="1" borderColor="#33333d" borderWidth="2" scrollbarMode="showNever" zPosition="6" />
+        <panel name="date" />
+        <panel name="New-Buttons" />
+        <ePixmap pixmap="o-backgrounds/v-divider.png" position="809 ,1005" size="3,75" alphatest="blend" zPosition="3" />
+        <ePixmap pixmap="o-backgrounds/v-divider.png" position="1128,1005" size="3,75" alphatest="blend" zPosition="3" />
+        <ePixmap pixmap="o-backgrounds/v-divider.png" position="1767,1005" size="3,75" alphatest="blend" zPosition="3" />
+        <panel name="MenuButton" />
+        <panel name="InfoButton-pos2" />
+        <applet type="onLayoutFinish">
+self["bouquetlist"].bouquetNamePadding = 30
+        </applet>
+    </screen>
+    
+    <!-- graphical infobar - multi epg < > info -->
+    <screen name="InfoBarEventView" position="0,0" size="1920,303" backgroundColor="transparent" flags="wfNoBorder" zPosition="1">
+        <eLabel position="0,0" size="1920,273" backgroundColor="blackglass" transparent="0" zPosition="-2" />
+        <ePixmap position="0,0" size="1920,273" pixmap="o-infobars/infobar-top.png" alphatest="blend" zPosition="-1" />
+        <ePixmap position="0,273" size="1920,30" pixmap="o-infobars/infobar-shadow-top.png" alphatest="blend" zPosition="-1" />
+        <panel name="v-separator-tr" />
+        <!-- now name -->
+        <widget source="Event" render="Label" position="527,32" size="905,39" font="Bold;30" foregroundColor="colour2" backgroundColor="topmid" noWrap="1" transparent="1">
+            <convert type="EventName">Name</convert>
+        </widget>
+        <!-- now description -->
+        <widget source="Event" render="RunningText" options="movetype=running,startpoint=0,direction=top,steptime=80,repeat=0,always=0,oneshot=0,startdelay=6000,wrap" position="527,75" size="905,174" foregroundColor="white" backgroundColor="topmid" font="Regular;30" transparent="1">
+            <convert type="EventName">FullDescription</convert>
+        </widget>
+        <!-- picon -->
+        <widget source="Service" render="Slyk18Picon" position="1500,38" size="150,90" alphatest="blend">
+            <convert type="ServiceName">Reference</convert>
+        </widget>
+        <!-- now duration -->
+        <widget source="Event" render="Label" position="1500,137" size="390,36" font="Regular;30" foregroundColor="white" backgroundColor="topright" transparent="1">
+            <convert type="EventTime">Duration</convert>
+            <convert type="Slyk18ClockToText">Slyk18AsLength</convert>
+        </widget>
+        <!-- now times -->
+        <widget source="Event" render="Label" position="1500,179" size="390,36" font="Regular;30" foregroundColor="white" backgroundColor="topright" transparent="1">
+            <convert type="EventTime">StartTime</convert>
+            <convert type="Slyk18ClockToText">Slyk18StartedAt</convert>
+        </widget>
+        <!-- progress bar -->
+        <widget source="Event" render="Progress" pixmap="o-progressbars/progress-260-6.png" position="1500,234" size="390,9" backgroundColor="#00000000" borderWidth="0" transparent="0">
+            <convert type="EventTime">Progress</convert>
+        </widget>
+        <panel position="1683,47" size="207,75">
+            <panel name="channel-icons" />
+        </panel>
+    </screen>
+    
+    
+    <!-- epg - show bouquet on launch -->
+    <screen name="BouquetSelector" title="Select a bouquet" position="0,0" size="522,1080" backgroundColor="transparent" flags="wfNoBorder">
+        <ePixmap pixmap="o-backgrounds/bouquet.png" position="0,0" size="522,1080" alphatest="blend" zPosition="-1" />
+        <widget source="Title" render="Label" position="0,0" size="485,240" font="Regular;48" foregroundColor="white" backgroundColor="blackglass" valign="center" halign="center" transparent="1" />
+        <widget name="menu" textOffset="15,14" position="30,242" size="425,720" font="Regular;35" foregroundColor="white" backgroundColor="blackglass" foregroundColorSelected="white" backgroundColorSelected="blackglass" selectionPixmap="o-selectbars/select-283-48.png" backgroundPixmap="o-selectbars/blank.png" itemHeight="72" enableWrapAround="1" scrollbarMode="showNever" transparent="1" />
+    </screen>
+    
+    <!-- EpgSelection -->
+    <!-- https://github.com/openatv/enigma2/blob/master/lib/python/Screens/EpgSelection.py -->
+    <!-- epg single / EPGSearch-->
+    <screen name="EPGSelection" position="0,0" size="1920,1080" backgroundColor="mid" flags="wfNoBorder">
+        <panel name="template1" />
+        <panel name="title2" />
+        <!-- dividers -->
+        <panel name="h-separator-tr" />
+        <panel name="v-separator-tr" />
+        <!-- now name -->
+        <widget source="Event" render="Label" position="527,32" size="905,39" font="Bold;30" foregroundColor="colour2" backgroundColor="topmid" noWrap="1" transparent="1">
+            <convert type="EventName">Name</convert>
+        </widget>
+        <!-- now description -->
+        <widget source="Event" render="RunningText" options="movetype=running,startpoint=0,direction=top,steptime=80,repeat=0,always=0,oneshot=0,startdelay=6000,wrap" position="527,75" size="905,174" foregroundColor="white" backgroundColor="topmid" font="Regular;30" transparent="1">
+            <convert type="EventName">FullDescription</convert>
+        </widget>
+        <!-- picon -->
+        <widget source="Service" render="Slyk18Picon" position="1500,38" size="150,90" alphatest="blend">
+            <convert type="ServiceName">Reference</convert>
+        </widget>
+        <panel position="1683,47" size="207,75">
+            <panel name="channel-icons" />
+        </panel>
+        <!-- Duration -->
+        <widget source="Event" render="Label" position="1500,137" size="390,36" font="Regular;30" foregroundColor="white" backgroundColor="topright" transparent="1">
+            <convert type="EventTime">Duration</convert>
+            <convert type="Slyk18ClockToText">Slyk18AsLength</convert>
+        </widget>
+        <!-- Start time -->
+        <widget source="Event" render="Label" position="1500,179" size="390,36" font="Regular;30" foregroundColor="white" backgroundColor="topright" transparent="1">
+            <convert type="EventTime">StartTime</convert>
+            <convert type="Slyk18ClockToText">Slyk18StartedAt</convert>
+        </widget>
+        <!-- progress bar -->
+        <widget source="Event" render="Progress" pixmap="o-progressbars/progress-260-6.png" position="1500,234" size="390,9" backgroundColor="#00000000" borderWidth="0" transparent="0">
+            <convert type="EventTime">Progress</convert>
+        </widget>
+        <widget name="list" position="527,324" size="1364,681" EventFontSingle="Regular;30" foregroundColor="white" foregroundColorSelected="white" backgroundColor="mid" backgroundColorSelected="bg-selected-text" transparent="1" enableWrapAround="1" scrollbarMode="showOnDemand" />
+        <panel name="New-Buttons" />
+        <panel name="MenuButton" />
+        <panel name="InfoButton-pos2" />
+        <applet type="onLayoutFinish">
+self["list"].instance.setItemHeight(66)
+        </applet>
+    </screen>
+    
+    <screen name="EPGSelectionMulti" position="0,0" size="1920,1080" backgroundColor="mid" flags="wfNoBorder">
+        <panel name="template1" />
+        <ePixmap pixmap="epg/TimeLineBG.png" position="0,272" size="1920,83" alphatest="blend" zPosition="1" />
+        <ePixmap pixmap="o-backgrounds/flare.png" position="296,258" size="375,29" alphatest="blend" zPosition="4" />
+
+        <ePixmap pixmap="o-backgrounds/v-divider.png" position="815,271" size="3,57" alphatest="blend" zPosition="3" />
+        <ePixmap pixmap="o-backgrounds/v-divider.png" position="1142,271" size="3,57" alphatest="blend" zPosition="3" />
+        <ePixmap pixmap="o-backgrounds/v-divider.png" position="1469,271" size="3,57" alphatest="blend" zPosition="3" />
+
+        <panel name="title2" />
+        <panel name="h-separator-tr" />
+        <panel name="v-separator-tr" />
+        <!-- now name -->
+        <widget source="Event" render="Label" position="527,32" size="905,39" font="Bold;30" foregroundColor="colour2" backgroundColor="topmid" noWrap="1" transparent="1">
+            <convert type="EventName">Name</convert>
+        </widget>
+        <!-- now description -->
+        <widget source="Event" render="RunningText" options="movetype=running,startpoint=0,direction=top,steptime=80,repeat=0,always=0,oneshot=0,startdelay=6000,wrap" position="527,75" size="905,174" foregroundColor="white" backgroundColor="topmid" font="Regular;30" transparent="1">
+            <convert type="EventName">FullDescription</convert>
+        </widget>
+        <!-- picon -->
+        <widget source="Service" render="Slyk18Picon" position="1500,38" size="150,90" alphatest="blend">
+            <convert type="ServiceName">Reference</convert>
+        </widget>
+        <panel position="1683,47" size="207,75">
+            <panel name="channel-icons" />
+        </panel>
+        <!-- Duration -->
+        <widget source="Event" render="Label" position="1500,137" size="390,36" font="Regular;30" foregroundColor="white" backgroundColor="topright" transparent="1">
+            <convert type="EventTime">Duration</convert>
+            <convert type="Slyk18ClockToText">Slyk18AsLength</convert>
+        </widget>
+        <!-- Start time -->
+        <widget source="Event" render="Label" position="1500,179" size="390,36" font="Regular;30" foregroundColor="white" backgroundColor="topright" transparent="1">
+            <convert type="EventTime">StartTime</convert>
+            <convert type="Slyk18ClockToText">Slyk18StartedAt</convert>
+        </widget>
+        <!-- progress bar -->
+        <widget source="Event" render="Progress" pixmap="o-progressbars/progress-260-6.png" position="1500,234" size="390,9" backgroundColor="#00000000" borderWidth="0" transparent="0">
+            <convert type="EventTime">Progress</convert>
+        </widget>
+
+        <widget name="list" position="527,339" size="1355,651"
+                foregroundColor="white"
+                foregroundColorSelected="white"
+                backgroundColor="mid"
+                backgroundColorSelected="bg-selected-text"
+                EventFontMulti="Regular;30"
+                transparent="1"
+                enableWrapAround="1"
+                scrollbarMode="showOnDemand" />
+                
+        <widget name="bouquetlist" position="0,324" size="480,681" font="Regular;30" itemHeight="66" foregroundColor="white" foregroundColorSelected="white" backgroundColor="#1a1a24" backgroundColorSelected="#006fce" transparent="1" borderColor="#33333d" borderWidth="2" scrollbarMode="showNever" zPosition="4" />
+        
+	<widget name="now_button_sel" position="489,272" size="327,54" pixmap="o-selectbars/multi-epg.png" zPosition="2" />
+        <widget name="next_button_sel" position="816,272" size="327,54" pixmap="o-selectbars/multi-epg.png" zPosition="2" />
+        <widget name="more_button_sel" position="1143,272" size="327,54" pixmap="o-selectbars/multi-epg.png" zPosition="2" />
+        
+        <widget name="now_text" position="489,279" size="327,54" text="Now" font="Bold;30" halign="center" foregroundColor="white" backgroundColor="mid" transparent="1" zPosition="3" />
+         <widget name="next_text" position="816,279" size="327,54" text="Next" font="Bold;30" halign="center" foregroundColor="white" backgroundColor="mid" transparent="1" zPosition="3" />
+        <widget name="more_text" position="1143,279" size="327,54" text="More" font="Bold;30" halign="center" foregroundColor="white" backgroundColor="mid" transparent="1" zPosition="3" />
+        
+<widget name="date" position="15,279" size="450,291" halign="center" font="Regular;30" foregroundColor="white" backgroundColor="topleft" transparent="1" zPosition="3" />
+
+        <panel name="New-Buttons" />
+        <panel name="MenuButton" />
+        <panel name="InfoButton-pos2" />
+        <applet type="onLayoutFinish">from enigma import eListboxPythonMultiContent, gFont
+self["list"].l.setFont(0, gFont("Regular", 30))	
+self["list"].l.setFont(1, gFont("Regular", 30))	
+self["list"].l.setItemHeight(45)	
+self["bouquetlist"].bouquetNamePadding = 30
+        </applet>
+    </screen>
+    
+    <!-- epg tabs hack - red button popup -->
+    <screen name="OptionDialog" position="center,center" size="360,195" backgroundColor="transparent" flags="wfNoBorder" zPosition="10">
+        <ePixmap pixmap="o-backgrounds/optiondialog.png" position="0,0" size="360,195" alphatest="blend" zPosition="-1" />
+        <widget name="text" position="0,0" size="0,0" font="Regular;33" />
+        <widget name="list" position="8,8" size="345,180" font="Regular;32" foregroundColor="white" backgroundColor="bg-selected" backgroundColorSelected="bg-selected" selectionPixmap="o-selectbars/select-230-30.png" itemHeight="45" enableWrapAround="1" scrollbarMode="showNever" transparent="1" />
+    </screen>
+    
+    <screen name="EPGvertical" position="0,0" size="1920,1080" backgroundColor="mid" flags="wfNoBorder" title="Vertical Program Guide">
+        <panel name="template1" />
+        <ePixmap pixmap="epg/TimeLineBG.png" position="0,272" size="1920,54" alphatest="blend" zPosition="1" />
+        <ePixmap pixmap="o-backgrounds/flare.png" position="296,258" size="375,29" alphatest="blend" zPosition="4" />
+        
+        <panel name="h-separator-tr" />
+        <panel name="v-separator-tr" />
+        
+        <widget source="Title" render="Label" position="15,272" size="450,52" valign="center" halign="center" font="Regular;30" transparent="1" foregroundColor="white" backgroundColor="topleft" zPosition="3" />
+        
+        <eLabel text="Vertical EPG" position="15,675" size="450,291" halign="center" font="Regular;35" transparent="1" foregroundColor="white" backgroundColor="topleft" />
+
+
+        <!-- now name -->
+        <widget source="Event" render="Label" position="527,32" size="905,39" font="Bold;30" foregroundColor="colour2" backgroundColor="topmid" noWrap="1" transparent="1">
+            <convert type="EventName">Name</convert>
+        </widget>
+        <!-- now description -->
+        <widget source="Event" render="RunningText" options="movetype=running,startpoint=0,direction=top,steptime=80,repeat=0,always=0,oneshot=0,startdelay=6000,wrap" position="527,75" size="905,174" foregroundColor="white" backgroundColor="topmid" font="Regular;30" transparent="1">
+            <convert type="EventName">FullDescription</convert>
+        </widget>
+        <!-- picon -->
+        <widget source="Service" render="Slyk18Picon" position="1500,38" size="150,90" alphatest="blend">
+            <convert type="ServiceName">Reference</convert>
+        </widget>
+        <panel position="1683,47" size="207,75">
+            <panel name="channel-icons" />
+        </panel>
+        <!-- now duration -->
+        <widget source="Event" render="Label" position="1500,137" size="390,36" font="Regular;30" foregroundColor="white" backgroundColor="topright" transparent="1">
+            <convert type="EventTime">Duration</convert>
+            <convert type="Slyk18ClockToText">Slyk18AsLength</convert>
+        </widget>
+        <!-- now times -->
+        <widget source="Event" render="Label" position="1500,179" size="390,36" font="Regular;30" foregroundColor="white" backgroundColor="topright" transparent="1">
+            <convert type="EventTime">StartTime</convert>
+            <convert type="Slyk18ClockToText">Slyk18StartedAt</convert>
+        </widget>
+        <!-- progress bar -->
+        <widget source="Event" render="Progress" pixmap="o-progressbars/progress-260-6.png" position="1500,234" size="390,9" backgroundColor="#00000000" borderWidth="0" transparent="0">
+            <convert type="EventTime">Progress</convert>
+        </widget>
+
+        <widget source="piconCh1" render="Slyk18Picon" position="505,284" size="50,30" zPosition="3" alphatest="blend">
+            <convert type="ServiceName">Reference</convert>
+        </widget>
+        <widget source="piconCh2" render="Slyk18Picon" position="791,284" size="50,30" zPosition="3" alphatest="blend">
+            <convert type="ServiceName">Reference</convert>
+        </widget>
+        <widget source="piconCh3" render="Slyk18Picon" position="1077,284" size="50,30" zPosition="3" alphatest="blend">
+            <convert type="ServiceName">Reference</convert>
+        </widget>
+        <widget source="piconCh4" render="Slyk18Picon" position="1363,284" size="50,30" zPosition="3" alphatest="blend">
+            <convert type="ServiceName">Reference</convert>
+        </widget>
+        <widget source="piconCh5" render="Slyk18Picon" position="1649,284" size="50,30" zPosition="3" alphatest="blend">
+            <convert type="ServiceName">Reference</convert>
+        </widget>
+        
+        <widget name="currCh1" position="570,272" size="206,52" font="Regular;24" foregroundColor="white" backgroundColor="mid" valign="center" halign="left" transparent="1" zPosition="3" />
+        <widget name="currCh2" position="856,272" size="206,52" font="Regular;24" foregroundColor="white" backgroundColor="mid" valign="center" halign="left" transparent="1" zPosition="3" />
+        <widget name="currCh3" position="1142,272" size="206,52" font="Regular;24" foregroundColor="white" backgroundColor="mid" valign="center" halign="left" transparent="1" zPosition="3" />
+        <widget name="currCh4" position="1428,272" size="206,52" font="Regular;24" foregroundColor="white" backgroundColor="mid" valign="center" halign="left" transparent="1" zPosition="3" />
+        <widget name="currCh5" position="1714,272" size="206,52" font="Regular;24" foregroundColor="white" backgroundColor="mid" valign="center" halign="left" transparent="1" zPosition="3" />
+
+        <widget name="Active1" position="490,272" size="286,52" backgroundColor="blackglass" transparent="1" zPosition="2" />
+        <widget name="Active2" position="776,272" size="286,52" backgroundColor="blackglass" transparent="1" zPosition="2" />
+        <widget name="Active3" position="1062,272" size="286,52" backgroundColor="blackglass" transparent="1" zPosition="2" />
+        <widget name="Active4" position="1348,272" size="286,52" backgroundColor="blackglass" transparent="1" zPosition="2" />
+        <widget name="Active5" position="1634,272" size="286,52" backgroundColor="blackglass" transparent="1" zPosition="2" />
+
+        <!-- required for channel list scrolling -->
+        <widget enableWrapAround="0" itemHeight="20" font="Regular;0" name="list" position="0,0" size="0,100" zPosition="-10" />
+
+        <widget name="list1" position="490,324" size="286,681"
+                scrollbarMode="showNever"
+                TimeForegroundColor="colour2"
+                TimeBackgroundColor="#1a1a24"
+                PrimeTimeForegroundColor="white"
+                PrimeTimeBackgroundColor="#1a1a24"
+                TimeFontVertical="Regular;24"
+                EntryForegroundColor="white"
+                EntryForegroundColorSelected="white"
+                EntryForegroundColorNow="white"
+                EntryForegroundColorNowSelected="white"
+                EntryBackgroundColor="#1a1a24"
+                EntryBackgroundColorSelected="#006fce"
+                EntryBackgroundColorNow="#2e2d3b"
+                EntryBackgroundColorNowSelected="#006fce"
+                EntryBorderColor="#33333d"
+                EventBorderWidth="1"
+                EventFontVertical="Regular;24"
+                EntryForegroundColorPast="notavailable"
+                EntryForegroundColorPastSelected="notavailable"
+                EntryBackgroundColorPast="#1a1a24"
+                EntryBackgroundColorPastSelected="#006fce"
+                transparent="1" />
+                
+        <widget name="list2" position="776,324" size="286,681"
+                scrollbarMode="showNever"
+                TimeForegroundColor="colour2"
+                TimeBackgroundColor="#1a1a24"
+                PrimeTimeForegroundColor="white"
+                PrimeTimeBackgroundColor="#1a1a24"
+                TimeFontVertical="Regular;24"
+                EntryForegroundColor="white"
+                EntryForegroundColorSelected="white"
+                EntryForegroundColorNow="white"
+                EntryForegroundColorNowSelected="white"
+                EntryBackgroundColor="#1a1a24"
+                EntryBackgroundColorSelected="#006fce"
+                EntryBackgroundColorNow="#2e2d3b"
+                EntryBackgroundColorNowSelected="#006fce"
+                EntryBorderColor="#33333d"
+                EventBorderWidth="1"
+                EventFontVertical="Regular;24"
+                EntryForegroundColorPast="notavailable"
+                EntryForegroundColorPastSelected="notavailable"
+                EntryBackgroundColorPast="#1a1a24"
+                EntryBackgroundColorPastSelected="#006fce"
+                transparent="1" />
+
+        <widget name="list3" position="1062,324" size="286,681"
+                scrollbarMode="showNever"
+                TimeForegroundColor="colour2"
+                TimeBackgroundColor="#1a1a24"
+                PrimeTimeForegroundColor="white"
+                PrimeTimeBackgroundColor="#1a1a24"
+                TimeFontVertical="Regular;24"
+                EntryForegroundColor="white"
+                EntryForegroundColorSelected="white"
+                EntryForegroundColorNow="white"
+                EntryForegroundColorNowSelected="white"
+                EntryBackgroundColor="#1a1a24"
+                EntryBackgroundColorSelected="#006fce"
+                EntryBackgroundColorNow="#2e2d3b"
+                EntryBackgroundColorNowSelected="#006fce"
+                EntryBorderColor="#33333d"
+                EventBorderWidth="1"
+                EventFontVertical="Regular;24"
+                EntryForegroundColorPast="notavailable"
+                EntryForegroundColorPastSelected="notavailable"
+                EntryBackgroundColorPast="#1a1a24"
+                EntryBackgroundColorPastSelected="#006fce"
+                transparent="1" />
+
+        <widget name="list4" position="1348,324" size="286,681"
+                scrollbarMode="showNever"
+                TimeForegroundColor="colour2"
+                TimeBackgroundColor="#1a1a24"
+                PrimeTimeForegroundColor="white"
+                PrimeTimeBackgroundColor="#1a1a24"
+                TimeFontVertical="Regular;24"
+                EntryForegroundColor="white"
+                EntryForegroundColorSelected="white"
+                EntryForegroundColorNow="white"
+                EntryForegroundColorNowSelected="white"
+                EntryBackgroundColor="#1a1a24"
+                EntryBackgroundColorSelected="#006fce"
+                EntryBackgroundColorNow="#2e2d3b"
+                EntryBackgroundColorNowSelected="#006fce"
+                EntryBorderColor="#33333d"
+                EventBorderWidth="1"
+                EventFontVertical="Regular;24"
+                EntryForegroundColorPast="notavailable"
+                EntryForegroundColorPastSelected="notavailable"
+                EntryBackgroundColorPast="#1a1a24"
+                EntryBackgroundColorPastSelected="#006fce"
+                transparent="1" />
+
+        <widget name="list5" position="1634,324" size="286,681"
+                scrollbarMode="showNever"
+                TimeForegroundColor="colour2"
+                TimeBackgroundColor="#1a1a24"
+                PrimeTimeForegroundColor="white"
+                PrimeTimeBackgroundColor="#1a1a24"
+                TimeFontVertical="Regular;24"
+                EntryForegroundColor="white"
+                EntryForegroundColorSelected="white"
+                EntryForegroundColorNow="white"
+                EntryForegroundColorNowSelected="white"
+                EntryBackgroundColor="#1a1a24"
+                EntryBackgroundColorSelected="#006fce"
+                EntryBackgroundColorNow="#2e2d3b"
+                EntryBackgroundColorNowSelected="#006fce"
+                EntryBorderColor="#33333d"
+                EventBorderWidth="1"
+                EventFontVertical="Regular;24"
+                EntryForegroundColorPast="notavailable"
+                EntryForegroundColorPastSelected="notavailable"
+                EntryBackgroundColorPast="#1a1a24"
+                EntryBackgroundColorPastSelected="#006fce"
+                transparent="1" />
+
+        <widget name="bouquetlist" position="0,324" size="480,681" font="Regular;30" itemHeight="66" foregroundColor="white" foregroundColorSelected="white" backgroundColor="#1a1a24" backgroundColorSelected="#006fce" transparent="1" borderColor="#33333d" borderWidth="2" scrollbarMode="showNever" zPosition="6" />
+        <panel name="New-Buttons" />
+        <panel name="MenuButton" />
+        <panel name="InfoButton-pos2" />
+        <applet type="onLayoutFinish">
+self["bouquetlist"].bouquetNamePadding = 45
+        </applet>
+    </screen>
+    
+    <screen name="EPGverticalPIG" position="0,0" size="1920,1080" backgroundColor="mid" flags="wfNoBorder" title="Vertical Program Guide">
+      <panel name="EPGvertical" />
+    </screen>
+</skin>

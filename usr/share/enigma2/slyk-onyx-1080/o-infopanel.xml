@@ -1,0 +1,213 @@
+
+<skin>
+	<!-- Info Panel Menus -->
+	<screen name="Infopanel" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="template1" />
+		<panel name="h-separator-tr" />
+		<panel name="title2" />
+		<widget name="label1" position="15,735" size="450,291" halign="center" font="Regular;24" transparent="1" foregroundColor="white" backgroundColor="topleft" />
+		<widget name="Mlist" position="527,321" size="954,645" foregroundColor="white" backgroundColor="mid" backgroundColorSelected="bg-selected" selectionPixmap="o-selectbars/select-636-48.png" backgroundPixmap="o-selectbars/blank.png" itemHeight="72" font="Regular;35" transparent="1" enableWrapAround="1" scrollbarMode="showNever" zPosition="3" />
+		<panel name="whatson-top" />
+		<panel name="whatson-right" />
+	</screen>
+	
+	<!-- ##MountManager## -->
+	<!-- /lib/python/Plugins/Extensions/Infopanel/MountManager.py -->
+	<!-- MountManager -->
+	<screen name="HddMount" position="0,0" size="1920,1080" title="Mount Manager" flags="wfNoBorder" backgroundColor="mid">
+		<panel name="template1" />
+		<panel name="h-separator-tr" />
+		<panel name="title2" />
+		<ePixmap pixmap="o-backgrounds/setup-100row-bg.png" alphatest="blend" position="527,344" size="942,600" zPosition="1" />
+		<widget source="list" render="Listbox" position="527,345" size="942,600" foregroundColor="white" backgroundColor="mid" foregroundColorSelected="white" backgroundColorSelected="bg-selected" selectionPixmap="o-selectbars/select-628-100.png" backgroundPixmap="o-selectbars/blank.png" itemHeight="150" scrollbarMode="showNever" transparent="1" zPosition="2">
+			<convert type="TemplatedMultiContent">{"template": [
+				 MultiContentEntryText(pos = (90, 18), size = (837, 38), font=0, text = 0),
+				 MultiContentEntryText(pos = (90, 57), size = (837, 75), font=1, flags = RT_VALIGN_TOP, text = 1),
+				 MultiContentEntryPixmapAlphaBlend(pos = (15, 23), size = (60, 60), png = 2),
+				],
+				"fonts": [gFont("Bold",30),gFont("Regular",30)],
+				"itemHeight": 150
+				}</convert>
+		</widget>
+		<widget name="lab1" zPosition="2" position="527,345" size="942,600" font="Regular;35" backgroundColor="mid" foregroundColor="white" valign="center" halign="center" transparent="1" />
+		<panel name="New-Buttons" />
+	</screen>
+	
+	<!-- hhdmounts - setup mounts -->
+	<screen name="DevicePanelConf" position="0,0" size="1920,1080" backgroundColor="mid" flags="wfNoBorder" zPosition="4" title="UserManager">
+		<panel name="Setup-Default" />
+		<widget name="Linconn" position="527,321" size="954,645" font="Regular;30" foregroundColor="white" backgroundColor="mid" transparent="1" />
+	</screen>
+	
+	<!-- /lib/python/Screens/CronTimer.py -->
+	<screen name="CronTimers" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="mid">
+		<panel name="template1" />
+		<panel name="h-separator-tr" />
+		<panel name="title2" />
+		<panel name="active-block" />
+		<widget source="list" render="Listbox" position="527,537" size="942,432" foregroundColor="white" backgroundColor="mid" foregroundColorSelected="white" backgroundColorSelected="bg-selected" selectionPixmap="o-selectbars/select-628-48.png" backgroundPixmap="o-selectbars/blank.png" itemHeight="72" scrollbarMode="showNever" transparent="1" zPosition="2">
+			<convert type="TemplatedMultiContent">{"template": [
+				 MultiContentEntryText(pos = (15, 12), size = (912, 45), font=0, text = 0),
+				],
+				"fonts": [gFont("Regular",35)],
+				"itemHeight": 72
+				}</convert>
+		</widget>
+		<panel name="New-Buttons" />
+	</screen>
+	
+	<!-- ##ScriptRunner## / JobManager -->
+	<!-- /lib/python/Plugins/Extensions/Infopanel/ScriptRunner.py -->
+	<screen name="ScriptRunner" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="mid">
+		<panel name="template1" />
+		<panel name="h-separator-tr" />
+		<panel name="title2" />
+		<widget name="lab1" position="1518,341" size="372,510" font="Regular;27" foregroundColor="colour2" backgroundColor="midright" transparent="1" />
+		<widget name="list" textOffset="15,12" position="527,321" size="942,645" foregroundColor="white" backgroundColor="mid" backgroundColorSelected="bg-selected" selectionPixmap="o-selectbars/select-628-48.png" backgroundPixmap="o-selectbars/blank.png" itemHeight="72" font="Regular;35" transparent="1" enableWrapAround="1" scrollbarMode="showNever" zPosition="3" />
+		<panel name="New-Buttons" />
+		<ePixmap pixmap="o-backgrounds/menu-gradient.png" position="527,900" size="954,75" alphatest="blend" zPosition="7" />
+		<applet type="onLayoutFinish">self["list"].instance.setItemHeight(72)</applet>
+	</screen>
+	
+	<!-- ##SwapManager## -->
+	<!-- /lib/python/Plugins/Extensions/Infopanel/SwapManager.py -->
+	<screen name="Swap" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="mid">
+		<panel name="template1" />
+		<panel name="h-separator-tr" />
+		<panel name="title2" />
+		<ePixmap pixmap="o-backgrounds/2box.png" alphatest="blend" position="525,329" size="947,168" zPosition="1" />
+		<widget name="lab1" position="557,360" size="891,83" font="Regular;35" foregroundColor="white" backgroundColor="mid" transparent="1" zPosition="2" />
+		<widget name="autostart_off" position="1391,357" size="48,48" pixmap="icons/lock_off.png" alphatest="blend" zPosition="2" />
+		<widget name="autostart_on" position="1391,357" size="48,48" pixmap="icons/lock_on.png" alphatest="blend" zPosition="2" />
+		<widget name="lab4" position="557,417" size="441,83" font="Regular;35" foregroundColor="white" backgroundColor="mid" transparent="1" zPosition="2" />
+		<widget name="inactive" position="998,417" size="441,83" font="Regular;35" backgroundColor="mid" halign="right" transparent="1" zPosition="2" />
+		<widget name="active" position="998,417" size="441,83" font="Regular;35" backgroundColor="mid" halign="right" transparent="1" zPosition="2" />
+		<ePixmap pixmap="o-backgrounds/setup-bg.png" alphatest="blend" position="525,561" size="942,171" zPosition="1" />
+		<widget name="lab2" position="527,563" size="471,83" font="Regular;35" valign="center" backgroundColor="mid" transparent="1" />
+		<widget name="labplace" position="998,563" size="471,83" font="Regular;35" valign="center" halign="right" backgroundColor="mid" transparent="1" />
+		<widget name="lab3" position="527,645" size="471,83" font="Regular;35" valign="center" backgroundColor="mid" transparent="1" />
+		<widget name="labsize" position="998,645" size="471,83" font="Regular;35" valign="center" halign="right" backgroundColor="mid" transparent="1" />
+		<panel name="New-Buttons" />
+	</screen>
+	
+	<!-- ##QuickMenu ## -->
+	<!-- /lib/python/Plugins/Extensions/Infopanel/QuickMenu.py -->
+	<screen name="QuickMenu" position="0,0" size="1920,1080" backgroundColor="mid" flags="wfNoBorder">
+		<panel name="template1" />
+		<panel name="h-separator-tr" />
+		<panel name="title2" />
+		<ePixmap pixmap="o-backgrounds/v-divider.png" alphatest="blend" position="1190,293" size="3,713" zPosition="12" />
+		<widget name="list" position="527,323" size="626,719" font="Regular;35" foregroundColor="white" backgroundColor="mid" foregroundColorSelected="white" backgroundColorSelected="bg-selected" selectionPixmap="o-selectbars/select-417-48.png" backgroundPixmap="o-selectbars/blank.png" itemHeight="72" enableWrapAround="1" scrollbarMode="showNever" transparent="1" zPosition="2" />
+		<widget name="sublist" position="1227,323" size="626,719" font="Regular;35" foregroundColor="white" backgroundColor="mid" foregroundColorSelected="white" backgroundColorSelected="bg-selected" selectionPixmap="o-selectbars/select-417-48.png" backgroundPixmap="o-selectbars/blank.png" itemHeight="72" enableWrapAround="1" scrollbarMode="showNever" transparent="1" zPosition="2" />
+		<widget name="description" position="527,32" size="905,174" foregroundColor="white" backgroundColor="topmid" font="Regular;30" transparent="1" zPosition="3" />
+		<panel name="New-Buttons" />
+	</screen>
+	
+	<screen name="QuickMenuDevices" position="0,0" size="1920,1080" title="Devices" flags="wfNoBorder" backgroundColor="mid">
+		<panel name="template1" />
+		<panel name="h-separator-tr" />
+		<panel name="title2" />
+		<ePixmap pixmap="o-backgrounds/setup-100row-bg.png" alphatest="blend" position="527,344" size="942,600" zPosition="1" />
+		<widget source="devicelist" render="Listbox" position="527,345" size="942,600" foregroundColor="white" backgroundColor="mid" foregroundColorSelected="white" backgroundColorSelected="bg-selected" selectionPixmap="o-selectbars/select-628-100.png" backgroundPixmap="o-selectbars/blank.png" itemHeight="150" scrollbarMode="showNever" transparent="1" zPosition="2">
+			<convert type="TemplatedMultiContent">{"template": [
+				 MultiContentEntryText(pos = (90, 18), size = (837, 38), font=0, text = 0),
+				 MultiContentEntryText(pos = (90, 57), size = (837, 75), font=1, flags = RT_VALIGN_TOP, text = 1),
+				 MultiContentEntryPixmapAlphaBlend(pos = (15, 23), size = (60, 60), png = 2),
+				],
+				"fonts": [gFont("Bold",30),gFont("Regular",30)],
+				"itemHeight": 150
+				}</convert>
+		</widget>
+		<widget name="lab1" zPosition="2" position="527,345" size="942,600" font="Regular;35" backgroundColor="mid" foregroundColor="white" valign="center" halign="center" transparent="1" />
+	</screen>
+	
+	<!-- ##Quick Menu RestartNetwork## -->
+	<!-- /lib/python/Plugins/Extensions/Infopanel/RestartNetwork.py -->
+	<screen name="RestartNetwork" position="center,center" size="900,150" title="Restart Network Adapter">
+		<widget name="label" position="15,45" size="750,75" halign="center" font="Regular;35" transparent="1" foregroundColor="white" backgroundColor="messageboxbg" />
+	</screen>
+	
+	<!-- ##SoftcamPanel## -->
+	<!-- /lib/python/Plugins/Extensions/Infopanel/SoftcamPanel.py -->
+	<screen name="SoftcamPanel" position="0,0" size="1920,1080" title="Softcam Panel" flags="wfNoBorder" backgroundColor="mid">
+		<panel name="template1" />
+		<panel name="h-separator-tr" />
+		<panel name="title2" />
+		<ePixmap pixmap="o-backgrounds/2box.png" position="525,62" size="947,168" alphatest="blend" zPosition="1" />
+		<widget name="actifcam" position="557,93" size="882,83" font="Regular;35" foregroundColor="white" backgroundColor="topmid" transparent="1" zPosition="2" />
+		<widget name="actifcam2" position="557,150" size="882,83" font="Regular;35" foregroundColor="white" backgroundColor="topmid" transparent="1" zPosition="2" />
+		<ePixmap pixmap="o-backgrounds/setup-48-bg.png" alphatest="blend" position="527,329" size="942,150" zPosition="1" />
+		<widget name="config" textOffset="15,0" position="527,330" size="942,165" font="Regular;35" secondfont="Regular;35" foregroundColor="white" foregroundColorSelected="white" backgroundColorSelected="bg-selected" selectionPixmap="o-selectbars/select-628-48.png" backgroundPixmap="o-selectbars/blank.png" itemHeight="72" scrollbarMode="showNever" transparent="1" zPosition="2" />
+		<widget name="ecminfo" position="557,540" size="912,413" font="Regular;30" foregroundColor="white" backgroundColor="mid" transparent="1" />
+		<panel name="New-Buttons" />
+	</screen>
+	
+	<!-- info panel SoftcamPanel Install-->
+	<screen name="ShowSoftcamPackages" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="mid" title="Install Softcams">
+		<panel name="template1" />
+		<panel name="h-separator-tr" />
+		<widget source="list" render="Listbox" position="527,321" size="942,648" font="Regular;35" foregroundColor="white" backgroundColor="mid" foregroundColorSelected="white" backgroundColorSelected="bg-selected" selectionPixmap="o-selectbars/select-628-48-full.png" backgroundPixmap="o-selectbars/blank.png" itemHeight="72" enableWrapAround="1" scrollbarMode="showNever" transparent="1" zPosition="2">
+			<convert type="TemplatedMultiContent">{"template": [
+	                	                MultiContentEntryPixmapAlphaBlend(pos = (15, 3), size = (60, 60), png = 4), # index 4 is the status pixmap
+						MultiContentEntryText(pos = (90, 2), size = (815, 42), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 0,  color = 0x00ffffff, color_sel = 0x00ffffff), # index 0 is the name
+						MultiContentEntryText(pos = (90, 38), size = (815, 30), font=1, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 2, color = 0x00ffffff, color_sel = 0x00ffffff), # index 2 is the description
+					
+						MultiContentEntryPixmapAlphaBlend(pos = (0, 72), size = (942, 0), png = 5), # index 5 is the div pixmap
+					],
+				"fonts": [gFont("Regular",30),gFont("Regular",24)],
+				"itemHeight": 72,
+				"scrollbarMode": "showNever"
+				}</convert>
+		</widget>
+		<panel name="New-Buttons" />
+		<ePixmap name="ok" pixmap="buttons/key_ok.png" position="1148,1028" size="38,38" alphatest="blend" zPosition="10" />
+		<widget source="key_ok" render="Label" position="1193,1025" size="237,38" font="Regular;30" valign="center" noWrap="1" foregroundColor="white" backgroundColor="button-bg" transparent="1" zPosition="10" />
+	</screen>
+	
+	<!-- ##SoftwarePanel## -->
+	<!-- /lib/python/Plugins/Extensions/Infopanel/SoftwarePanel.py -->
+	<!-- software update -->
+	<screen name="SoftwarePanel" position="0,0" size="1920,1080" backgroundColor="mid" flags="wfNoBorder" title="Software Panel">
+		<panel name="template1" />
+		<panel name="h-separator-tr" />
+		<panel name="title2" />
+		<ePixmap pixmap="o-backgrounds/setup-48-bg.png" alphatest="blend" position="527,329" size="942,648" zPosition="1" />
+		<widget source="list" render="Listbox" position="527,330" size="942,648" foregroundColor="white" backgroundColor="mid" foregroundColorSelected="white" backgroundColorSelected="bg-selected" selectionPixmap="o-selectbars/select-628-48-full.png" backgroundPixmap="o-selectbars/blank.png" itemHeight="72" enableWrapAround="1" scrollbarMode="showNever" transparent="1" zPosition="2">
+			<convert type="TemplatedMultiContent">{"template": [
+						MultiContentEntryText(pos = (15, 2), size = (825, 42), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 0,  color = 0x00ffffff, color_sel = 0x00ffffff), # index 0 is the name
+						MultiContentEntryText(pos = (15, 38), size = (825, 30), font=1, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 2, color = 0x00ffffff, color_sel = 0x00ffffff), # index 2 is the description
+						MultiContentEntryPixmapAlphaBlend(pos = (855, 0), size = (72, 72), png = 4), # index 4 is the status pixmap
+						MultiContentEntryPixmapAlphaBlend(pos = (0, 83), size = (942, 0), png = 5), # index 5 is the div pixmap
+					],
+				"fonts": [gFont("Regular",30),gFont("Regular",24)],
+				"itemHeight": 72,
+				"scrollbarMode": "showNever"
+				}</convert>
+		</widget>
+		<ePixmap pixmap="o-backgrounds/sidebar2.png" alphatest="blend" position="1515,329" size="324,168" zPosition="1" />
+		<widget name="packagetext" position="1530,329" size="233,83" font="Regular;27" valign="center" foregroundColor="white" backgroundColor="mid" transparent="1" zPosition="2" />
+		<widget name="packagenr" position="1763,329" size="75,83" font="Regular;27" valign="center" foregroundColor="white" backgroundColor="mid" transparent="1" zPosition="2" />
+		<widget name="a_off" position="1530,440" size="23,24" pixmap="buttons/button_green_off.png" alphatest="blend" zPosition="1" />
+		<widget name="a_red" position="1530,440" size="23,24" pixmap="buttons/button_red.png" alphatest="blend" zPosition="1" />
+		<widget name="a_yellow" position="1530,440" size="23,24" pixmap="buttons/button_yellow.png" alphatest="blend" zPosition="1" />
+		<widget name="a_green" position="1530,440" size="23,24" pixmap="buttons/button_green.png" alphatest="blend" zPosition="1" />
+		<widget name="feedstatusRED" position="1568,411" size="269,83" font="Regular;27" valign="center" foregroundColor="white" backgroundColor="midright" transparent="1" zPosition="1" />
+		<widget name="feedstatusYELLOW" position="1568,411" size="269,83" font="Regular;27" valign="center" foregroundColor="white" backgroundColor="midright" transparent="1" zPosition="1" />
+		<widget name="feedstatusGREEN" position="1568,411" size="269,83" font="Regular;27" valign="center" foregroundColor="white" backgroundColor="midright" transparent="1" zPosition="1" />
+		<widget name="key_red_pic" pixmap="buttons/key_red.png" position="509,1028" size="38,38" alphatest="blend" zPosition="10" />
+		<widget name="key_red" position="554,1025" size="237,38" font="Regular;30" valign="center" halign="left" transparent="1" noWrap="1" foregroundColor="white" backgroundColor="button-bg" zPosition="10" />
+		<widget name="key_green_pic" pixmap="buttons/key_green.png" position="828,1028" size="38,38" alphatest="blend" zPosition="10" />
+		<widget name="key_green" position="873,1025" size="237,38" font="Regular;30" valign="center" halign="left" transparent="1" noWrap="1" foregroundColor="white" backgroundColor="button-bg" zPosition="10" />
+		<panel name="New-Buttons" />
+	</screen>
+	
+	<!-- Info Panel Infos -->
+	<screen name="Info" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="mid" title="Info">
+		<panel name="template1" />
+		<panel name="h-separator-tr" />
+		<panel name="title2" />
+		<widget name="label2" position="527,330" size="921,54" font="Bold;29" zPosition="1" transparent="1" foregroundColor="colour2" backgroundColor="topmid" />
+		<widget name="label1" position="527,381" size="1356,570" font="Console;27" foregroundColor="white" backgroundColor="mid" transparent="1" zPosition="3" />
+	</screen>
+</skin>
+

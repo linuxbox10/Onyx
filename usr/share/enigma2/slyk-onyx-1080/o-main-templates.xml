@@ -1,0 +1,281 @@
+
+<skin>
+	<screen name="background">
+		<ePixmap pixmap="o-backgrounds/main-bg.jpg" position="0,0" size="1920,1080" zPosition="-2" />
+	</screen>
+	
+	<screen name="divider1">
+		<ePixmap pixmap="o-backgrounds/v-glass-div.png" alphatest="blend" position="467,0" size="50,1080" zPosition="3" />
+	</screen>
+	
+	<screen name="divider2">
+		<ePixmap pixmap="o-backgrounds/v-glass-div.png" alphatest="blend" position="817,0" size="50,1080" zPosition="3" />
+	</screen>
+	
+	<screen name="divider3">
+		<ePixmap pixmap="o-backgrounds/v-glass-div.png" alphatest="blend" position="1182,0" size="36,1080" zPosition="3" />
+	</screen>
+	
+	<screen name="divider4">
+		<ePixmap pixmap="o-backgrounds/v-glass-div.png" alphatest="blend" position="1433,0" size="36,1080" zPosition="2" />
+	</screen>
+	
+	<screen name="h-separator-tl">
+		<ePixmap pixmap="o-backgrounds/h-divider.png" position="0,270" size="480,2" alphatest="blend" />
+	</screen>
+	
+	<screen name="h-separator-tr">
+		<ePixmap pixmap="o-backgrounds/h-divider.png" position="489,270" size="1431,2" alphatest="blend" />
+	</screen>
+	
+	<screen name="h-separator-br">
+		<ePixmap pixmap="o-backgrounds/h-divider.png" position="1499,875" size="422,2" alphatest="blend" />
+	</screen>
+	
+	<screen name="v-separator-tr">
+		<ePixmap pixmap="o-backgrounds/v-divider.png" position="1469,42" size="3,213" alphatest="blend" />
+	</screen>
+	
+	<screen name="1panel-gradient">
+		<ePixmap pixmap="o-backgrounds/1panel-gradient.png" alphatest="blend" position="510,972" size="323,108" zPosition="2" />
+	</screen>
+	
+	<screen name="2panel-gradient">
+		<ePixmap pixmap="o-backgrounds/2panel-gradient.png" alphatest="blend" position="510,972" size="672,108" zPosition="2" />
+	</screen>
+	
+	<screen name="logo">
+		<ePixmap pixmap="o-backgrounds/onyx-logo-sm.png" alphatest="blend" position="24,525" size="431,167" />
+	</screen>
+	
+	<screen name="tv">
+		<widget source="session.VideoPicture" render="Pig" position="0,0" size="488,278" backgroundColor="transparent" transparent="1" />
+		<eLabel position="0,0" size="480,270" backgroundColor="transparent" zPosition="1" />
+		<!-- recording icon -->
+		<widget position="435,15" size="30,30" source="session.RecordState" render="Pixmap" pixmap="o-icons/record.png" alphatest="blend">
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<!-- tv overlay-->
+		<!-- <eLabel  position="0,249" size="480,21" backgroundColor="#0f1015"  zPosition="2" />  -->
+		<widget source="session.CurrentService" render="Label" position="0,249" size="480,21" font="Bold;18" foregroundColor="white" backgroundColor="blackglass" borderWidth="0" borderColor="black" valign="center" halign="center" noWrap="1" zPosition="3" transparent="0">
+			<convert type="ServiceName">Name</convert>
+		</widget>
+		<panel name="h-separator-tl" />
+	</screen>
+	
+	<screen name="date">
+		<widget source="global.CurrentTime" render="Label" position="0,1005" size="480,75" font="Regular;30" foregroundColor="white" backgroundColor="botleft" valign="center" halign="center" transparent="1">
+			<convert type="Slyk18ClockToText">Slyk18DateFormat1</convert>
+		</widget>
+	</screen>
+	
+	<screen name="title2">
+		<widget source="Title" render="Label" position="15,675" size="450,291" halign="center" font="Regular;35" transparent="1" foregroundColor="white" backgroundColor="topleft" />
+	</screen>
+	
+	<screen name="button-bg">
+		<ePixmap pixmap="o-backgrounds/button-bg.png" position="0,e-102" size="1920,102" alphatest="blend" zPosition="-1" />
+		<ePixmap pixmap="o-backgrounds/v-divider.png" position="809 ,1005" size="3,75" alphatest="blend" />
+		<ePixmap pixmap="o-backgrounds/v-divider.png" position="1128,1005" size="3,75" alphatest="blend" />
+		<ePixmap pixmap="o-backgrounds/v-divider.png" position="1448,1005" size="3,75" alphatest="blend" />
+		<ePixmap pixmap="o-backgrounds/v-divider.png" position="1767,1005" size="3,75" alphatest="blend" />
+		<ePixmap pixmap="o-backgrounds/flare.png" position="296,992" size="375,29" alphatest="blend" zPosition="6" />
+		<ePixmap pixmap="o-backgrounds/flare.png" position="1260,992" size="375,29" alphatest="blend" zPosition="6" />
+	</screen>
+	
+	<screen name="template1">
+		<panel name="background" />
+		<panel name="logo" />
+		<panel name="tv" />
+		<panel name="date" />
+		<panel name="button-bg" />
+		<panel name="divider1" />
+	</screen>
+	
+	<screen name="template2">
+		<panel name="background" />
+		<panel name="date" />
+		<panel name="button-bg" />
+	</screen>
+	
+	<screen name="config">
+		<widget name="config" textOffset="15,0" position="527,321" size="954,645" font="Regular;32" secondfont="Regular;32" foregroundColor="white" backgroundColor="mid" backgroundColorSelected="bg-selected" selectionPixmap="o-selectbars/select-636-48.png" backgroundPixmap="o-selectbars/blank.png" itemHeight="72" enableWrapAround="1" scrollbarMode="showNever" transparent="1" />
+	</screen>
+	
+	<screen name="config2">
+		<widget name="config" textOffset="15,0" position="527,321" size="942,645" font="Regular;32" secondfont="Regular;32" foregroundColor="white" backgroundColor="mid" backgroundColorSelected="bg-selected" selectionPixmap="o-selectbars/select-628-48.png" backgroundPixmap="o-selectbars/blank.png" itemHeight="72" enableWrapAround="1" scrollbarMode="showNever" transparent="1" />
+	</screen>
+	
+	<screen name="description">
+		<widget name="description" position="1518,341" size="372,510" font="Regular;27" foregroundColor="colour2" backgroundColor="midright" transparent="1" />
+	</screen>
+	
+	<screen name="VKeyIcon">
+		<widget source="VKeyIcon" render="Pixmap" pixmap="buttons/key_text.png" position="1845,1025" size="38,38" alphatest="blend">
+			<convert type="ConditionalShowHide" />
+		</widget>
+	</screen>
+	
+	<screen name="HelpWindow">
+		<widget name="HelpWindow" pixmap="buttons/vkey_icon.png" position="0,0" size="1920,60" alphatest="blend" />
+	</screen>
+	
+	<!-- used mainly on network screens -->
+	<screen name="active-block">
+		<ePixmap pixmap="o-backgrounds/2box.png" alphatest="blend" position="525,329" size="947,168" zPosition="-1" />
+		<widget name="lab1" position="557,360" size="441,83" font="Regular;35" foregroundColor="white" backgroundColor="mid" transparent="1" />
+		<widget name="labdisabled" position="998,360" size="441,83" font="Regular;35" foregroundColor="white" backgroundColor="mid" halign="right" transparent="1" />
+		<widget name="labactive" position="998 ,360" size="441,83" font="Regular;35" foregroundColor="white" backgroundColor="mid" halign="right" transparent="1" />
+		<widget name="lab2" position="557,417" size="441,83" font="Regular;35" foregroundColor="white" backgroundColor="mid" transparent="1" />
+		<widget name="labstop" position="998,417" size="441,83" font="Regular;35" backgroundColor="mid" halign="right" transparent="1" />
+		<widget name="labrun" position="998,417" size="441,83" font="Regular;35" backgroundColor="mid" halign="right" transparent="1" />
+	</screen>
+	
+	<screen name="active-block2">
+		<ePixmap pixmap="o-backgrounds/2box.png" alphatest="blend" position="525,329" size="947,168" zPosition="-1" />
+		<widget name="lab1" position="557,360" size="441,83" font="Regular;35" foregroundColor="white" backgroundColor="mid" transparent="1" />
+		<widget name="labactive" position="998,360" size="441,83" font="Regular;35" foregroundColor="white" backgroundColor="mid" halign="right" transparent="1" />
+		<widget name="lab2" position="557,417" size="441,83" font="Regular;35" foregroundColor="white" backgroundColor="mid" transparent="1" />
+		<widget name="labstop" position="998,417" size="441,83" font="Regular;35" backgroundColor="mid" halign="right" transparent="1" />
+		<widget name="labrun" position="998,417" size="441,83" font="Regular;35" backgroundColor="mid" halign="right" transparent="1" />
+	</screen>
+	
+	<screen name="whatson-top" />
+	
+	<screen name="whatson-right" />
+	
+	<screen name="channel-icons">
+		<ePixmap pixmap="o-icons/icon-bg.png" position="0,0" size="45,30" alphatest="blend" zPosition="1" />
+		<ePixmap pixmap="o-icons/icon-bg.png" position="54,0" size="45,30" alphatest="blend" zPosition="1" />
+		<ePixmap pixmap="o-icons/icon-bg.png" position="108,0" size="45,30" alphatest="blend" zPosition="1" />
+		<ePixmap pixmap="o-icons/icon-bg.png" position="162,0" size="45,30" alphatest="blend" zPosition="1" />
+		<ePixmap pixmap="o-icons/icon-bg.png" position="0,39" size="45,30" alphatest="blend" zPosition="1" />
+		<ePixmap pixmap="o-icons/icon-bg.png" position="54,39" size="45,30" alphatest="blend" zPosition="1" />
+		<ePixmap pixmap="o-icons/icon-bg.png" position="108,39" size="45,30" alphatest="blend" zPosition="1" />
+		<ePixmap pixmap="o-icons/icon-bg.png" position="162,39" size="45,30" alphatest="blend" zPosition="1" />
+		<widget source="session.CurrentService" render="Pixmap" pixmap="o-icons/hd.png" position="0,0" size="45,30" alphatest="blend" zPosition="2">
+			<convert type="SlykServiceInfo">IsHD</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="session.CurrentService" render="Pixmap" pixmap="o-icons/sd.png" position="0,0" size="45,30" alphatest="blend" zPosition="2">
+			<convert type="SlykServiceInfo">IsHD</convert>
+			<convert type="ConditionalShowHide">Invert</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Pixmap" pixmap="o-icons/1080.png" position="54,0" size="45,30" alphatest="blend" zPosition="2">
+			<convert type="SlykServiceInfo">Is1080</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="session.CurrentService" render="Pixmap" pixmap="o-icons/720.png" position="54,0" size="45,30" alphatest="blend" zPosition="2">
+			<convert type="SlykServiceInfo">Is720</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="session.CurrentService" render="Pixmap" pixmap="o-icons/576.png" position="54,0" size="45,30" alphatest="blend" zPosition="2">
+			<convert type="SlykServiceInfo">Is576</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="session.CurrentService" render="Pixmap" pixmap="o-icons/480.png" position="54,0" size="45,30" alphatest="blend" zPosition="2">
+			<convert type="SlykServiceInfo">Is480</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="session.CurrentService" render="Pixmap" pixmap="o-icons/4k.png" position="54,0" size="45,30" alphatest="blend" zPosition="2">
+			<convert type="SlykServiceInfo">Is4K</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="session.CurrentService" render="Pixmap" pixmap="o-icons/16-9.png" position="108,0" size="45,30" alphatest="blend" zPosition="2">
+			<convert type="SlykServiceInfo">IsWidescreen</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="session.CurrentService" render="Pixmap" pixmap="o-icons/4-3.png" position="108,0" size="45,30" alphatest="blend" zPosition="2">
+			<convert type="SlykServiceInfo">IsWidescreen</convert>
+			<convert type="ConditionalShowHide">Invert</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Pixmap" pixmap="o-icons/dolby.png" position="162,0" size="45,30" alphatest="blend" zPosition="2">
+			<convert type="SlykServiceInfo">IsMultichannel</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="session.CurrentService" render="Pixmap" pixmap="o-icons/crypt.png" position="0,39" size="45,30" alphatest="blend" zPosition="2">
+			<convert type="SlykServiceInfo">IsCrypted</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="session.CurrentService" render="Pixmap" pixmap="o-icons/fta.png" position="0,39" size="45,30" alphatest="blend" zPosition="2">
+			<convert type="SlykServiceInfo">IsCrypted</convert>
+			<convert type="ConditionalShowHide">Invert</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Pixmap" pixmap="o-icons/subs.png" position="54,39" size="45,30" alphatest="blend" zPosition="2">
+			<convert type="SlykServiceInfo">SubtitlesAvailable</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="session.CurrentService" render="Pixmap" pixmap="o-icons/stream.png" position="108,39" size="45,30" alphatest="blend" zPosition="2">
+			<convert type="SlykServiceInfo">IsStream</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="session.CurrentService" render="Pixmap" pixmap="o-icons/hbb.png" position="162,39" size="45,30" alphatest="blend" zPosition="2">
+			<convert type="SlykServiceInfo">HasHBBTV</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+	</screen>
+	
+	<screen name="infobar-icons">
+		<ePixmap pixmap="o-icons/icon-bg.png" position="527,1028" size="45,30" alphatest="blend" zPosition="1" />
+		<ePixmap pixmap="o-icons/icon-bg.png" position="581,1028" size="45,30" alphatest="blend" zPosition="1" />
+		<ePixmap pixmap="o-icons/icon-bg.png" position="635,1028" size="45,30" alphatest="blend" zPosition="1" />
+		<ePixmap pixmap="o-icons/icon-bg.png" position="689,1028" size="45,30" alphatest="blend" zPosition="1" />
+		<ePixmap pixmap="o-icons/icon-bg.png" position="743,1028" size="45,30" alphatest="blend" zPosition="1" />
+		<ePixmap pixmap="o-icons/icon-bg.png" position="797,1028" size="45,30" alphatest="blend" zPosition="1" />
+		<ePixmap pixmap="o-icons/icon-bg.png" position="851,1028" size="45,30" alphatest="blend" zPosition="1" />
+		<ePixmap pixmap="o-icons/icon-bg.png" position="905,1028" size="45,30" alphatest="blend" zPosition="1" />
+		<widget source="session.CurrentService" render="Pixmap" pixmap="o-icons/sd.png" position="527,1028" size="45,30" alphatest="blend" zPosition="2">
+			<convert type="SlykServiceInfo">IsSD</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="session.CurrentService" render="Pixmap" pixmap="o-icons/hd.png" position="527,1028" size="45,30" alphatest="blend" zPosition="2">
+			<convert type="SlykServiceInfo">IsSD</convert>
+			<convert type="ConditionalShowHide">Invert</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Pixmap" pixmap="o-icons/720.png" position="581,1028" size="45,30" alphatest="blend" zPosition="2">
+			<convert type="SlykServiceInfo">Is720</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="session.CurrentService" render="Pixmap" pixmap="o-icons/1080.png" position="581,1028" size="45,30" alphatest="blend" zPosition="2">
+			<convert type="SlykServiceInfo">Is1080</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="session.CurrentService" render="Pixmap" pixmap="o-icons/4k.png" position="581,1028" size="45,30" alphatest="blend" zPosition="2">
+			<convert type="SlykServiceInfo">Is4K</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="session.CurrentService" render="Pixmap" pixmap="o-icons/16-9.png" position="635,1028" size="45,30" alphatest="blend" zPosition="2">
+			<convert type="SlykServiceInfo">IsWidescreen</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="session.CurrentService" render="Pixmap" pixmap="o-icons/4-3.png" position="635,1028" size="45,30" alphatest="blend" zPosition="2">
+			<convert type="SlykServiceInfo">IsWidescreen</convert>
+			<convert type="ConditionalShowHide">Invert</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Pixmap" pixmap="o-icons/dolby.png" position="689,1028" size="45,30" alphatest="blend" zPosition="2">
+			<convert type="SlykServiceInfo">IsMultichannel</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="session.CurrentService" render="Pixmap" pixmap="o-icons/crypt.png" position="743,1028" size="45,30" alphatest="blend" zPosition="2">
+			<convert type="SlykServiceInfo">IsCrypted</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="session.CurrentService" render="Pixmap" pixmap="o-icons/fta.png" position="743,1028" size="45,30" alphatest="blend" zPosition="2">
+			<convert type="SlykServiceInfo">IsCrypted</convert>
+			<convert type="ConditionalShowHide">Invert</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Pixmap" pixmap="o-icons/subs.png" position="797,1028" size="45,30" alphatest="blend" zPosition="2">
+			<convert type="SlykServiceInfo">SubtitlesAvailable</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="session.CurrentService" render="Pixmap" pixmap="o-icons/stream.png" position="851,1028" size="45,30" alphatest="blend" zPosition="2">
+			<convert type="SlykServiceInfo">IsStream</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="session.CurrentService" render="Pixmap" pixmap="o-icons/hbb.png" position="905,1028" size="45,30" alphatest="blend" zPosition="2">
+			<convert type="SlykServiceInfo">HasHBBTV</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+	</screen>
+</skin>
+

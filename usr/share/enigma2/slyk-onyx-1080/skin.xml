@@ -1,0 +1,200 @@
+<skin>
+	<!-- Skin: Slyk Onyx 1080 by kiddac : linuxsat-support.com -->
+	
+        <!-- All graphics, icons, buttons, screens are my own hard work-->
+	<!-- If using any elements/graphics from this skin in your own work please reference me correctly -->
+	
+        <!-- ****************************************************************************************************** -->
+	<!-- If you would like to buy me a beer for my efforts https://paypal.me/kiddac -->
+	<!-- ****************************************************************************************************** -->
+
+	<output id="0">
+		<resolution xres="1920" yres="1080" bpp="32" />
+	</output>
+	
+        <!-- includes -->
+	        <include filename="o-main-templates.xml" />
+                <include filename="o-button-templates.xml" />
+                <include filename="o-general.xml" />
+                <include filename="o-wizards.xml" />
+                <include filename="o-menus.xml" />
+                <include filename="o-infopanel.xml" />
+                <include filename="o-movies.xml" />
+                <include filename="o-epg.xml" />
+                <include filename="o-information.xml" />
+                <include filename="o-cccam.xml" />
+                <include filename="o-timers.xml" />
+                <include filename="o-channel-selection.xml" />
+                <include filename="o-infobar.xml" />
+                <include filename="o-eventview.xml" />
+                <include filename="o-plugins.xml" />
+                <include filename="o-network.xml" />
+                <!-- <include filename="o-vix.xml" /> -->
+                <include filename="o-toppicks.xml" />
+                <include filename="o-picons.xml" />
+
+	<!-- fonts -->
+	<fonts>
+		<!-- default skin fonts -->
+	        <font name="Subtitlefont"  filename="/usr/share/fonts/nmsbd.ttf" scale="90"/>
+		<font name="LCD"           filename="/usr/share/fonts/lcd.ttf" scale="100"/>
+		<font name="Replacement"   filename="/usr/share/fonts/ae_AlMateen.ttf"  scale="90" replacement="1"/>
+
+		<!-- slyk1hd fonts -->
+	        <font name="Regular" filename="fonts/MavenPro-Regular.ttf" scale="100" />
+ 	        <font name="Bold" filename="fonts/MavenPro-Medium.ttf" scale="100" />
+		<font name="Console" filename="fonts/Inconsolata-Regular.ttf" scale="100" />
+	
+	        <!-- alias -->
+		<alias name="Body" font="Regular" size="30" height="45" />
+		<alias name="TextNormal" font="Regular" size="30" height="45" />
+		
+		<!-- context menu -->
+		<alias name="ChoiceList" font="Regular" size="30" height="45" />
+		
+		<!-- plugins -->
+		<alias name="PluginBrowser0" font="Regular" size="30" height="38" />        <!-- plugin name -->
+		<alias name="PluginBrowser1" font="Regular" size="24" height="32" />        <!-- plugin description -->
+		
+                <!-- help menus -->
+		<alias name="HelpMenuList" font="Regular" size="30" height="45" />
+		
+                <!-- virtual keyboard -->
+		<alias name="VirtualKeyboard" font="Regular" size="27" height="68" />
+		<alias name="VirtualKeyBoard" font="Regular" size="27" height="68" />
+		
+                <!-- used on tuner config - positioner -->
+		<alias name="SelectionList" font="Regular" size="30" height="45" />
+		
+                <!-- locationbox i.e movie file location  -->
+		<alias name="FileList" font="Regular" size="30" height="45" />
+		<alias name="FileListMulti" font="Regular" size="30" height="45" />	
+	</fonts>
+
+	<!-- default colour list -->
+	<colors>
+		<color name="transparent" value="#ff000000" />
+		<color name="black" value="#00000000" />
+		<color name="red" value="#00ff0011" />
+		<color name="green" value="#307e13" />
+		<color name="yellow" value="#00ffff00"/>
+		<color name="blue" value="#000064c7"/>
+		<color name="white" value="#00ffffff" />
+		<color name="zapgreen" value="#00007f0e" />
+
+		<color name="button-bg"                  value="#0f1017" />
+		<color name="blackglass"                 value="#4d000000"/> <!-- 90% = 1a000000 / 80% = 34000000 / 70% = 4d000000 / -->
+               	<color name="topleft"                    value="#1a1a24" />
+	        <color name="topmid"                     value="#414256" />
+               	<color name="topright"                   value="#22222e" />
+               	<color name="midleft"                    value="#0f0f16" />
+               	<color name="mid"                        value="#313040" />
+               	<color name="midright"                   value="#07070a" />
+               	<color name="botleft"                    value="#0a0b10" />
+               	<color name="botmid"                     value="#1d1d27" />
+               	<color name="botright"                   value="#0a090e" />
+                <color name="bg-selected"                value="#1e1f2b" />
+      	 	<color name="bg-selected-text"           value="#006fce" />
+       		<color name="tvguidecolor"               value="#57c7ff" /> <!-- 3ab7fe channel selection second colour -->
+      	 	<color name="colour2"                    value="#57c7ff" />
+	        <color name="notavailable"               value="#555555" />
+        	<color name="messageboxbg"               value="#161620" />
+        	<color name="titlebackground"            value="#16161e" />
+
+        	
+	</colors>
+	
+	<!-- default colours -->
+
+	<windowstyle type="skinned" id="0">
+		<title offset="23,3" font="Bold;35" />
+	        <color name="Background" color="#111119" />
+	  	<color name="LabelForeground" color="white" />
+	        <color name="ListboxBackground" color="#1a1a24" />
+	        <color name="ListboxForeground" color="white" />
+		<color name="ListboxSelectedBackground" color="bg-selected-text" />
+		<color name="ListboxSelectedForeground" color="white" />
+		<color name="ListboxMarkedBackground" color="bg-selected-text" />
+		<color name="ListboxMarkedForeground" color="red" />
+		<color name="ListboxMarkedAndSelectedBackground" color="bg-selected-text" />
+		<color name="ListboxMarkedAndSelectedForeground" color="black" />
+		<color name="WindowTitleForeground" color="white" />
+		<color name="WindowTitleBackground" color="titlebackground" />
+	
+		<borderset name="bsWindow">
+			<pixmap pos="bpTopLeft" filename="screens/b_tl.png" />
+			<pixmap pos="bpTop" filename="screens/b_t.png" />
+			<pixmap pos="bpTopRight" filename="screens/b_tr.png" />
+			<pixmap pos="bpLeft" filename="screens/b_l.png" />
+			<pixmap pos="bpRight" filename="screens/b_r.png" />
+			<pixmap pos="bpBottomLeft" filename="screens/b_bl.png" />
+			<pixmap pos="bpBottom" filename="screens/b_b.png" />
+			<pixmap pos="bpBottomRight" filename="screens/b_br.png" />
+		</borderset>
+	</windowstyle>
+	
+	<windowstyle type="skinned" id="1">
+	        <color name="Background" color="#111119" />
+	  	<color name="LabelForeground" color="white" />
+	        <color name="ListboxBackground" color="#1a1a24" />
+	        <color name="ListboxForeground" color="white" />
+		<color name="ListboxSelectedBackground" color="bg-selected-text" />
+		<color name="ListboxSelectedForeground" color="white" />
+		<color name="ListboxMarkedBackground" color="bg-selected-text" />
+		<color name="ListboxMarkedForeground" color="red" />
+		<color name="ListboxMarkedAndSelectedBackground" color="bg-selected-text" />
+		<color name="ListboxMarkedAndSelectedForeground" color="black" />
+		<color name="WindowTitleForeground" color="white" />
+		<color name="WindowTitleBackground" color="titlebackground" />
+	</windowstyle>
+
+	<parameters>
+		<parameter name="AutotimerEnabledIcon" value="15,3,38,36" />        <!-- Autotimer tick box -->
+		<parameter name="AutotimerRecordIcon" value="60,8,30,30" />         <!-- Autotimer Record Icon -->
+		
+		<parameter name="ChoicelistDash" value="0,3,955,45"/>
+	        <parameter name="ChoicelistName" value="68,5,887,45"/>
+                <parameter name="ChoicelistIcon" value="15,4,38,38"/>
+		<parameter name="ConfigListSeperator" value="525"/>
+	
+        <!-- example is software management - backup list -->
+                <parameter name="FileListIcon" value="15,8,30,30" />
+		<parameter name="FileListName" value="68,0,874,45" />
+		<parameter name="FileListMultiLock" value="15,3,38,36" />
+                <parameter name="FileListMultiIcon" value="68,8,30,30" />
+		<parameter name="FileListMultiName" value="121,0,821,45" />
+
+		<parameter name="HelpMenuListHlp" value="15,14,942,72" />            <!-- help menu text -->
+                <parameter name="HelpMenuListExtHlp0" value="15,2,942,42"/>
+		<parameter name="HelpMenuListExtHlp1" value="0,42,942,42"/>
+		
+                <parameter name="PluginBrowserIcon" value="15,15,150,60" />          <!-- plugins main icon -->
+		<parameter name="PluginBrowserName" value="180,12,45" />             <!-- plugins name -->
+		<parameter name="PluginBrowserDescr" value="180,45,30" />           <!-- plugins description -->
+                <parameter name="PluginBrowserDownloadIcon" value="15,0,63,90" />   <!-- plugins + - boxed icon -->
+		<parameter name="PluginBrowserDownloadName" value="93,10,45" />      <!-- plugins download name - see font alias PluginBrowser0 -->
+		<parameter name="PluginBrowserDownloadDescr" value="93,47,30" />    <!-- plugins download description -see font alias PluginBrowser1 -->
+	
+	        <!-- information - services -->
+		<parameter name="ServiceInfo" value="0,0,450,45" />
+                <parameter name="ServiceInfoLeft" value="0,0,450,38" />
+                <parameter name="ServiceInfoRight" value="450,0,900,38" />
+
+                <!-- used on tuner config - positioner -->
+		<parameter name="SelectionListDescr" value="66,3,863,45" />
+		<parameter name="SelectionListLock" value="15,3,38,36" />
+		<parameter name="SelectionListLockOff" value="15,3,38,36" />
+		
+		<parameter name="VirtualKeyboard" value="68,68"/>
+		<parameter name="VirtualKeyBoard" value="68,68"/>
+		<parameter name="VirtualKeyBoardAlignment" value="0,0"/>
+                <parameter name="VirtualKeyBoardPadding" value="7,7"/>
+		
+                <parameter name="EPGImportFilterListDescr" value="66,3,863,45" />
+		<parameter name="EPGImportFilterListLockOn" value="15,3,38,36" />
+		<parameter name="EPGImportFilterListLockOff" value="15,3,38,36" />
+	</parameters>
+
+</skin>
+
+
